@@ -1,9 +1,28 @@
+@font-face {
+  font-family: "MaPolice";
+  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
+    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
+    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
+    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
+    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Styles de base */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "MaPolice", sans-serif;
   background-color: #f0f0f0;
 }
 
@@ -12,8 +31,6 @@ body, html {
   height: 100%;
   overflow: hidden;
   position: relative;
-
-
 
   background-color: white;
   box-sizing: border-box;
@@ -40,7 +57,7 @@ header {
 h1 {
   font-size: 15px;
   margin-bottom: 5px;
-color: #2E6E96;
+  color: #2e6e96;
 }
 
 p {
@@ -63,7 +80,7 @@ input[type="checkbox"] {
 
 .interest-tag {
   padding: 8px 15px;
-  margin-bottom:2rem ;
+  margin-bottom: 2rem;
   background-color: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 20px;
@@ -111,10 +128,8 @@ input[type="checkbox"]:checked + .interest-tag {
   right: 15%;
 }
 
-
-
 .submit-button {
-  background-color: #0076C0;
+  background-color: #0076c0;
   color: white;
   width: 100%;
   border: none;
@@ -125,7 +140,7 @@ input[type="checkbox"]:checked + .interest-tag {
 
 /* Footer */
 footer {
-  background-color: #0076C0;
+  background-color: #0076c0;
   padding: 20px;
   position: absolute;
   bottom: 0;
@@ -137,7 +152,6 @@ footer {
   margin-right: 10px;
 }
 
-
 /* Styles pour écran plus grand */
 @media (min-width: 768px) {
   .slide-content h2 {
@@ -146,7 +160,8 @@ footer {
   .slide-content p {
     font-size: 1.2rem;
   }
-  .btn-inscrire, .btn-connecter {
+  .btn-inscrire,
+  .btn-connecter {
     font-size: 1rem;
   }
 }

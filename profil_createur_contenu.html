@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Profil Utilisateur</title>
     <style>
-    body,
-    html {
+      body,
+      html {
         margin: 0;
         padding: 0;
         height: 100%;
-        font-family: Arial, sans-serif;
+        font-family: "MaPolice", sans-serif;
         background-color: #f4f4f4;
         overflow-y: scroll;
-    }
+      }
 
-    .container {
+      .container {
         width: 100%;
         height: auto;
         position: relative;
@@ -27,22 +29,22 @@
         background-position: center;
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+      }
 
-    * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+      }
 
-    .header {
+      .header {
         background-image: url("./assets/profil1.jpg");
         background-size: cover;
         height: 233px;
         position: relative;
-    }
+      }
 
-    .back-button {
+      .back-button {
         position: absolute;
         top: 10px;
         left: 10px;
@@ -54,9 +56,9 @@
         padding: 0.5rem;
         margin-left: 0.5em;
         border: white;
-    }
+      }
 
-    .notif-button {
+      .notif-button {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -70,74 +72,74 @@
         padding: 0.5rem;
         margin-left: 0.5em;
         border: white;*/
-    }
+      }
 
-    .profile {
+      .profile {
         padding: 20px;
         display: flex;
         align-items: center;
-    }
+      }
 
-    .profile-pic {
+      .profile-pic {
         width: 80px;
         height: 80px;
         border-radius: 50%;
         margin-right: 15px;
-    }
+      }
 
-    .profile-info h2 {
+      .profile-info h2 {
         margin: 0;
-    }
+      }
 
-    .profile-stats {
+      .profile-stats {
         color: #888;
         font-size: 0.9em;
-    }
+      }
 
-    .follow-button {
+      .follow-button {
         background-color: #007bff;
         color: white;
         border: none;
         padding: 10px 20px;
         border-radius: 20px;
         margin-top: 10px;
-    }
+      }
 
-    .bio {
+      .bio {
         padding: 0 20px;
-    }
+      }
 
-    .content-section {
+      .content-section {
         padding: 20px;
-    }
+      }
 
-    .content-title {
+      .content-title {
         font-weight: bold;
         margin-bottom: 10px;
-    }
+      }
 
-    .content-section {
+      .content-section {
         padding: 20px;
-    }
+      }
 
-    .content-title {
+      .content-title {
         font-weight: bold;
         margin-bottom: 10px;
-    }
+      }
 
-    .video-container {
+      .video-container {
         position: relative;
         width: 100%;
-    }
+      }
 
-    .video-container img {
+      .video-container img {
         width: 100%;
         height: auto;
         border-radius: 10px;
         display: block;
-    }
+      }
 
-    .video-thumbnail {
+      .video-thumbnail {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -152,21 +154,21 @@
         justify-content: center;
         font-size: 24px;
         cursor: pointer;
-    }
+      }
 
-    .playlist {
+      .playlist {
         display: flex;
         overflow-x: auto;
         padding-bottom: 10px;
-    }
+      }
 
-    .playlist-item {
+      .playlist-item {
         flex: 0 0 auto;
         width: 120px;
         margin-right: 10px;
-    }
+      }
 
-    .playlist-thumbnail {
+      .playlist-thumbnail {
         width: 120px;
         height: 80px;
         background-color: #ddd;
@@ -175,9 +177,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
+      }
 
-    .play-icon {
+      .play-icon {
         position: absolute;
         top: 10px;
         left: 10px;
@@ -189,20 +191,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
+      }
 
-    .play-icon i {
+      .play-icon i {
         color: white;
         font-size: 18px;
-    }
+      }
 
-    .audio-player img {
+      .audio-player img {
         width: 100%;
         border-radius: 10px;
         /* Optionnel, pour des coins arrondis */
-    }
+      }
 
-    .audio-bar {
+      .audio-bar {
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -212,29 +214,28 @@
         align-items: flex-end;
         background-color: transparent;
         margin-bottom: 1.43em;
-    }
+      }
 
-    .bar {
+      .bar {
         width: 1rem;
         height: 20px;
         /* La hauteur sera animée pour simuler l'effet audio */
         background-color: #ffcb00;
         animation: bounce 1s infinite ease-in-out;
-    }
+      }
 
-    @keyframes bounce {
-
+      @keyframes bounce {
         0%,
         100% {
-            height: 10px;
+          height: 10px;
         }
 
         50% {
-            height: 30px;
+          height: 30px;
         }
-    }
+      }
 
-    .trend-title {
+      .trend-title {
         position: absolute;
         top: 0px;
         /* Position en haut */
@@ -251,34 +252,34 @@
         /* Taille de la police */
         z-index: 1;
         /* S'assurer que le titre est au-dessus de l'image */
-    }
+      }
 
-    .trends-section {
+      .trends-section {
         margin-bottom: 20px;
-    }
+      }
 
-    .titre-trend {
+      .titre-trend {
         margin-bottom: 10px;
         font-size: 18px;
         margin-left: 15px;
-    }
+      }
 
-    .trends-container {
+      .trends-container {
         display: flex;
         overflow-x: scroll;
         padding-bottom: 10px;
         width: 100%;
         margin-bottom: 0rem;
-    }
+      }
 
-    .trend-card {
+      .trend-card {
         position: relative;
         flex: 0 0 150px;
         margin-right: 10px;
         text-align: center;
-    }
+      }
 
-    .trend-card .play-btn {
+      .trend-card .play-btn {
         position: absolute;
         bottom: 45%;
         left: 40%;
@@ -294,103 +295,106 @@
         align-items: center;
         cursor: pointer;
         margin: auto;
-    }
+      }
 
-    .trend-card img {
+      .trend-card img {
         width: 100%;
         border-radius: 10px;
         height: 80%;
-    }
+      }
 
-    .trend-card p {
+      .trend-card p {
         margin-top: 5px;
         font-size: 14px;
         color: #333;
-    }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="header">
-            <button class="back-button" onclick="history.back();">&larr;</button>
-            <button class="notif-button"><i class="far fa-bell"></i></button>
+      <div class="header">
+        <button class="back-button" onclick="history.back();">&larr;</button>
+        <button class="notif-button"><i class="far fa-bell"></i></button>
+      </div>
+      <div class="profile">
+        <img
+          src="./assets/img5.jfif"
+          alt="Photo de profil"
+          class="profile-pic"
+        />
+        <div class="profile-info">
+          <h2>Corine Dupois</h2>
+          <div class="profile-stats">23,6k Abonnés • 6.5</div>
+          <button class="follow-button">Suivre</button>
         </div>
-        <div class="profile">
-            <img src="./assets/img5.jfif" alt="Photo de profil" class="profile-pic" />
-            <div class="profile-info">
-                <h2>Corine Dupois</h2>
-                <div class="profile-stats">23,6k Abonnés • 6.5</div>
-                <button class="follow-button">Suivre</button>
-            </div>
+      </div>
+      <div class="bio">
+        Hello! I am a content creator.<br />
+        If you like what you see follow me.
+      </div>
+      <div class="content-section">
+        <div class="content-title">Dernière vidéo</div>
+        <div class="video-container">
+          <img src="./assets/contenu.jpg" alt="dernière vidéo" />
+          <div class="video-thumbnail">▶️</div>
         </div>
-        <div class="bio">
-            Hello! I am a content creator.<br />
-            If you like what you see follow me.
+      </div>
+      <section class="trends-section">
+        <h4 class="titre-trend">Les recettes de Yolande</h4>
+        <div class="trends-container">
+          <div class="trend-card">
+            <img src="./assets/img8.jfif" alt="Tendance 1" />
+            <button class="play-btn"><i class="fas fa-play"></i></button>
+            <p class="trend-title">Axel Merryl</p>
+          </div>
+          <div class="trend-card">
+            <img src="./assets/img5.jfif" alt="Tendance 2" />
+            <button class="play-btn"><i class="fas fa-play"></i></button>
+            <p class="trend-title">Sessimin</p>
+          </div>
+          <div class="trend-card">
+            <img src="./assets/img9.jfif" alt="Tendance 3" />
+            <button class="play-btn"><i class="fas fa-play"></i></button>
+            <p class="trend-title">La vie est belle</p>
+          </div>
+          <div class="trend-card">
+            <img src="./assets/img8.jfif" alt="Tendance 3" />
+            <button class="play-btn"><i class="fas fa-play"></i></button>
+            <p class="trend-title">La vie est belle</p>
+          </div>
         </div>
-        <div class="content-section">
-            <div class="content-title">Dernière vidéo</div>
-            <div class="video-container">
-                <img src="./assets/contenu.jpg" alt="dernière vidéo" />
-                <div class="video-thumbnail">▶️</div>
+      </section>
+      <section class="trends-section">
+        <h4 class="titre-trend">Recettes de gateaux</h4>
+        <div class="trends-container">
+          <div class="trend-card">
+            <img src="./assets/img9.jfif" alt="Tendance 3" />
+            <p class="trend-title">La vie est belle</p>
+          </div>
+          <div class="trend-card">
+            <img src="./assets/img8.jfif" alt="Tendance 3" />
+            <p class="trend-title">La vie est belle</p>
+            <div class="play-icon">
+              <i class="fas fa-pause"></i>
             </div>
+            <div class="audio-bar">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          <div class="trend-card">
+            <img src="./assets/img5.jfif" alt="Tendance 3" />
+            <p class="trend-title">La vie est belle</p>
+          </div>
+          <div class="trend-card">
+            <img src="./assets/img9.jfif" alt="Tendance 3" />
+            <p class="trend-title">La vie est belle</p>
+          </div>
         </div>
-        <section class="trends-section">
-            <h4 class="titre-trend">Les recettes de Yolande</h4>
-            <div class="trends-container">
-                <div class="trend-card">
-                    <img src="./assets/img8.jfif" alt="Tendance 1" />
-                    <button class="play-btn"><i class="fas fa-play"></i></button>
-                    <p class="trend-title">Axel Merryl</p>
-                </div>
-                <div class="trend-card">
-                    <img src="./assets/img5.jfif" alt="Tendance 2" />
-                    <button class="play-btn"><i class="fas fa-play"></i></button>
-                    <p class="trend-title">Sessimin</p>
-                </div>
-                <div class="trend-card">
-                    <img src="./assets/img9.jfif" alt="Tendance 3" />
-                    <button class="play-btn"><i class="fas fa-play"></i></button>
-                    <p class="trend-title">La vie est belle</p>
-                </div>
-                <div class="trend-card">
-                    <img src="./assets/img8.jfif" alt="Tendance 3" />
-                    <button class="play-btn"><i class="fas fa-play"></i></button>
-                    <p class="trend-title">La vie est belle</p>
-                </div>
-            </div>
-        </section>
-        <section class="trends-section">
-            <h4 class="titre-trend">Recettes de gateaux</h4>
-            <div class="trends-container">
-                <div class="trend-card">
-                    <img src="./assets/img9.jfif" alt="Tendance 3" />
-                    <p class="trend-title">La vie est belle</p>
-                </div>
-                <div class="trend-card">
-                    <img src="./assets/img8.jfif" alt="Tendance 3" />
-                    <p class="trend-title">La vie est belle</p>
-                    <div class="play-icon">
-                        <i class="fas fa-pause"></i>
-                    </div>
-                    <div class="audio-bar">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-                <div class="trend-card">
-                    <img src="./assets/img5.jfif" alt="Tendance 3" />
-                    <p class="trend-title">La vie est belle</p>
-                </div>
-                <div class="trend-card">
-                    <img src="./assets/img9.jfif" alt="Tendance 3" />
-                    <p class="trend-title">La vie est belle</p>
-                </div>
-            </div>
-        </section>
+      </section>
     </div>
-</body>
-
+  </body>
 </html>

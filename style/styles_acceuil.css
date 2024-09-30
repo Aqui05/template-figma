@@ -1,9 +1,27 @@
+@font-face {
+  font-family: "MaPolice";
+  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
+    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
+    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
+    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
+    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
+    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
+    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "MaPolice", sans-serif;
   background-color: #f0f0f0;
 }
 .container {
@@ -28,6 +46,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.9);
 }
 .slide-content {
   position: absolute;
@@ -40,10 +59,13 @@ html {
   width: 85%;
   margin: auto;
   height: 68px;
+  width: 284px;
 }
 .slide-content h2 {
-  font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
 }
 .slide-content p {
   font-size: 1rem;
@@ -74,7 +96,7 @@ html {
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  color: #333;
+  color: #fff;
   text-decoration: none;
   border-radius: 2rem;
   font-weight: bold;
@@ -92,7 +114,7 @@ html {
 }
 .btn-inscrire {
   padding: 10px 20px;
-  margin: 10px 5px;
+  margin: 30px 0px;
   border-radius: 30px;
   border: 2px solid white;
   background-color: transparent;
@@ -101,12 +123,14 @@ html {
   cursor: pointer;
   transition: background-color 0.3s ease;
   height: 50px;
-  width: 17rem;
+  width: 300px;
+  justify-content: space-between;
+  display: flex;
 }
 
 .btn-connecter {
   padding: 10px 20px;
-  margin: 10px 5px;
+  margin: 30px 5px;
   border-radius: 30px;
   border: 2px solid white;
   background-color: transparent;
@@ -116,7 +140,29 @@ html {
   transition: background-color 0.3s ease;
   background-color: #0076c0;
   height: 50px;
-  width: 17rem;
+  width: 300px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.btn-connecter span,
+.btn-inscrire span {
+  color: #fff;
+  font-family: "MaPolice";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px 0 1 0;
+}
+
+.btn-connecter i,
+.btn-inscrire i {
+  width: 24px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2px;
+  stroke: #fff;
 }
 
 .btn-inscrire:hover,
