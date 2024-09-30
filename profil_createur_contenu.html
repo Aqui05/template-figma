@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <title>Profil Utilisateur</title>
     <style>
-      body,
-      html {
+    body,
+    html {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: "MaPolice", sans-serif;
         background-color: #f4f4f4;
         overflow-y: scroll;
-      }
+    }
 
-      .container {
+    .container {
         width: 100%;
         height: auto;
         position: relative;
@@ -29,117 +27,151 @@
         background-position: center;
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    }
 
-      * {
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-      }
+    }
 
-      .header {
-        background-image: url("./assets/profil1.jpg");
-        background-size: cover;
-        height: 233px;
+    .header {
         position: relative;
-      }
+        height: 200px;
+        background-image: url('https://via.placeholder.com/400x200');
+        background-size: cover;
+        background-position: center;
+    }
 
-      .back-button {
+    .back-button,
+    .notification-button {
         position: absolute;
         top: 10px;
-        left: 10px;
-        color: white;
-        font-size: 24px;
-        color: #f0f0f0;
-        border-radius: 100%;
-        background-color: #0076c0;
-        padding: 0.5rem;
-        margin-left: 0.5em;
-        border: white;
-      }
-
-      .notif-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        /* color: white; */
-        font-size: 24px;
-        color: black;
+        background: none;
         border: none;
-        background-color: transparent;
-        /*border-radius: 100%;
+        cursor: pointer;
+    }
 
-        padding: 0.5rem;
-        margin-left: 0.5em;
-        border: white;*/
-      }
+    .back-button {
+        left: 10px;
+    }
 
-      .profile {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-      }
+    .notification-button {
+        right: 10px;
+    }
 
-      .profile-pic {
-        width: 80px;
-        height: 80px;
+    .profile-name {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
-        margin-right: 15px;
-      }
+        border: 4px solid white;
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: url('https://via.placeholder.com/120');
+        background-size: cover;
+        background-position: center;
+    }
 
-      .profile-info h2 {
-        margin: 0;
-      }
+    .profile-info {
+        padding: 70px 20px 20px;
+        text-align: center;
+    }
 
-      .profile-stats {
-        color: #888;
-        font-size: 0.9em;
-      }
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
-      .follow-button {
-        background-color: #007bff;
+    .stat {
+        flex: 1;
+    }
+
+    .stat-value {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0076C0;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .follow-button {
+        background-color: #0076C0;
         color: white;
         border: none;
         padding: 10px 20px;
         border-radius: 20px;
-        margin-top: 10px;
-      }
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-      .bio {
-        padding: 0 20px;
-      }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
 
-      .content-section {
+    .social-icon {
+        width: 24px;
+        height: 24px;
+        background-color: #C4C4C4;
+    }
+
+    .bio {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.4;
+    }
+
+    .content-section {
         padding: 20px;
-      }
+    }
 
-      .content-title {
+    .content-title {
         font-weight: bold;
         margin-bottom: 10px;
-      }
+    }
 
-      .content-section {
+    .content-section {
         padding: 20px;
-      }
+    }
 
-      .content-title {
+    .content-title {
         font-weight: bold;
         margin-bottom: 10px;
-      }
+    }
 
-      .video-container {
+    .video-container {
         position: relative;
         width: 100%;
-      }
+    }
 
-      .video-container img {
+    .video-container img {
         width: 100%;
         height: auto;
         border-radius: 10px;
         display: block;
-      }
+    }
 
-      .video-thumbnail {
+    .video-thumbnail {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -154,21 +186,21 @@
         justify-content: center;
         font-size: 24px;
         cursor: pointer;
-      }
+    }
 
-      .playlist {
+    .playlist {
         display: flex;
         overflow-x: auto;
         padding-bottom: 10px;
-      }
+    }
 
-      .playlist-item {
+    .playlist-item {
         flex: 0 0 auto;
         width: 120px;
         margin-right: 10px;
-      }
+    }
 
-      .playlist-thumbnail {
+    .playlist-thumbnail {
         width: 120px;
         height: 80px;
         background-color: #ddd;
@@ -177,9 +209,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      }
+    }
 
-      .play-icon {
+    .play-icon {
         position: absolute;
         top: 10px;
         left: 10px;
@@ -191,20 +223,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      }
+    }
 
-      .play-icon i {
+    .play-icon i {
         color: white;
         font-size: 18px;
-      }
+    }
 
-      .audio-player img {
+    .audio-player img {
         width: 100%;
         border-radius: 10px;
         /* Optionnel, pour des coins arrondis */
-      }
+    }
 
-      .audio-bar {
+    .audio-bar {
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -214,28 +246,29 @@
         align-items: flex-end;
         background-color: transparent;
         margin-bottom: 1.43em;
-      }
+    }
 
-      .bar {
+    .bar {
         width: 1rem;
         height: 20px;
         /* La hauteur sera animée pour simuler l'effet audio */
         background-color: #ffcb00;
         animation: bounce 1s infinite ease-in-out;
-      }
+    }
 
-      @keyframes bounce {
+    @keyframes bounce {
+
         0%,
         100% {
-          height: 10px;
+            height: 10px;
         }
 
         50% {
-          height: 30px;
+            height: 30px;
         }
-      }
+    }
 
-      .trend-title {
+    .trend-title {
         position: absolute;
         top: 0px;
         /* Position en haut */
@@ -252,34 +285,34 @@
         /* Taille de la police */
         z-index: 1;
         /* S'assurer que le titre est au-dessus de l'image */
-      }
+    }
 
-      .trends-section {
+    .trends-section {
         margin-bottom: 20px;
-      }
+    }
 
-      .titre-trend {
+    .titre-trend {
         margin-bottom: 10px;
         font-size: 18px;
         margin-left: 15px;
-      }
+    }
 
-      .trends-container {
+    .trends-container {
         display: flex;
         overflow-x: scroll;
         padding-bottom: 10px;
         width: 100%;
         margin-bottom: 0rem;
-      }
+    }
 
-      .trend-card {
+    .trend-card {
         position: relative;
         flex: 0 0 150px;
         margin-right: 10px;
         text-align: center;
-      }
+    }
 
-      .trend-card .play-btn {
+    .trend-card .play-btn {
         position: absolute;
         bottom: 45%;
         left: 40%;
@@ -295,106 +328,139 @@
         align-items: center;
         cursor: pointer;
         margin: auto;
-      }
+    }
 
-      .trend-card img {
+    .trend-card img {
         width: 100%;
         border-radius: 10px;
         height: 80%;
-      }
+    }
 
-      .trend-card p {
+    .trend-card p {
         margin-top: 5px;
         font-size: 14px;
         color: #333;
-      }
+    }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="header">
-        <button class="back-button" onclick="history.back();">&larr;</button>
-        <button class="notif-button"><i class="far fa-bell"></i></button>
-      </div>
-      <div class="profile">
-        <img
-          src="./assets/img5.jfif"
-          alt="Photo de profil"
-          class="profile-pic"
-        />
+
+
+
+        <div class="header">
+            <button class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <circle cx="15" cy="15" r="15" fill="#0076C0" />
+                    <path d="M24 16L9.83 16L13.41 19.59L12 21L6 15L12 9L13.41 10.41L9.83 14L24 14V16Z" fill="white" />
+                </svg>
+            </button>
+            <span class="profile-name">Celine Briston</span>
+            <button class="notification-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21" fill="none">
+                    <path
+                        d="M14 14.0827V14.4969L14.2929 14.7898L15.5858 16.0827H1.41421L2.70711 14.7898L3 14.4969V14.0827V8.58476C3.00538 7.35683 3.42234 6.16615 4.18424 5.20312L4.19737 5.18653L4.20978 5.1694C4.92689 4.17968 5.99266 3.49874 7.19207 3.26399L8 3.10587V2.28261V1.58266V1.55664L7.99865 1.53065C7.99516 1.46372 8.00517 1.39675 8.02807 1.33377C8.05099 1.27074 8.08634 1.21298 8.13198 1.16395L8.13485 1.16085C8.20463 1.08525 8.29608 1.03299 8.39677 1.01126C8.4974 0.989536 8.60228 0.999404 8.6971 1.03952C8.7919 1.07963 8.87202 1.14803 8.92651 1.23538C8.981 1.32274 9.00719 1.42477 9.00152 1.52756L9 1.55509V1.58266V2.28261V3.07578L9.77234 3.25635C10.9774 3.5381 12.05 4.22339 12.8121 5.19848L12.8239 5.21358L12.8363 5.22822C13.6204 6.15586 14.0349 7.34009 14.0004 8.55426L14 8.56846V8.58266V14.0827Z"
+                        stroke="white" stroke-width="2" />
+                </svg>
+            </button>
+            <div class="profile-picture"></div>
+        </div>
         <div class="profile-info">
-          <h2>Corine Dupois</h2>
-          <div class="profile-stats">23,6k Abonnés • 6.5</div>
-          <button class="follow-button">Suivre</button>
-        </div>
-      </div>
-      <div class="bio">
-        Hello! I am a content creator.<br />
-        If you like what you see follow me.
-      </div>
-      <div class="content-section">
-        <div class="content-title">Dernière vidéo</div>
-        <div class="video-container">
-          <img src="./assets/contenu.jpg" alt="dernière vidéo" />
-          <div class="video-thumbnail">▶️</div>
-        </div>
-      </div>
-      <section class="trends-section">
-        <h4 class="titre-trend">Les recettes de Yolande</h4>
-        <div class="trends-container">
-          <div class="trend-card">
-            <img src="./assets/img8.jfif" alt="Tendance 1" />
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <p class="trend-title">Axel Merryl</p>
-          </div>
-          <div class="trend-card">
-            <img src="./assets/img5.jfif" alt="Tendance 2" />
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <p class="trend-title">Sessimin</p>
-          </div>
-          <div class="trend-card">
-            <img src="./assets/img9.jfif" alt="Tendance 3" />
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <p class="trend-title">La vie est belle</p>
-          </div>
-          <div class="trend-card">
-            <img src="./assets/img8.jfif" alt="Tendance 3" />
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <p class="trend-title">La vie est belle</p>
-          </div>
-        </div>
-      </section>
-      <section class="trends-section">
-        <h4 class="titre-trend">Recettes de gateaux</h4>
-        <div class="trends-container">
-          <div class="trend-card">
-            <img src="./assets/img9.jfif" alt="Tendance 3" />
-            <p class="trend-title">La vie est belle</p>
-          </div>
-          <div class="trend-card">
-            <img src="./assets/img8.jfif" alt="Tendance 3" />
-            <p class="trend-title">La vie est belle</p>
-            <div class="play-icon">
-              <i class="fas fa-pause"></i>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">23,6k</div>
+                    <div class="stat-label">Abonnés</div>
+                </div>
+                <div class="stat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="19" fill="white" stroke="#0076C0" stroke-width="2" />
+                        <path
+                            d="M15.147 19.211C15.641 19.211 16.096 19.315 16.512 19.523C16.9367 19.7223 17.2747 20.0213 17.526 20.42C17.786 20.8187 17.916 21.2997 17.916 21.863C17.916 22.4523 17.7773 22.9853 17.5 23.462C17.2227 23.93 16.8327 24.2983 16.33 24.567C15.8273 24.8357 15.251 24.97 14.601 24.97C13.8817 24.97 13.249 24.801 12.703 24.463C12.1657 24.125 11.7453 23.6397 11.442 23.007C11.1473 22.3743 11 21.629 11 20.771C11 19.8263 11.1777 18.9943 11.533 18.275C11.897 17.547 12.391 16.988 13.015 16.598C13.6477 16.1993 14.3497 16 15.121 16C15.4243 16 15.7667 16.0303 16.148 16.091C16.5293 16.143 16.8717 16.221 17.175 16.325V18.067C16.889 17.937 16.577 17.8417 16.239 17.781C15.9097 17.7203 15.6193 17.69 15.368 17.69C14.7613 17.69 14.2717 17.885 13.899 18.275C13.5263 18.6563 13.288 19.211 13.184 19.939C13.7387 19.4537 14.393 19.211 15.147 19.211ZM14.627 23.28C14.991 23.28 15.277 23.1673 15.485 22.942C15.7017 22.7167 15.81 22.435 15.81 22.097C15.81 21.733 15.6887 21.4253 15.446 21.174C15.2033 20.9227 14.887 20.797 14.497 20.797C14.029 20.797 13.5827 20.9747 13.158 21.33C13.21 21.9627 13.3617 22.448 13.613 22.786C13.8643 23.1153 14.2023 23.28 14.627 23.28Z"
+                            fill="#0076C0" />
+                        <path
+                            d="M20.1696 24.866C19.8142 24.866 19.5109 24.7447 19.2596 24.502C19.0169 24.2593 18.8956 23.9647 18.8956 23.618C18.8956 23.2713 19.0212 22.9767 19.2726 22.734C19.5239 22.4827 19.8229 22.357 20.1696 22.357C20.5162 22.357 20.8152 22.4827 21.0666 22.734C21.3179 22.9767 21.4436 23.2713 21.4436 23.618C21.4436 23.9647 21.3179 24.2593 21.0666 24.502C20.8239 24.7447 20.5249 24.866 20.1696 24.866Z"
+                            fill="#0076C0" />
+                        <path
+                            d="M26.4007 19.25C26.9554 19.25 27.4537 19.3627 27.8957 19.588C28.3377 19.8047 28.6801 20.1123 28.9227 20.511C29.1741 20.901 29.2997 21.3387 29.2997 21.824C29.2997 22.4653 29.1351 23.0243 28.8057 23.501C28.4851 23.969 28.0344 24.3287 27.4537 24.58C26.8731 24.8227 26.2057 24.944 25.4517 24.944C24.9404 24.944 24.4421 24.8833 23.9567 24.762C23.4801 24.6407 23.0597 24.463 22.6957 24.229V22.318C23.0771 22.5953 23.4931 22.799 23.9437 22.929C24.3944 23.059 24.8451 23.124 25.2957 23.124C25.8417 23.124 26.2751 23.0243 26.5957 22.825C26.9251 22.6257 27.0897 22.3527 27.0897 22.006C27.0897 21.6767 26.9597 21.4167 26.6997 21.226C26.4397 21.0267 26.0714 20.927 25.5947 20.927C24.9707 20.927 24.3381 21.0787 23.6967 21.382L22.9167 20.771L23.4107 16.208L28.9357 16.234V18.028L24.9317 18.002L24.7237 19.627C24.9491 19.523 25.2091 19.4363 25.5037 19.367C25.7984 19.289 26.0974 19.25 26.4007 19.25Z"
+                            fill="#0076C0" />
+                    </svg>
+                    <div class="stat-label">Score</div>
+                </div>
             </div>
-            <div class="audio-bar">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
+            <button class="follow-button">Suivre</button>
+            <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
             </div>
-          </div>
-          <div class="trend-card">
-            <img src="./assets/img5.jfif" alt="Tendance 3" />
-            <p class="trend-title">La vie est belle</p>
-          </div>
-          <div class="trend-card">
-            <img src="./assets/img9.jfif" alt="Tendance 3" />
-            <p class="trend-title">La vie est belle</p>
-          </div>
+            <p class="bio">Hello I am a content crreator.<br>If you like what you see follow me.</p>
         </div>
-      </section>
+
+
+        <div class="content-section">
+            <div class="content-title">Dernière vidéo</div>
+            <div class="video-container">
+                <img src="./assets/contenu.jpg" alt="dernière vidéo" />
+                <div class="video-thumbnail">▶️</div>
+            </div>
+        </div>
+        <section class="trends-section">
+            <h4 class="titre-trend">Les recettes de Yolande</h4>
+            <div class="trends-container">
+                <div class="trend-card">
+                    <img src="./assets/img8.jfif" alt="Tendance 1" />
+                    <button class="play-btn"><i class="fas fa-play"></i></button>
+                    <p class="trend-title">Axel Merryl</p>
+                </div>
+                <div class="trend-card">
+                    <img src="./assets/img5.jfif" alt="Tendance 2" />
+                    <button class="play-btn"><i class="fas fa-play"></i></button>
+                    <p class="trend-title">Sessimin</p>
+                </div>
+                <div class="trend-card">
+                    <img src="./assets/img9.jfif" alt="Tendance 3" />
+                    <button class="play-btn"><i class="fas fa-play"></i></button>
+                    <p class="trend-title">La vie est belle</p>
+                </div>
+                <div class="trend-card">
+                    <img src="./assets/img8.jfif" alt="Tendance 3" />
+                    <button class="play-btn"><i class="fas fa-play"></i></button>
+                    <p class="trend-title">La vie est belle</p>
+                </div>
+            </div>
+        </section>
+        <section class="trends-section">
+            <h4 class="titre-trend">Recettes de gateaux</h4>
+            <div class="trends-container">
+                <div class="trend-card">
+                    <img src="./assets/img9.jfif" alt="Tendance 3" />
+                    <p class="trend-title">La vie est belle</p>
+                </div>
+                <div class="trend-card">
+                    <img src="./assets/img8.jfif" alt="Tendance 3" />
+                    <p class="trend-title">La vie est belle</p>
+                    <div class="play-icon">
+                        <i class="fas fa-pause"></i>
+                    </div>
+                    <div class="audio-bar">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="trend-card">
+                    <img src="./assets/img5.jfif" alt="Tendance 3" />
+                    <p class="trend-title">La vie est belle</p>
+                </div>
+                <div class="trend-card">
+                    <img src="./assets/img9.jfif" alt="Tendance 3" />
+                    <p class="trend-title">La vie est belle</p>
+                </div>
+            </div>
+        </section>
     </div>
-  </body>
+</body>
+
 </html>
