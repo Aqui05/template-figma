@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style/styles_inscription.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="./acceuil.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+            <h1>Inscription</h1>
+        </header>
+        <main>
+            <form id="inscription-form">
+                <div class="input-container">
+                    <input type="text" id="nom" placeholder="Nom" required />
+                </div>
+                <div class="input-container">
+                    <input type="text" id="prenoms" placeholder="Prénoms" required />
+                </div>
+                <div class="input-container">
+                    <input type="tel" id="tel" placeholder="Tel" required />
+                </div>
+                <div class="radio-container">
+                    <label>Sexe:</label>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                            <input type="radio" name="sexe" value="homme" required />
+                            <span class="radio-custom"><i class="fas fa-male"></i></span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sexe" value="femme" required />
+                            <span class="radio-custom"><i class="fas fa-female"></i></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="separator">OU</div>
+                <button type="button" class="facebook-button" id="facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+                <footer>
+                    <button type="submit" class="submit-button">
+                        Continuer <i class="fas fa-arrow-right"></i>
+                    </button>
+                </footer>
+            </form>
+        </main>
+    </div>
+
+    <script>
+    function redirectTo(url) {
+        window.location.href = url;
+    }
+
+    document
+        .getElementById("inscription-form")
+        .addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nom = document.getElementById("nom").value;
+            const prenoms = document.getElementById("prenoms").value;
+            const tel = document.getElementById("tel").value;
+            const sexe = document.querySelector('input[name="sexe"]:checked');
+
+            if (nom && prenoms && tel && sexe) {
+                redirectTo("./centres_interet.html");
+            } else {
+                alert("Veuillez remplir tous les champs requis.");
+            }
+        });
+
+    document
+        .getElementById("facebook")
+        .addEventListener("click", function() {
+            redirectTo("https://www.facebook.com");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider CSS Uniquement</title>
+    <link rel="stylesheet" href="style/styles_acceuil.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <span id="slide1"></span>
+        <span id="slide2"></span>
+        <span id="slide3"></span>
+
+        <div class="slider">
+            <div class="slide">
+                <img src="./assets/img1.jpeg" alt="Slide 1" />
+                <a href="#slide3" class="skip-link">Passer
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="slide-content">
+                    <h2>Bienvenu sur MTN Fresh.</h2>
+                    <p>Un univers de fun, d’opportunité et de liberté !</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./assets/img2.jfif" alt="Slide 2" />
+                <a href="#slide3" class="skip-link">Passer
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="slide-content">
+                    <h2>Eclate toi!</h2>
+                    <p>
+                        Découvre les meilleures vidéos pour t'éclater, apprendre et
+                        t'inspirer
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./assets/img3.jpeg" alt="Slide 3" />
+                <div class="slide-content">
+                    <h2>Gagne des points</h2>
+                    <p>
+                        Gagne des points et deviens le gars le plus fresh de la
+                        communauté!
+                    </p>
+                    <!-- Bouton Inscrivez-vous -->
+                    <button class="btn-inscrire" onclick="window.location.href='./inscription.html'">
+                        Inscrivez-vous <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Bouton Connectez-vous -->
+                    <button class="btn-connecter" onclick="window.location.href='./connexion.html'">
+                        Connectez-vous <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <a href="#slide1"></a>
+            <a href="#slide2"></a>
+            <a href="#slide3"></a>
+        </div>
+    </div>
+</body>
+
+</html>

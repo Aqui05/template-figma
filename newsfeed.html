@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceuil Newsfeed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style/styles_newsfeed_acceuil.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="nav-item active" id="home-nav">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </div>
+            <div class="nav-item" id="trends-nav">
+                <i class="fas fa-fire"></i>
+                <span>Tendances</span>
+            </div>
+            <div class="nav-item" id="community-nav">
+                <i class="fas fa-users"></i>
+                <span>Communauté</span>
+            </div>
+            <div class="nav-item" id="account-nav">
+                <i class="fas fa-user"></i>
+                <span>Mon compte</span>
+                <span class="status-dot"></span>
+            </div>
+        </header>
+        <section class="all-sections">
+            <section class="section1">
+                <p class="section1-text">Direct</p>
+                <div class="stories-container">
+
+                    <div class="story user-story">
+                        <div class="story-avatar">
+                            <i class="fas fa-user"></i>
+                            <div class="add-story">+</div>
+                        </div>
+                        <p>Vous</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img12.jfif" alt="Person 1" />
+                        <p>MTN</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img5.jfif" alt="Person 2" />
+                        <p>Bella</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img6.jfif" alt="Person 3" />
+                        <p>Aquilas</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img7.jfif" alt="Person 4" />
+                        <p>Elisée</p>
+                    </div>
+                </div>
+            </section>
+            <div class="separator"></div>
+
+            <!-- Section 3: Barre de recherche -->
+            <section class="search-bar">
+                <input type="text" placeholder="Recherche...">
+                <i class="fas fa-search"></i>
+            </section>
+
+            <!-- Section 2: Tendances ou suggestions (cards scrollable horizontalement) -->
+
+            <section class="trends-section">
+                <h3 class="section-title">Tendances</h3>
+                <div class="trends-container">
+                    <div class="trend-card">
+                        <div class="trend-image-container">
+                            <img src="./assets/img5.jfif" alt="Tendance 1">
+                        </div>
+                        <p class="trend-title">Axel Merryl</p>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-image-container">
+                            <img src="./assets/img5.jfif" alt="Tendance 2">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <p class="trend-title">Sessimin</p>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-image-container">
+                            <img src="./assets/img5.jfif" alt="Tendance 3">
+                        </div>
+                        <p class="trend-title">La vie est belle</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 3: Section intermédiaire -->
+            <section class="promo-section">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide">
+                            <img src="./assets/img10.jfif" alt="Slide 1">
+                            <div class="slide-content">
+                                <h3>Chattez, Likez, Surfez comme jamais</h3>
+                                <button>En savoir plus →</button>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="./assets/img10.jfif" alt="Slide 2">
+                            <div class="slide-content">
+                                <h3>Chattez, Likez, Surfez comme jamais</h3>
+                                <button>En savoir plus →</button>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="./assets/img10.jfif" alt="Slide 3">
+                            <div class="slide-content">
+                                <h3>Chattez, Likez, Surfez comme jamais</h3>
+                                <button>En savoir plus →</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#slide1"></a>
+                        <a href="#slide2"></a>
+                        <a href="#slide3"></a>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 4: Section des postes -->
+            <section class="posts-section">
+                <div class="post-card">
+                    <div class="post-header">
+                        <img id="creator" src="./assets/img5.jfif" alt="Profil">
+                        <div class="post-info">
+                            <h4>Albana</h4>
+                            <span>Il y a 2 min</span>
+                        </div>
+                        <span class="post-score">6.5</span>
+                    </div>
+                    <div id="video" class="post-media">
+                        <img src="./assets/img11.jfif" alt="Post">
+                        <button class="play-btn"><i class="fas fa-play"></i></button>
+                    </div>
+
+                    <p><strong>La vie est belle</strong></p>
+                    <span>40k vues · 7k commentaires</span>
+                    <div class="post-actions">
+                        <button class="action-button">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>30k</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>10</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-share"></i>
+                            <span>15k</span>
+                        </button>
+                    </div>
+                    <div class="post-comments">
+                        <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                        <br>
+                        <span id="see-all-comments">Voir tous les commentaires</span>
+                    </div>
+
+
+                    <di class="comment-bar">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Ajouter vos commentaires...">
+                        <i class="far fa-grin"></i>
+                    </di>
+                </div>
+                <div class="post-card">
+                    <div class="post-header">
+                        <img src="./assets/img5.jfif" alt="Profil">
+                        <div class="post-info">
+                            <h4>Albana</h4>
+                            <span>Il y a 2 min</span>
+                        </div>
+                        <span class="post-score">6.5</span>
+                    </div>
+                    <div class="post-media">
+                        <img src="./assets/img8.jfif" alt="Post">
+                        <div class="play-icon">
+                            <i class="fas fa-pause"></i>
+                        </div>
+                        <div class="audio-bar">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+
+                        </div>
+                    </div>
+
+                    <p><strong>La vie est belle</strong></p>
+                    <span>40k vues · 7k commentaires</span>
+                    <div class="post-actions">
+                        <button class="action-button">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>30k</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>10</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-share"></i>
+                            <span>15k</span>
+                        </button>
+                    </div>
+                    <div class="post-comments">
+                        <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                        <br>
+                        <a href="./commentaires.html"><span id="see-all-comments">Voir tous les commentaires</span></a>
+                    </div>
+
+
+                    <div class="comment-bar">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Ajouter vos commentaires...">
+                        <i class="far fa-grin"></i>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-header">
+                        <img src="./assets/img5.jfif" alt="Profil">
+                        <div class="post-info">
+                            <h4>Albana</h4>
+                            <span>Il y a 2 min</span>
+                        </div>
+                        <span class="post-score">6.5</span>
+                    </div>
+                    <div class="post-media">
+                        <img src="./assets/img9.jfif" alt="Post">
+                    </div>
+
+                    <p><strong>La vie est belle</strong></p>
+                    <span>40k vues · 7k commentaires</span>
+                    <div class="post-actions">
+                        <button class="action-button">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>30k</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>10</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-share"></i>
+                            <span>15k</span>
+                        </button>
+                    </div>
+                    <div class="post-comments">
+                        <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                        <br>
+                        <a href="./commentaires.html"><span id="see-all-comments">Voir tous les commentaires</span></a>
+                    </div>
+
+
+                    <div class="comment-bar">
+                        <div class="comment-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="Ajouter vos commentaires...">
+                        <i class="far fa-grin"></i>
+                    </div>
+                </div>
+            </section>
+            </main>
+    </div>
+    <div class="add-button" id="add-content">+</div>
+
+    <script>
+    // Add event listeners for redirection
+    document.getElementById('home-nav').addEventListener('click', function() {
+        window.location.href = 'newsfeed.html'; // Change to the actual home page URL
+    });
+
+    document.getElementById('trends-nav').addEventListener('click', function() {
+        window.location.href = 'newsfeed_tendances.html'; // Change to the actual trends page URL
+    });
+
+    document.getElementById('community-nav').addEventListener('click', function() {
+        window.location.href = 'newsfeed_communaute.html'; // Change to the actual community page URL
+    });
+
+    document.getElementById('account-nav').addEventListener('click', function() {
+        window.location.href = 'mon_profil.html'; // Change to the actual account page URL
+    });
+
+    document.getElementById('see-all-comments').addEventListener('click', function() {
+        window.location.href = 'commentaires.html';
+    });
+
+    document.getElementById('add-content').addEventListener('click', function() {
+        window.location.href = 'creation_contenu2.html';
+    });
+
+    document.getElementById('video').addEventListener('click', function() {
+        window.location.href = 'afficher_video.html';
+    });
+
+    document.getElementById('creator').addEventListener('click', function() {
+        window.location.href = 'profil_createur_contenu.html';
+    });
+    </script>
+</body>
+
+</html>

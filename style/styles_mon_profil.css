@@ -1,0 +1,317 @@
+/* Styles de base */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.all-sections {
+  background-color: #f9f9f9;
+  padding-top: 60px;
+}
+
+.header {
+  position: relative;
+  height: 200px;
+  background-image: url("/assets/profil1.jpg");
+  background-size: cover;
+}
+
+header {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.back-button {
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: blue;
+  padding: 5px;
+}
+
+.back-button {
+  color: white;
+}
+
+.thumbs-up {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* position: relative; */
+  bottom: -40px;
+  left: 40%;
+  border: 3px solid white;
+}
+
+.profile-info {
+  padding: 50px 20px 20px;
+  text-align: center;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.points {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  background-color: #f0f0f0;
+  margin: 0;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.tab {
+  padding: 15px 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.tab:hover,
+.tab:active {
+  background-color: yellow;
+}
+
+.content {
+  padding: 20px;
+}
+
+.card {
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.card img {
+  display: block;
+}
+
+#fresh:checked ~ .content .fresh-content,
+#badges:checked ~ .content .badges-content,
+#subscriptions:checked ~ .content .subscriptions-content {
+  display: block;
+}
+
+#fresh:not(:checked) ~ .content .fresh-content,
+#badges:not(:checked) ~ .content .badges-content,
+#subscriptions:not(:checked) ~ .content .subscriptions-content {
+  display: none;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fresh-section {
+  margin-bottom: 20px;
+}
+
+.fresh-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fresh-card {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fresh-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ajustement pour les autres cartes */
+.card {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.subscriptions-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.badges-content .card {
+  width: calc(33.33% - 10px);
+}
+
+.profile-container {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header .back-btn,
+.profile-header .share-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.profile-header .profile-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.profile-banner {
+  position: relative;
+}
+
+.background-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.badge-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.badge-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.profile-details {
+  text-align: center;
+}
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.points {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.role {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 0;
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.badge {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.badge-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.badge-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.badge-description {
+  font-size: 0.9em;
+  color: #666;
+}

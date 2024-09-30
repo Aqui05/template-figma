@@ -1,0 +1,164 @@
+/* Styles de base */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.follow-btn {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.header {
+  position: relative;
+  height: 150px;
+  background-image: url("/assets/img4.jfif");
+  background-size: cover;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #0076c0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbs-up {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  border: 3px solid white;
+}
+
+.profile-info {
+  padding: 50px 20px 20px;
+  text-align: center;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.points {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.tab {
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.tab:hover,
+.tab:active {
+  background-color: yellow;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content-card img {
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.content-card img {
+  display: block;
+}
+
+#fresh:checked ~ .content .fresh-content,
+#badges:checked ~ .content .badges-content,
+#subscriptions:checked ~ .content .subscriptions-content {
+  display: block;
+}
+
+#fresh:not(:checked) ~ .content .fresh-content,
+#badges:not(:checked) ~ .content .badges-content,
+#subscriptions:not(:checked) ~ .content .subscriptions-content {
+  display: none;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

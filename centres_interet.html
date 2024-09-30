@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sélection des centres d'intérêt</title>
+    <link rel="stylesheet" href="style/styles_centres_interest.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button id="passer" class="close-btn">&times;</button>
+            <br />
+            <h1>Dites-nous vos centres d'intérêts</h1>
+            <br />
+            <p>Choisissez 3 de vos centres d'intérêts</p>
+            <br />
+        </header>
+        <main>
+            <form>
+                <div class="interests-grid">
+                    <input type="checkbox" id="mode" name="interest" value="mode" />
+                    <label for="mode" class="interest-tag selected">Mode</label>
+
+                    <input type="checkbox" id="emploi" name="interest" value="emploi" />
+                    <label for="emploi" class="interest-tag">Emploi</label>
+
+                    <input type="checkbox" id="culture" name="interest" value="culture" />
+                    <label for="culture" class="interest-tag">Culture</label>
+
+                    <input type="checkbox" id="musique" name="interest" value="musique" />
+                    <label for="musique" class="interest-tag">Musique</label>
+
+                    <input type="checkbox" id="education" name="interest" value="education" />
+                    <label for="education" class="interest-tag">Education</label>
+
+                    <input type="checkbox" id="cinema" name="interest" value="cinema" />
+                    <label for="cinema" class="interest-tag">Cinéma</label>
+
+                    <input type="checkbox" id="art" name="interest" value="art" />
+                    <label for="art" class="interest-tag">Art et expositions</label>
+
+                    <input type="checkbox" id="choregraphie" name="interest" value="choregraphie" />
+                    <label for="choregraphie" class="interest-tag">Chorégraphie</label>
+
+                    <input type="checkbox" id="theatre" name="interest" value="theatre" />
+                    <label for="theatre" class="interest-tag">Théâtre</label>
+
+                    <input type="checkbox" id="sports" name="interest" value="sports" />
+                    <label for="sports" class="interest-tag">Sports</label>
+
+                    <input type="checkbox" id="people" name="interest" value="people" />
+                    <label for="people" class="interest-tag">People</label>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <button id="continuer" class="submit-button">
+                Continuer <i class="fas fa-arrow-right"></i>
+            </button>
+        </footer>
+    </div>
+
+    <script>
+    function redirectTo(url) {
+        window.location.href = url;
+    }
+
+    document
+        .getElementById("continuer")
+        .addEventListener("click", function() {
+            redirectTo("./derniere_etape.html");
+        });
+
+    document.getElementById("passer").addEventListener("click", function() {
+        redirectTo("./derniere_etape.html");
+    });
+    </script>
+</body>
+
+</html>

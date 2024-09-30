@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Création de contenu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style/styles_creation_contenu.css" />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        overflow-y: scroll;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 0 auto;
+        background-size: cover;
+        background-position: center;
+        background-color: white;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .back-btn,
+      .next-btn {
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .back-btn {
+        color: #0080ff;
+      }
+
+      .next-btn {
+        border: 1px solid white;
+        border-radius: 50%;
+        background-color: #0080ff;
+        padding: 0.2rem;
+        color: white;
+      }
+
+      .input-field {
+        border: none;
+        font-size: 16px;
+        width: 70%;
+        padding: 10px;
+      }
+
+      .main-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: flex-start;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 10px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .tab {
+        padding: 10px 0px;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        border-bottom: 2px solid #0080ff;
+        color: #0080ff;
+      }
+
+      .form-container {
+        padding: 20px;
+        display: none;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .checkbox-group,
+      .radio-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .checkbox-group input[type="checkbox"],
+      .radio-group input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .select-group select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .input-group input[type="text"] {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px 0 0 4px;
+      }
+
+      .input-group .toggle {
+        width: 50px;
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 15px;
+        margin-left: 10px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .input-group .toggle::after {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background-color: white;
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        transition: 0.2s;
+      }
+
+      .input-group .toggle.active {
+        background-color: #0080ff;
+      }
+
+      .input-group .toggle.active::after {
+        left: 22px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        resize: vertical;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <button class="back-btn" onclick="history.back();">
+          <i class="fas fa-times"></i>
+        </button>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Votre texte ici..."
+        />
+        <span class="next-btn" onclick="toggleView()">→</span>
+      </div>
+      <div id="image-upload-view">
+        <img src="./assets/content1.jpg" alt="Main Image" class="main-image" />
+        <div class="gallery">
+          <img src="./assets/content1.jpg" alt="Thumbnail 1" />
+          <img src="./assets/img5.jfif" alt="Thumbnail 2" />
+          <img src="./assets/content2.jpg" alt="Thumbnail 3" />
+          <img src="./assets/content3.jpg" alt="Thumbnail 4" />
+          <img src="./assets/profil1.jpg" alt="Thumbnail 5" />
+          <img src="./assets/content4.jpg" alt="Thumbnail 6" />
+          <img src="./assets/content5.jpg" alt="Thumbnail 7" />
+          <img src="./assets/content6.jpg" alt="Thumbnail 8" />
+        </div>
+        <div class="tabs">
+          <div class="tab active">GALLERIE</div>
+          <div class="tab">PHOTO</div>
+          <div class="tab">VIDEO</div>
+          <div class="tab">TEXT</div>
+        </div>
+      </div>
+      <div id="form-view" class="form-container">
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="checkbox1" checked />
+          <label for="checkbox1">Checked</label>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="checkbox2" checked />
+          <label for="checkbox2">Checked</label>
+        </div>
+        <div class="form-group radio-group">
+          <input type="radio" id="radio1" name="radio-group" checked />
+          <label for="radio1"></label>
+        </div>
+        <div class="form-group radio-group">
+          <input type="radio" id="radio2" name="radio-group" />
+          <label for="radio2"></label>
+        </div>
+        <div class="form-group select-group">
+          <select>
+            <option>Choisir</option>
+          </select>
+        </div>
+        <div class="form-group select-group">
+          <select>
+            <option>Choisir</option>
+          </select>
+        </div>
+        <div class="form-group input-group">
+          <input type="text" placeholder="Taper votr|" />
+          <div class="toggle"></div>
+        </div>
+        <div class="form-group input-group">
+          <input type="text" placeholder="Entrez votre text" />
+          <div class="toggle active"></div>
+        </div>
+        <div class="form-group">
+          <textarea
+            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum sit amet lectus pulvinar ultrices id a nunc. Nunc pulvinar libero sit amet elementum hendrerit. Praesent ipsum ante, pulvinar vel ligula id, finibus ultrices massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Praesent posuere lectus blandit|"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleView() {
+        const imageView = document.getElementById("image-upload-view");
+        const formView = document.getElementById("form-view");
+        if (imageView.style.display === "none") {
+          imageView.style.display = "block";
+          formView.style.display = "none";
+        } else {
+          imageView.style.display = "none";
+          formView.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

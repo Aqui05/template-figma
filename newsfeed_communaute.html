@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Communauté Newsfeed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="style/styles_newsfeed_communaute.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="nav-item" id="home-nav">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </div>
+            <div class="nav-item" id="trends-nav">
+                <i class="fas fa-fire"></i>
+                <span>Tendances</span>
+            </div>
+            <div class="nav-item active" id="community-nav">
+                <i class="fas fa-users"></i>
+                <span>Communauté</span>
+            </div>
+            <div class="nav-item" id="account-nav">
+                <i class="fas fa-user"></i>
+                <span>Mon compte</span>
+                <span class="status-dot"></span>
+            </div>
+        </header>
+        <section class="all-sections">
+            <section class="section1">
+                <p class="section1-text">Direct</p>
+                <div class="stories-container">
+
+                    <div class="story user-story">
+                        <div class="story-avatar">
+                            <i class="fas fa-user"></i>
+                            <div class="add-story">+</div>
+                        </div>
+                        <p>Vous</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img12.jfif" alt="Person 1" />
+                        <p>MTN</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img5.jfif" alt="Person 2" />
+                        <p>Bella</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img6.jfif" alt="Person 3" />
+                        <p>Aquilas</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img7.jfif" alt="Person 4" />
+                        <p>Elisée</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="tabs">
+                <label class="tab" for="idees">Idées</label>
+                <label class="tab" for="astuces">Trucs & astuces</label>
+                <label class="tab" for="testeurs">Testeurs</label>
+            </div>
+            <input type="radio" id="idees" name="tab" checked hidden />
+            <input type="radio" id="astuces" name="tab" hidden />
+            <input type="radio" id="testeurs" name="tab" hidden />
+
+            <div class="tab2">
+                <p>Proposez-nous vos idées pour nous aider à améliorer nos produits et services</p>
+                <div class="grid">
+                    <input type="checkbox" id="Appels & sms" name="interest" value="Appels & sms" />
+                    <label for="Appels & sms" class="interest-tag selected">Appels & sms</label>
+
+                    <input type="checkbox" id="Forfaits" name="interest" value="Forfaits" />
+                    <label for="Forfaits" class="interest-tag">Forfaits</label>
+
+                    <input type="checkbox" id="Internet" name="interest" value="Internet" />
+                    <label for="Internet" class="interest-tag">Internet</label>
+
+                    <input type="checkbox" id="Relations clients" name="interest" value="Relations clients" />
+                    <label for="Relations clients" class="interest-tag">Relations clients</label>
+
+                    <input type="checkbox" id="Sites & Apps" name="interest" value="Sites & Apps" />
+                    <label for="Sites & Apps" class="interest-tag">Sites & Apps</label>
+
+                    <input type="checkbox" id="Autres" name="interest" value="Autres" />
+                    <label for="Autres" class="interest-tag">Autres</label>
+
+                    <input type="checkbox" id="evenements" name="interest" value="Evènements" />
+                    <label for="evenements" class="interest-tag">Evènements</label>
+                </div>
+            </div>
+            <div class="content">
+                <div class="idees-content">
+                    <section class="idees-section">
+                        <div class="comment">
+                            <img src="./assets/img6.jfif" alt="Josephine B." class="avatar" />
+                            <div class="comment-content">
+                                <div class="post-info">
+                                    <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                    <p class="post-date">Par Thibauf • 12 août 2018</p>
+                                </div>
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                    posuere scelerisque odio sit amet laoreet.
+                                </div>
+                                <div class="post-actions">
+                                    <button class="action-button">
+                                        <i class="far fa-thumbs-up"></i>
+                                        <span>30k</span>
+                                    </button>
+                                    <button class="action-button">
+                                        <i class="far fa-thumbs-down"></i>
+                                        <span>10</span>
+                                    </button>
+                                </div>
+                                <div class="post-comments">
+                                    <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                    <br><span id="see-all-comments">Voir tous les commentaires</span>
+                                </div>
+
+
+                                <div class="comment-bar">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Ajouter vos commentaires...">
+                                    <i class="far fa-grin"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <img src="./assets/img8.jfif" alt="Josephine B." class="avatar" />
+                            <div class="comment-content">
+                                <div class="post-info">
+                                    <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                    <p class="post-date">Par Thibauf • 12 août 2018</p>
+                                </div>
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                    posuere scelerisque odio sit amet laoreet.
+                                </div>
+                                <div class="post-actions">
+                                    <button class="action-button">
+                                        <i class="far fa-thumbs-up"></i>
+                                        <span>30k</span>
+                                    </button>
+                                    <button class="action-button">
+                                        <i class="far fa-thumbs-down"></i>
+                                        <span>10</span>
+                                    </button>
+                                </div>
+                                <div class="post-comments">
+                                    <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                    <br><span id="see-all-comments">Voir tous les commentaires</span>
+                                </div>
+
+
+                                <div class="comment-bar">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Ajouter vos commentaires...">
+                                    <i class="far fa-grin"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="astuces-content">
+                    <div class="comment">
+                        <img src="https://via.placeholder.com/50" alt="Josephine B." class="avatar" />
+                        <div class="comment-content">
+                            <div class="post-info">
+                                <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                <p class="post-date">Par Thibauf • 12 août 2018</p>
+                            </div>
+                            <div class="comment-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                posuere scelerisque odio sit amet laoreet.
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>30k</span>
+                                </button>
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span>10</span>
+                                </button>
+                            </div>
+                            <div class="post-comments">
+                                <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                <br><span id="see-all-comments">Voir tous les commentaires</span>
+                            </div>
+
+
+                            <div class="comment-bar">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Ajouter vos commentaires...">
+                                <i class="far fa-grin"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="https://via.placeholder.com/50" alt="Josephine B." class="avatar" />
+                        <div class="comment-content">
+                            <div class="post-info">
+                                <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                <p class="post-date">Par Thibauf • 12 août 2018</p>
+                            </div>
+                            <div class="comment-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                posuere scelerisque odio sit amet laoreet.
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>30k</span>
+                                </button>
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span>10</span>
+                                </button>
+                            </div>
+                            <div class="post-comments">
+                                <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                <br><span id="see-all-comments">Voir tous les commentaires</span>
+                            </div>
+
+
+                            <div class="comment-bar">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Ajouter vos commentaires...">
+                                <i class="far fa-grin"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="testeurs-content">
+                    <div class="comment">
+                        <img src="https://via.placeholder.com/50" alt="Josephine B." class="avatar" />
+                        <div class="comment-content">
+                            <div class="post-info">
+                                <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                <p class="post-date">Par Thibauf • 12 août 2018</p>
+                            </div>
+                            <div class="comment-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                posuere scelerisque odio sit amet laoreet.
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>30k</span>
+                                </button>
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span>10</span>
+                                </button>
+                            </div>
+                            <div class="post-comments">
+                                <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                <br>
+                                <span id="see-all-comments">Voir tous les commentaires</span>
+                            </div>
+
+
+                            <div class="comment-bar">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Ajouter vos commentaires...">
+                                <i class="far fa-grin"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="https://via.placeholder.com/50" alt="Josephine B." class="avatar" />
+                        <div class="comment-content">
+                            <div class="post-info">
+                                <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                <p class="post-date">Par Thibauf • 12 août 2018</p>
+                            </div>
+                            <div class="comment-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                posuere scelerisque odio sit amet laoreet.
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>30k</span>
+                                </button>
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span>10</span>
+                                </button>
+                            </div>
+                            <div class="post-comments">
+                                <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                <br>
+                                <span id="see-all-comments">Voir tous les commentaires</span>
+                            </div>
+
+
+                            <div class="comment-bar">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Ajouter vos commentaires...">
+                                <i class="far fa-grin"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="comment">
+                        <img src="https://via.placeholder.com/50" alt="Josephine B." class="avatar" />
+                        <div class="comment-content">
+                            <div class="post-info">
+                                <h5 class="post-author">Offrir un nouveau forfait internet pour les gamers</h5>
+                                <p class="post-date">Par Thibauf • 12 août 2018</p>
+                            </div>
+                            <div class="comment-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                                posuere scelerisque odio sit amet laoreet.
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>30k</span>
+                                </button>
+                                <button class="action-button">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span>10</span>
+                                </button>
+                            </div>
+                            <div class="post-comments">
+                                <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
+                                <br>
+                                <span id="see-all-comments">Voir tous les commentaires</span>
+                            </div>
+
+
+                            <div class="comment-bar">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Ajouter vos commentaires...">
+                                <i class="far fa-grin"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="add-content" class="add-button">+</div>
+    <script>
+    // Add event listeners for redirection
+    document.getElementById('home-nav').addEventListener('click', function() {
+        window.location.href = 'newsfeed.html'; // Change to the actual home page URL
+    });
+
+    document.getElementById('trends-nav').addEventListener('click', function() {
+        window.location.href = 'newsfeed_tendances.html'; // Change to the actual trends page URL
+    });
+
+    document.getElementById('community-nav').addEventListener('click', function() {
+        window.location.href = 'newsfeed_communaute.html'; // Change to the actual community page URL
+    });
+
+    document.getElementById('account-nav').addEventListener('click', function() {
+        window.location.href = 'mon_profil.html'; // Change to the actual account page URL
+    });
+
+    document.getElementById('see-all-comments').addEventListener('click', function() {
+        window.location.href = 'commentaires.html';
+    })
+
+    document.getElementById('add-content').addEventListener('click', function() {
+        window.location.href = 'creation_contenu2.html';
+    })
+    </script>
+</body>
+
+</html>

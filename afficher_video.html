@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecteur Vidéo MTN avec Options de Partage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        overflow-y: scroll;
+      }
+
+      .video-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 0 auto;
+        background-size: cover;
+        background-position: center;
+        background-color: white;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      video {
+        width: 100%;
+        display: block;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.7) 0%,
+          rgba(0, 0, 0, 0) 30%,
+          rgba(0, 0, 0, 0) 70%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
+        color: white;
+        padding: 10px;
+      }
+
+      .video-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .mtn-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .mtn-logo img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      .video-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 1em;
+        margin-top: 2em;
+      }
+
+      .video-subtitle {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-left: 1rem;
+      }
+
+      .video-controls {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+      }
+
+      .video-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2em;
+      }
+
+      .action-buttons {
+        display: flex;
+      }
+
+      .action-button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+      }
+
+      .action-button i {
+        margin-right: 5px;
+      }
+
+      .see-more {
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+      }
+
+      .video-progress-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .video-time {
+        font-size: 12px;
+        margin-right: 10px;
+      }
+
+      .video-progress {
+        flex-grow: 1;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .video-progress-inner {
+        width: 30%;
+        height: 100%;
+        background-color: #ffcc00;
+      }
+
+      .share-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+      }
+
+      .share-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .share-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .share-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .close-button {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+      }
+
+      .share-options {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .share-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .share-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        font-size: 24px;
+      }
+
+      .facebook {
+        background-color: #3b5998;
+        color: white;
+      }
+
+      .instagram {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #e1306c,
+          #fd1d1d
+        );
+        color: white;
+      }
+
+      .twitter {
+        background-color: #1da1f2;
+        color: white;
+      }
+
+      .gmail {
+        background-color: #d44638;
+        color: white;
+      }
+
+      .youtube {
+        background-color: #ff0000;
+        color: white;
+      }
+
+      #share-toggle {
+        display: none;
+      }
+
+      #share-toggle:checked + .share-overlay {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="video-container">
+      <video controls>
+        <source src="./assets/vid.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+      </video>
+      <div class="video-overlay">
+        <div class="video-title">
+          Les délices de Fatou, les meilleures recettes de la semaine
+        </div>
+        <div class="video-header">
+          <div class="mtn-logo">
+            <img src="./assets/img12.jfif" alt="MTN Logo" />
+            MTN
+          </div>
+          <div class="video-subtitle">Il y a 2 min</div>
+        </div>
+
+        <div class="video-controls">
+          <div class="video-actions">
+            <div class="action-buttons">
+              <button class="action-button">
+                <i class="far fa-thumbs-up"></i>
+                <span>30k</span>
+              </button>
+              <button class="action-button">
+                <i class="far fa-thumbs-down"></i>
+                <span>10</span>
+              </button>
+              <label for="share-toggle" class="action-button">
+                <i class="fas fa-share"></i>
+                <span>15k</span>
+              </label>
+            </div>
+            <span class="see-more">Voir plus</span>
+          </div>
+          <div class="video-progress-container">
+            <span class="video-time">1:03</span>
+            <div class="video-progress">
+              <div class="video-progress-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="checkbox" id="share-toggle" />
+    <div class="share-overlay">
+      <div class="share-container">
+        <div class="share-header">
+          <span class="share-title">Partager la vidéo</span>
+          <label for="share-toggle" class="close-button">×</label>
+        </div>
+        <div class="share-options">
+          <a href="#" class="share-option">
+            <span class="share-icon facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></span>
+            <span>Facebook</span>
+          </a>
+          <a href="#" class="share-option">
+            <span class="share-icon instagram"
+              ><i class="fab fa-instagram"></i
+            ></span>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="share-option">
+            <span class="share-icon twitter"
+              ><i class="fab fa-twitter"></i
+            ></span>
+            <span>Twitter</span>
+          </a>
+          <a href="#" class="share-option">
+            <span class="share-icon gmail"
+              ><i class="far fa-envelope"></i
+            ></span>
+            <span>Gmail</span>
+          </a>
+          <a href="#" class="share-option">
+            <span class="share-icon youtube"
+              ><i class="fab fa-youtube"></i
+            ></span>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style/styles_mon_profil.css" />
+</head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <button class="back-button" onclick="history.back();">&larr;</button>
+
+            <span class="profile-name">Joseph British</span>
+            <i style='font-size:24px' class='fab'>&#xf37c;</i>
+        </div>
+
+        <!-- Background image with badge -->
+        <div class="profile-banner">
+            <img src="./assets/profil1.jpg" alt="Background" class="background-img">
+            <div class="badge-container">
+                <img src="./assets/ambassadeur.png" alt="Badge" class="badge-icon">
+            </div>
+        </div>
+
+        <!-- Profile picture and details -->
+        <div class="profile-details">
+            <img src="./assets/profil2.jpg" alt="Photo de profil" class="profile-pic">
+            <p class="points">26k points</p>
+            <p class="role">Ambassadeur</p>
+        </div>
+        <div class="tabs">
+            <label class="tab" for="fresh">Fresh</label>
+            <label class="tab" for="badges">Badges</label>
+            <label class="tab" for="subscriptions">Abonnements</label>
+        </div>
+        <input type="radio" id="fresh" name="tab" checked hidden />
+        <input type="radio" id="badges" name="tab" hidden />
+        <input type="radio" id="subscriptions" name="tab" hidden />
+        <div class="content">
+            <div class="fresh-content">
+                <section class="fresh-section">
+                    <h4>Souscriptions</h4>
+                    <div class="fresh-container">
+                        <div class="fresh-card">
+                            <img src="./assets/sous1.png" alt="souscription 1">
+                        </div>
+                        <div class="fresh-card">
+                            <img src="./assets/sous2.png" alt="souscription 2">
+                        </div>
+                    </div>
+                </section>
+                <section class="fresh-section">
+                    <h4>Bonus</h4>
+                    <div class="fresh-container">
+                        <div class="fresh-card">
+                            <img src="./assets/sous1.png" alt="bonus 1">
+                        </div>
+                        <div class="fresh-card">
+                            <img src="./assets/sous2.png" alt="bonus 2">
+                        </div>
+                    </div>
+                </section>
+                <section class="fresh-section">
+                    <h4>Suggestions de forfaits</h4>
+                    <div class="fresh-container">
+                        <div class="fresh-card">
+                            <img src="./assets/sous1.png" alt="suggest 1">
+                        </div>
+                        <div class="fresh-card">
+                            <img src="./assets/sous2.png" alt="suggest 2">
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="badges-content">
+                <p>Vous êtes 100ème dans la communauté. C'est en effet pathétique, mais faîtes de votre mieux pour
+                    gagner
+                    d'autres badge et vous hisser au sommet</p>
+
+                <div class="badge-grid">
+                    <div class="badge">
+                        <img src="./assets/ambassadeur.png" alt="Ambassadeur" class="badge-icon">
+                        <div class="badge-title">Ambassadeur</div>
+                        <div class="badge-description">Ce badge est attribué pour féliciter deux nouveaux utilisateurs
+                            chaque mois pour leur excellente contribution mesurée</div>
+                    </div>
+                    <div class="badge">
+                        <img src="./assets/meneur.png" alt="Meneur" class="badge-icon">
+                        <div class="badge-title">Meneur</div>
+                        <div class="badge-description">Ce badge est attribué pour féliciter deux nouveaux utilisateurs
+                            chaque mois pour leur excellente contribution mesurée</div>
+                    </div>
+                    <div class="badge">
+                        <img src="./assets/champion.png" alt="Champion" class="badge-icon">
+                        <div class="badge-title">Champion</div>
+                        <div class="badge-description">Ce badge est attribué pour féliciter deux nouveaux utilisateurs
+                            chaque mois pour leur excellente contribution mesurée</div>
+                    </div>
+                    <div class="badge">
+                        <img src="./assets/sympa.png" alt="Copy" class="badge-icon">
+                        <div class="badge-title">Copy</div>
+                        <div class="badge-description">Ce badge est attribué pour féliciter deux nouveaux utilisateurs
+                            chaque mois pour leur excellente contribution mesurée</div>
+                    </div>
+                </div>
+            </div>
+            <div class="subscriptions-content">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x150" alt="Subscription 1" />
+                    <p>Tape *143#</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x150" alt="Subscription 2" />
+                    <p>Tape *777#</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-content" class="add-button">+</div>
+    <script>
+    document.getElementById('add-content').addEventListener('click', function() {
+        window.location.href = 'creation_contenu2.html';
+    })
+    </script>
+</body>
+
+</html>

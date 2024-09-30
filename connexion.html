@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style/styles_connexion.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="./acceuil.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+            <h1>Connexion</h1>
+        </header>
+        <main>
+            <form id="login-form">
+                <div class="icon-container">
+                    <i class="far fa-user"></i>
+                </div>
+                <div class="input-container">
+                    <input type="tel" id="tel" placeholder="Tel" required />
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Mot de passe" required />
+                    <a href="#" class="forgot-password">Mot de passe oublié?</a>
+                </div>
+                <div class="separator">OU</div>
+                <button type="button" class="facebook-button" id="facebook">
+                    <i class="fab fa-facebook-f"></i> Connexion via Facebook
+                </button>
+
+                <footer>
+                    <button type="submit" class="submit-button" id="acceuil">
+                        Continuer <i class="fas fa-arrow-right"></i>
+                    </button>
+                </footer>
+            </form>
+        </main>
+    </div>
+
+    <script>
+    document
+        .getElementById("login-form")
+        .addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            const tel = document.getElementById("tel").value;
+            const password = document.getElementById("password").value;
+
+            if (tel && password) {
+                window.location.href = "./newsfeed.html";
+            } else {
+                alert("Veuillez remplir les champs requis");
+            }
+        });
+
+    // Handle Facebook login redirection
+    document
+        .getElementById("facebook")
+        .addEventListener("click", function() {
+            //redirection vers facebook
+            window.location.href = "https://www.facebook.com";
+        });
+    </script>
+</body>
+
+</html>
