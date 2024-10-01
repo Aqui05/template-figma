@@ -1,17 +1,18 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
-    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
-    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
-    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLight.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Light.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -25,6 +26,9 @@ html {
   background-color: #f0f0f0;
   scrollbar-width: none; /* Pour Firefox */
   -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 .container {
@@ -43,10 +47,12 @@ html {
 
 .header {
   display: flex;
-  align-items: center;
   margin-bottom: 20px;
-  padding: 20px;
-  justify-content: space-evenly;
+  padding: 20px 0px 20px 90px;
+  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
 .header h1 {
@@ -56,8 +62,14 @@ html {
 }
 
 .subtitle {
-  color: #666;
-  margin: 0 20px 20px;
+  /* color: #666; */
+  margin: auto;
+  color: #c4c4c4;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 20px;
 }
 
 .close-btn {
@@ -77,8 +89,6 @@ html {
 .carousel {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   padding: 20px;
 }
@@ -105,6 +115,9 @@ html {
 
 .card-content {
   padding: 15px;
+  justify-content: space-evenly;
+  /* display: flex; */
+  align-content: stretch;
 }
 
 .card h2 {
@@ -118,21 +131,37 @@ html {
 }
 
 .card p {
-  margin: 0;
   color: #c4c4c4;
-  font-size: 17px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: auto;
+}
+
+.card span {
+  color: #c4c4c4;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .follow-btn {
   display: block;
-  width: 50%;
+  /* width: 50%; */
   padding: 10px;
-  background-color: #0056b3;
+  /* background-color: #0056b3; */
   color: white;
   border: none;
-  border-radius: 50px;
+  /* border-radius: 30px; */
   margin-top: 10px;
   cursor: pointer;
+  width: 82px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #0076c0;
 }
 
 /* Footer */

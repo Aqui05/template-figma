@@ -1,17 +1,18 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
-    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
-    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
-    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLight.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Light.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -19,10 +20,14 @@
 .back-button {
   position: absolute;
   left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000;
   font-size: 20px;
+}
+
+.back-button svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #fff;
 }
 
 header i {
@@ -51,7 +56,10 @@ main {
 .radio-container {
   margin-bottom: 15px;
   color: white;
-  display: inline;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 30px;
 }
 
 .radio-options {
@@ -95,7 +103,7 @@ html {
   background-color: #f0f0f0;
 }
 
-.container {
+/*.container {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -103,21 +111,32 @@ html {
   background-image: url(../assets/img2.jfif);
   background-size: cover;
   background-position: center;
-  filter: brightness(1); /* Noircir l'image */
+  filter: brightness(1);
+}*/
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* Dégradé depuis le haut + image de fond */
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("../assets/img1.jpeg") lightgray 50% / cover no-repeat;
+
+  filter: brightness(0.9);
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.9);
 }
 
 header {
   padding: 20px;
   position: relative;
-}
-
-.back-button {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000;
-  font-size: 20px;
 }
 
 h1 {
@@ -149,16 +168,16 @@ main {
 }
 
 input {
-  padding: 10px;
+  padding-left: 10px;
   margin: 10px 5px;
-  border-radius: 30px;
+  border-radius: 40px;
   border: 2px solid white;
   background-color: transparent;
   color: white;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  height: 20px;
+  height: 50px;
   width: 90%;
 }
 
@@ -200,15 +219,24 @@ input {
 /* Bouton Facebook */
 .facebook-button {
   background-color: white; /* Fond blanc */
-  color: #3b5998; /* Texte bleu Facebook */
-  border: 2px solid #3b5998; /* Bordure bleue Facebook */
-  width: 100%;
+  /* color: #3b5998; */ /* Texte bleu Facebook */
+  border: 2px solid white; /* Bordure bleue Facebook */
+  width: 90%;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 60px;
   font-size: 16px;
   margin-bottom: 10px;
   cursor: pointer;
-  top: 15rem;
+  top: 35rem;
+  position: fixed;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 37%;
 }
 
 .submit-button {
@@ -231,9 +259,8 @@ footer {
   width: 100%;
 }
 
-.facebook-button i,
-.submit-button i {
-  margin-right: 10px;
+.submit-button svg {
+  padding-left: 10px;
 }
 
 /* Styles pour écran plus grand */

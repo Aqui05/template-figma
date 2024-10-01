@@ -1,17 +1,17 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
-    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
-    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
-    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLight.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Light.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +31,15 @@ html {
   height: 100%;
   overflow: hidden;
   position: relative;
-  background-image: url(../assets/img2.jfif);
+
+  /* Dégradé depuis le haut + image de fond */
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("../assets/img2.jfif") lightgray 50% / cover no-repeat;
+
   filter: brightness(0.9);
   background-size: cover;
   background-position: center;
@@ -55,10 +63,14 @@ header i {
 .back-button {
   position: absolute;
   left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000;
   font-size: 20px;
+}
+
+.back-button svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #fff;
 }
 
 h1 {
@@ -86,21 +98,21 @@ main {
 
 .input-container {
   top: 20%;
-  margin-bottom: 15px;
+  margin-bottom: 1px;
   position: relative;
 }
 
 input {
-  padding: 10px;
-  margin: 10px 5px 30px 5px;
-  border-radius: 30px;
+  padding: 0 0px 0 21px;
+  margin: 10px 5px 20px 5px;
+  border-radius: 40px;
   border: 2px solid white;
   background-color: transparent;
-  color: white;
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.9s ease;
-  height: 20px;
+  height: 50px;
   width: 90%;
 }
 
@@ -119,6 +131,7 @@ input {
   color: white;
   position: relative;
   margin-bottom: 5rem;
+  margin-top: 5rem;
 }
 
 .separator::before,
@@ -142,15 +155,24 @@ input {
 /* Bouton Facebook */
 .facebook-button {
   background-color: white; /* Fond blanc */
-  color: #3b5998; /* Texte bleu Facebook */
-  border: 2px solid #3b5998; /* Bordure bleue Facebook */
-  width: 100%;
+  /* color: #3b5998; */ /* Texte bleu Facebook */
+  border: 2px solid white; /* Bordure bleue Facebook */
+  width: 90%;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 60px;
   font-size: 16px;
   margin-bottom: 10px;
   cursor: pointer;
-  top: 15rem;
+  top: 35rem;
+  position: fixed;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 37%;
 }
 
 .submit-button {
@@ -167,7 +189,7 @@ input {
 footer {
   background-color: #0076c0;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -178,16 +200,6 @@ footer {
   margin-right: 10px;
 }
 
-/* Styles pour écran plus grand */
-@media (min-width: 768px) {
-  .slide-content h2 {
-    font-size: 2rem;
-  }
-  .slide-content p {
-    font-size: 1.2rem;
-  }
-  .btn-inscrire,
-  .btn-connecter {
-    font-size: 1rem;
-  }
+.submit-button svg {
+  padding-left: 10px;
 }

@@ -1,21 +1,20 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
-    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
-    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
-    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLight.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Light.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
-
 /* Styles de base */
 body,
 html {
@@ -51,51 +50,87 @@ header {
   align-items: center;
   border-bottom: 1px solid #e0e0e0;
 }
-
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 10%;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: #999;
-  font-size: 19px;
+  font-size: 14px;
+  width: 25%;
+  height: 100%;
+  transition: color 0.3s ease;
 }
 
-.nav-item i {
-  font-size: 20px;
-  color: #999;
-  display: block;
-  margin-top: 8px;
+.nav-item svg {
+  width: 24px;
+  height: 24px;
   margin-bottom: 5px;
 }
 
 .nav-item span {
-  font-size: 15px;
   display: block;
+  color: #c4c4c4;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.nav-item.active i,
-.nav-item :hover,
-.nav-item.active span {
-  color: #007bff;
-  /*mouse: pointer;*/
+.nav-item.active,
+.nav-item:hover {
+  color: #0076c0;
+  cursor: pointer;
+}
+
+.nav-item.active svg path,
+.nav-item:hover svg path,
+.nav-item.active span,
+.nav-item:hover span {
+  fill: #0076c0;
+  color: #0076c0;
+  border-bottom: 2px solid #0076c0;
+}
+
+.status-dot {
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5em;
+  right: 2.2rem;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
 }
 
 .all-sections {
   background-color: #f9f9f9;
-  padding-top: 22%;
+  padding-top: 20%;
+}
+
+.section1-text {
+  font-size: 1.2rem;
+  margin-bottom: 1px;
+  left: 10px;
+  position: relative;
 }
 
 .stories-container {
@@ -162,18 +197,31 @@ header {
 }
 
 .tabs {
-  width: 333px;
+  width: 93%;
   height: 40px;
   flex-shrink: 0;
   border-radius: 59px;
   background: #e5e5e5;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
 }
 
 .tab {
-  padding: 15px 15px;
+  padding: 10px 17px;
   border-radius: 20px;
   cursor: pointer;
   margin: 0;
+  color: #939393;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .tab:hover,
@@ -218,18 +266,12 @@ header {
 
 .add-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: yellow;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  bottom: 50px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
 }
 
 .idees-section {
@@ -284,9 +326,18 @@ header {
   flex-grow: 1;
 }
 .post-date {
-  color: #65676b;
-  font-size: 0.9em;
-  margin: 0;
+  color: #c4c4c4;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.post-author {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 .post-content {
   margin-bottom: 10px;
@@ -380,37 +431,20 @@ header {
 }
 
 .post-comments {
-  margin-top: 10px;
   font-size: 14px;
   color: gray;
 }
 
-.comment-bar {
-  display: flex;
-  align-items: center;
-  background-color: #f0f0f0;
-  border-radius: 20px;
-  padding: 5px 15px;
-  margin-top: 10px;
+.post-comments a {
+  color: #c4c4c4;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: auto;
 }
 
-.comment-bar input {
-  border: none;
-  background-color: transparent;
-  flex-grow: 1;
-  padding: 5px;
-}
-
-.status-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: green;
-  border-radius: 50%;
-  position: absolute;
-  top: 2em;
-  right: 2em;
-}
 .comment {
   display: flex;
   padding: 0.5rem;
@@ -422,6 +456,50 @@ header {
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
+  object-fit: cover;
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-content: stretch;
+  justify-content: space-evenly;
+}
+
+.action-button svg {
+  /* background-color: white; */
+  /* color: #333; */
+  /* width: 40px; */
+  /* height: 40px; */
+  /* border-radius: 50%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* font-size: 20px; */
+  /* margin-bottom: 5px; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  margin: auto 0;
+  width: 14px;
+  height: 14.402px;
+  flex-shrink: 0;
+}
+.post-comments {
+  margin-top: 10px;
+}
+
+.action-button span {
+  /* font-size: 12px; */
+  /* color: #666; */
+  color: #c4c4c4;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .comment-content {
@@ -437,6 +515,12 @@ header {
   margin-bottom: 5px;
   font-size: 14px;
   line-height: 1.4;
+  color: #000;
+  font-family: "MTN Brighter Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .comment-meta {
@@ -469,25 +553,38 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
   margin-bottom: 1em;
   margin-top: 1em;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e0e0e0;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
 }
 
 input[type="checkbox"] {
   display: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .interest-tag {
   padding: 8px 15px;
   background-color: #f0f0f0;
-  border: 1px solid #ddd;
   border-radius: 20px;
-  font-size: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #c4c4c4;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input[type="radio"]:checked + .tab {
+  color: white;
 }
 
 input[type="checkbox"]:checked + .interest-tag {
@@ -500,4 +597,10 @@ input[type="checkbox"]:checked + .interest-tag {
   font-size: small;
   margin: auto;
   margin: 1.2em;
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

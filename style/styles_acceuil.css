@@ -1,17 +1,18 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("fonts/MTNBrighterSans-Bold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-BoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBold.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLight.otf") format("otf"),
-    url("fonts/MTNBrighterSans-ExtraLightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Light.otf") format("otf"),
-    url("fonts/MTNBrighterSans-LightItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Medium.otf") format("otf"),
-    url("fonts/MTNBrighterSans-MediumItalic.otf") format("otf"),
-    url("fonts/MTNBrighterSans-Regular.otf") format("otf"),
-    url("fonts/MTNBrighterSans-RegularItalic.otf") format("otf");
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLight.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-ExtraLightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Light.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -42,15 +43,40 @@ html {
   position: relative;
   overflow: hidden;
 }
+/* Appliquer la propriété background aux images de diapositives */
+
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.9);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 }
+
 .slide-content {
   position: absolute;
-  top: 60%;
+  top: 78%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  width: 85%;
+  margin: auto;
+  height: 68px;
+  width: 284px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.slide-content2 {
+  position: absolute;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;
@@ -60,24 +86,41 @@ html {
   margin: auto;
   height: 68px;
   width: 284px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
-.slide-content h2 {
+
+.slide-content h2,
+.slide-content2 h2 {
   margin-bottom: 0.5rem;
-  font-size: 22px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 700;
+  opacity: 1;
+
+  line-height: normal;
 }
-.slide-content p {
-  font-size: 1rem;
+.slide-content p,
+.slide-content2 p {
+  opacity: 0.8;
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-bottom: 50px;
 }
 .slider-nav {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 1rem;
 }
+
 .slider-nav a {
   width: 1rem;
   height: 1rem;
@@ -85,10 +128,22 @@ html {
   background-color: #ffc53f;
   transition: background-color 0.3s;
 }
-.slider-nav a:hover,
-.slider-nav a:target {
+
+/* Active par défaut pour le premier slide */
+#slide1:target ~ .slider-nav a[href="#slide1"] {
   background-color: yellow;
 }
+
+/* Changement de l'active sur le slide 2 */
+#slide2:target ~ .slider-nav a[href="#slide2"] {
+  background-color: yellow;
+}
+
+/* Changement de l'active sur le slide 3 */
+#slide3:target ~ .slider-nav a[href="#slide3"] {
+  background-color: yellow;
+}
+
 .skip-link {
   position: absolute;
   top: 0;
@@ -103,14 +158,11 @@ html {
   transition: background-color 0.3s;
 }
 
-.skip-link i {
-  color: #f0f0f0;
-  border: #f0f0f0 solid #f0f0f0;
-  border-radius: 100%;
-  background-color: #0076c0;
-  margin-left: 5px;
-  padding: 0.5rem;
-  margin-left: 0.5em;
+.skip-link svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-left: 14px;
 }
 .btn-inscrire {
   padding: 10px 20px;
@@ -134,6 +186,8 @@ html {
   border-radius: 30px;
   border: 2px solid white;
   background-color: transparent;
+  font-size: 20px;
+  font-style: normal;
   color: #ffffff;
   font-size: 0.8rem;
   cursor: pointer;
@@ -156,13 +210,14 @@ html {
   padding: 12px 0 1 0;
 }
 
-.btn-connecter i,
-.btn-inscrire i {
+.btn-connecter svg,
+.btn-inscrire svg {
   width: 24px;
   height: 14px;
   flex-shrink: 0;
   stroke-width: 2px;
   stroke: #fff;
+  margin: 6px;
 }
 
 .btn-inscrire:hover,
