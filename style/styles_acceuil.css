@@ -125,23 +125,23 @@ html {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: #ffc53f;
+  background-color: #775a18;
   transition: background-color 0.3s;
 }
 
 /* Active par défaut pour le premier slide */
 #slide1:target ~ .slider-nav a[href="#slide1"] {
-  background-color: yellow;
+  background-color: #ffc53f;
 }
 
 /* Changement de l'active sur le slide 2 */
 #slide2:target ~ .slider-nav a[href="#slide2"] {
-  background-color: yellow;
+  background-color: #ffc53f;
 }
 
 /* Changement de l'active sur le slide 3 */
 #slide3:target ~ .slider-nav a[href="#slide3"] {
-  background-color: yellow;
+  background-color: #ffc53f;
 }
 
 .skip-link {

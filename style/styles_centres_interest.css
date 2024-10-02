@@ -199,20 +199,14 @@ input[type="checkbox"] {
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #c4c4c4;
 }
 
 .interest-tag span {
-  color: #c4c4c4;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-input[type="checkbox"]:checked + .interest-tag {
-  background-color: #007bff;
-  color: #fff;
-  border-color: #007bff;
 }
 
 .submit-btn {
@@ -286,4 +280,10 @@ footer {
   .btn-connecter {
     font-size: 1rem;
   }
+}
+
+input[type="checkbox"]:checked + .interest-tag {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
 }
