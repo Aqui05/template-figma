@@ -1,6 +1,7 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
@@ -10,7 +11,6 @@
     url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
-    url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
@@ -48,6 +48,15 @@ html {
   align-items: center;
   padding: 15px;
   border-bottom: 1px solid #e0e0e0;
+  color: #000;
+  text-align: center;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .back-btn {
@@ -78,56 +87,74 @@ html {
 .avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   margin-right: 15px;
+  object-fit: cover;
+  border-radius: 50px;
 }
-
 .comment-content {
   flex: auto;
 }
 
 .comment-author {
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-bottom: 5px;
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .comment-text {
-  margin-bottom: 5px;
-  font-size: 14px;
-  line-height: 1.4;
+  margin-bottom: 15px;
+  /* font-size: 14px; */
+  /* line-height: 1.4; */
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 207px;
+  height: 80px;
+  flex-shrink: 0;
+  margin-top: 10px;
 }
 
 .comment-meta {
-  font-size: 12px;
-  color: #888;
+  /* font-size: 12px; */
+  /* color: #888; */
+  color: #c4c4c4;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 20px;
 }
 
-.add-comment {
+.comment-bar {
   display: flex;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   border-radius: 20px;
   padding: 5px 15px;
-  border: 1px solid #e0e0e0;
-  width: 90%;
-  margin: 1rem;
+  /* margin-top: 10px; */
+  width: 92%;
+  margin: 10px auto;
 }
 
-.add-comment input {
-  flex: 1;
-  border: 1px solid #e0e0e0;
-  border-radius: 20px;
-  padding: 10px 15px;
-  font-size: 14px;
-  background-color: transparent;
+.comment-bar input {
   border: none;
   background-color: transparent;
   flex-grow: 1;
   padding: 5px;
 }
 
-.add-comment .emoji-btn {
-  margin-left: 10px;
-  font-size: 20px;
-  color: #888;
+.comment-bar svg {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
 }

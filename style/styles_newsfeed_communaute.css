@@ -186,6 +186,7 @@ header {
   height: 60px;
   border-radius: 50%; /* Rend l'image ronde */
   border: 2px solid #0076c0;
+  object-fit: cover;
 }
 
 .story p {
@@ -414,11 +415,11 @@ header {
 }
 
 .post-actions button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  /* background-color: transparent; */
+  /* border: none; */
+  /* cursor: pointer; */
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .post-actions i {
@@ -428,6 +429,13 @@ header {
 
 .post-actions span {
   margin-right: 20px;
+}
+.post-date span {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .post-comments {
@@ -471,17 +479,6 @@ header {
 }
 
 .action-button svg {
-  /* background-color: white; */
-  /* color: #333; */
-  /* width: 40px; */
-  /* height: 40px; */
-  /* border-radius: 50%; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* font-size: 20px; */
-  /* margin-bottom: 5px; */
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   margin: auto 0;
   width: 14px;
   height: 14.402px;
@@ -504,6 +501,39 @@ header {
 
 .comment-content {
   flex: auto;
+}
+
+.comment-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+
+.comment-bar input {
+  border: none;
+  background-color: transparent;
+  flex-grow: 1;
+  padding: 5px;
+}
+
+h3,
+p {
+  margin: 0;
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.comment-bar svg {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
 }
 
 .comment-author {

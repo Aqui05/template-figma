@@ -541,6 +541,15 @@ header {
   flex-grow: 1;
 }
 
+.post-info span {
+  color: #000;
+  font-family: "MTN Brighter Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .post-score {
   margin: auto;
   width: 40px;
@@ -900,15 +909,6 @@ p {
 
 .post-info {
   flex-grow: 1;
-}
-
-.comment-bar {
-  display: flex;
-  align-items: center;
-  background-color: #f0f0f0;
-  border-radius: 20px;
-  padding: 5px 15px;
-  margin-top: 10px;
 }
 
 .comment-bar svg {

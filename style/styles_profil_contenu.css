@@ -1,6 +1,7 @@
 @font-face {
   font-family: "MaPolice";
-  src: url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+  src: url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
+    url("../fonts/MTNBrighterSans-Bold.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-BoldItalic.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-ExtraBold.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-ExtraBoldItalic.otf") format("opentype"),
@@ -10,13 +11,11 @@
     url("../fonts/MTNBrighterSans-LightItalic.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-Medium.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-MediumItalic.otf") format("opentype"),
-    url("../fonts/MTNBrighterSans-Regular.otf") format("opentype"),
     url("../fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* Styles de base */
 body,
 html {
   margin: 0;
@@ -29,12 +28,13 @@ html {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: relative;
   margin: 0 auto;
   background-size: cover;
   background-position: center;
   background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -43,30 +43,299 @@ html {
   box-sizing: border-box;
 }
 
-.follow-btn {
-  display: block;
-  width: 50%;
-  padding: 10px;
-  background-color: #0056b3;
-  color: white;
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  overflow-y: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 10;
+}
+.back-button,
+.share-button {
+  background: none;
   border: none;
-  border-radius: 50px;
-  margin-top: 10px;
   cursor: pointer;
 }
-
-.header {
-  position: relative;
-  height: 150px;
-  background-image: url("/assets/img4.jfif");
-  background-size: cover;
+.user-name {
+  /* color: white; */
+  /* font-size: 18px; */
+  /* font-weight: bold; */
+  color: #fff;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.background-image {
+  width: 100%; /* Utiliser toute la largeur disponible */
+  height: 68%; /* Utiliser toute la hauteur disponible */
+  object-fit: cover; /* S'assure que l'image couvre l'espace sans se déformer */
+  filter: brightness(
+    0.7
+  ); /* Optionnel : garde l'effet de filtre si nécessaire */
+  /* border-bottom-left-radius: 19%; */ /* Garde les coins arrondis si nécessaire */
+  /* border-bottom-right-radius: 17%; */ /* Garde les coins arrondis si nécessaire */
+  overflow: hidden; /* Cache tout dépassement de l'image */
+  clip-path: ellipse(140% 100% at 51% 0%);
 }
 
-.back-button {
+.badge-profile {
+  position: absolute;
+  top: 189%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 79px; */
+  /* height: 100px; */
+  width: 79px;
+  height: 99.314px;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+.profile-info {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+.profile-picture {
+  width: 129px;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid white;
+  object-fit: cover;
+}
+
+.inf-bas {
+  top: 7px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  /* padding-top: 10px; */
+}
+
+.inf-bas button {
+  width: 147px;
+  height: 40px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 59px;
+  background: #0076c0;
+  margin-top: 15px;
+}
+.inf-bas button:hover {
+  background: #005b8d;
+}
+.inf-bas button:active {
+  background: #004568;
+}
+.inf-bas button span {
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.follow-svg {
+  width: 93px;
+  height: 15px;
+  flex-shrink: 0;
+  margin-top: 29px;
+}
+
+.inf-gauche {
+  top: -5px;
+  left: -118px;
+  position: relative;
+}
+
+.inf-droite {
+  top: -153px;
+  left: 130px;
+  position: relative;
+}
+
+.points {
+  /* font-weight: bold; */
+  margin: 10px 0 0;
+  position: relative;
+  /* top: 15px; */
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.role {
+  /* color: #888; */
+  /* margin-bottom: 83px; */
+  /* top: 10px; */
+  position: relative;
+  color: #c4c4c4;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*************************  */
+.bio {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  width: 200px;
+  margin-left: 10px;
+}
+
+.bio span {
+  color: #c4c4c4;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.content-section {
+  padding: 20px;
+}
+
+.content-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content-section {
+  padding: 20px;
+}
+
+.content-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+}
+
+.video-container img {
+  /* width: 100%; */
+  /* height: auto; */
+  border-radius: 10px;
+  display: block;
+  width: 334px;
+  height: 150px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.video-thumbnail {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #0076c0;
+  background-color: rgba(255, 215, 0, 0.9); /* Couleur de fond jaune */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.playlist {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.playlist-item {
+  flex: 0 0 auto;
+  width: 120px;
+  margin-right: 10px;
+}
+
+.playlist-thumbnail {
+  width: 120px;
+  height: 80px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 215, 0, 0.9);
+  /* Couleur de fond jaune */
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -75,108 +344,168 @@ html {
   justify-content: center;
 }
 
-.thumbs-up {
+.play-icon i {
+  color: white;
+  font-size: 18px;
+}
+
+.audio-player img {
+  width: 100%;
+  border-radius: 10px;
+  /* Optionnel, pour des coins arrondis */
+}
+
+.audio-bar {
   position: absolute;
-  top: 100px;
-  right: 20px;
-  background-color: yellow;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: transparent;
+  margin-bottom: 1.43em;
+}
+
+.bar {
+  width: 1rem;
+  height: 20px;
+  /* La hauteur sera animée pour simuler l'effet audio */
+  background-color: #ffcb00;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.trends-section {
+  margin-bottom: 20px;
+}
+
+.titre-trend {
+  margin-bottom: 10px;
+  /* font-size: 18px; */
+  margin-left: 15px;
+  color: #000;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.scrollable-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0 5;
+  scroll-snap-type: x mandatory;
+  height: auto;
+}
+.card {
+  flex: 0 0 auto;
+  width: 191px;
+  height: 90px;
+  position: relative;
+  scroll-snap-align: start;
+}
+.card-image {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 5px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(<path-to-image>) lightgray 50% / cover no-repeat, #ffcb00;
+}
+.card-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  /* display: contents; */
+}
+.card-content2 {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  /* display: contents; */
+}
+.card-title {
+  /* font-size: 18px; */
+  /* font-weight: bold; */
+  margin-bottom: 5px;
+  top: -40px;
+  position: relative;
+  color: #fff;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 8px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-author {
+  font-size: 14px;
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  top: -45px;
+  position: relative;
+}
+
+.audio-player img {
+  width: 100%;
+  border-radius: 10px; /* Optionnel, pour des coins arrondis */
+}
+
+.audio-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 215, 0, 0.9); /* Couleur de fond jaune */
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  /* width: 30px; */
+  /* height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  left: 0px;
+  top: 1px;
 }
 
-.profile-pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.audio-bar {
   position: absolute;
-  bottom: -40px;
-  left: 20px;
-  border: 3px solid white;
-}
-
-.profile-info {
-  padding: 50px 20px 20px;
-  text-align: center;
-}
-
-.name {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.points {
-  color: #888;
-  margin-bottom: 10px;
-}
-
-.tabs {
+  bottom: -27px;
+  width: 100%;
+  height: 40px;
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: #f0f0f0;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: transparent;
+  margin-bottom: 1.8em;
 }
 
-.tab {
-  padding: 5px 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin: auto;
-}
-
-.tab:hover,
-.tab:active {
-  background-color: yellow;
-}
-
-.content {
-  padding: 20px;
-}
-
-.content-card img {
-  width: 80%;
-  height: auto;
-  border-radius: 5px;
-  margin: auto;
-}
-
-.content-card img {
-  display: block;
-}
-
-#fresh:checked ~ .content .fresh-content,
-#badges:checked ~ .content .badges-content,
-#subscriptions:checked ~ .content .subscriptions-content {
-  display: block;
-}
-
-#fresh:not(:checked) ~ .content .fresh-content,
-#badges:not(:checked) ~ .content .badges-content,
-#subscriptions:not(:checked) ~ .content .subscriptions-content {
-  display: none;
+.bar {
+  width: 1rem;
+  height: 20px; /* La hauteur sera animée pour simuler l'effet audio */
+  background-color: #ffcb00;
+  animation: bounce 1s infinite ease-in-out;
 }
 
 .add-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: yellow;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  bottom: 50px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
 }
