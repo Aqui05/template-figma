@@ -334,7 +334,7 @@ header {
   justify-content: center;
   align-content: flex-end;
   height: 160px;
-  /* width: 90%; */
+  /* width: 95%; */
   display: grid;
   margin: auto;
 }
@@ -406,10 +406,10 @@ header {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 80%;
-  height: 37%; /* Assurer que le SVG s'adapte à la largeur */
+  width: 79%;
+  height: 30%; /* Assurer que le SVG s'adapte à la largeur */
   z-index: 2; /* Assurer que le SVG soit visible en haut de l'image */
-  width: 335px;
+  /* width: 335px; */
   /* height: 44px; */
   flex-shrink: 0;
 }
