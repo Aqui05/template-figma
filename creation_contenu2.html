@@ -1,275 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Création de contenu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style/styles_creation_contenu.css" />
-    <style>
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: "MaPolice", sans-serif;
-        background-color: #f4f4f4;
-        overflow-y: scroll;
-    }
+  </head>
 
-    .container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        margin: 0 auto;
-        background-size: cover;
-        background-position: center;
-        background-color: white;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        border-bottom: 1px solid #e0e0e0;
-    }
-
-    .back-btn,
-    .next-btn {
-        font-size: 24px;
-        cursor: pointer;
-        border: none;
-    }
-
-    .back-btn {
-        color: #0080ff;
-    }
-
-    .next-btn {
-        border: 1px solid white;
-        border-radius: 50%;
-        background-color: #0080ff;
-        padding: 0.2rem;
-        color: white;
-    }
-
-    .input-field {
-        border: none;
-        font-size: 16px;
-        width: 70%;
-        padding: 10px;
-    }
-
-    .main-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2px;
-    }
-
-    .gallery img {
-        width: 100%;
-        height: 100px;
-        object-fit: cover;
-    }
-
-    .tabs {
-        display: flex;
-        justify-content: flex-start;
-        border-top: 1px solid #e0e0e0;
-        margin-top: 10px;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .tab {
-        padding: 10px 0px;
-        cursor: pointer;
-    }
-
-    .tab.active {
-        border-bottom: 2px solid #0080ff;
-        color: #0080ff;
-    }
-
-    .form-container {
-        padding: 20px;
-        display: none;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .checkbox-group,
-    .radio-group {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .checkbox-group input[type="checkbox"],
-    .radio-group input[type="radio"] {
-        margin-right: 10px;
-    }
-
-    .select-group select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-
-    .input-group {
-        display: flex;
-        align-items: center;
-    }
-
-    .input-group input[type="text"] {
-        flex-grow: 1;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px 0 0 4px;
-    }
-
-    .input-group .toggle {
-        width: 50px;
-        height: 30px;
-        background-color: #ddd;
-        border-radius: 15px;
-        margin-left: 10px;
-        position: relative;
-        cursor: pointer;
-    }
-
-    .input-group .toggle::after {
-        content: "";
-        position: absolute;
-        width: 26px;
-        height: 26px;
-        background-color: white;
-        border-radius: 50%;
-        top: 2px;
-        left: 2px;
-        transition: 0.2s;
-    }
-
-    .input-group .toggle.active {
-        background-color: #0080ff;
-    }
-
-    .input-group .toggle.active::after {
-        left: 22px;
-    }
-
-    textarea {
-        width: 100%;
-        height: 100px;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        resize: vertical;
-    }
-    </style>
-</head>
-
-<body>
+  <body>
     <div class="container">
+      <div id="image-upload-view">
         <div class="header">
-            <button class="back-btn" onclick="history.back();">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                    <path d="M0.998291 15.6403L15.1404 1.49812" stroke="#0076C0" stroke-width="2" />
-                </svg>
-            </button>
-            <input type="text" class="input-field" placeholder="Votre texte ici..." />
-            <span class="next-btn" onclick="toggleView()">→</span>
+          <button class="back-btn" onclick="history.back();">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="29"
+              viewBox="0 0 28 29"
+              fill="none"
+            >
+              <path
+                d="M6.99829 21.6403L21.1404 7.49812"
+                stroke="#0076C0"
+                stroke-width="2"
+              />
+              <path
+                d="M20.6448 21.2903L7.20975 7.85525"
+                stroke="#0076C0"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <span class="next-btn" onclick="toggleView()"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <circle
+                cx="15"
+                cy="15"
+                r="15"
+                transform="rotate(-180 15 15)"
+                fill="#0076C0"
+              />
+              <path
+                d="M6 14L20.17 14L16.59 10.41L18 9L24 15L18 21L16.59 19.59L20.17 16L6 16L6 14Z"
+                fill="white"
+              /></svg
+          ></span>
         </div>
-        <div id="image-upload-view">
-            <img src="./assets/content1.jpg" alt="Main Image" class="main-image" />
-            <div class="gallery">
-                <img src="./assets/content1.jpg" alt="Thumbnail 1" />
-                <img src="./assets/img5.jfif" alt="Thumbnail 2" />
-                <img src="./assets/content2.jpg" alt="Thumbnail 3" />
-                <img src="./assets/content3.jpg" alt="Thumbnail 4" />
-                <img src="./assets/profil1.jpg" alt="Thumbnail 5" />
-                <img src="./assets/content4.jpg" alt="Thumbnail 6" />
-                <img src="./assets/content5.jpg" alt="Thumbnail 7" />
-                <img src="./assets/content6.jpg" alt="Thumbnail 8" />
-            </div>
-            <div class="tabs">
-                <div class="tab active">GALLERIE</div>
-                <div class="tab">PHOTO</div>
-                <div class="tab">VIDEO</div>
-                <div class="tab">TEXT</div>
-            </div>
+        <input type="text" class="text" placeholder="Votre texte ici..." />
+
+        <img src="./assets/content1.jpg" alt="Main Image" class="main-image" />
+        <div class="gallery">
+          <div class="thumbnail-container">
+            <img
+              src="./assets/content1.jpg"
+              alt="Thumbnail 1"
+              class="thumbnail-image"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="16"
+              viewBox="0 0 20 16"
+              fill="none"
+              class="thumbnail-icon"
+            >
+              <path
+                d="M6.36398 12.045L18.409 0L20 1.591L6.36398 15.2271L0 8.86304L1.591 7.27203L6.36398 12.045Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+
+          <img src="./assets/img5.jfif" alt="Thumbnail 2" />
+          <img src="./assets/content2.jpg" alt="Thumbnail 3" />
+          <img src="./assets/content3.jpg" alt="Thumbnail 4" />
+          <img src="./assets/profil1.jpg" alt="Thumbnail 5" />
+          <img src="./assets/content4.jpg" alt="Thumbnail 6" />
+          <img src="./assets/content5.jpg" alt="Thumbnail 7" />
+          <img src="./assets/content6.jpg" alt="Thumbnail 8" />
         </div>
-        <div id="form-view" class="form-container">
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="checkbox1" checked />
-                <label for="checkbox1">Checked</label>
-            </div>
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="checkbox2" checked />
-                <label for="checkbox2">Checked</label>
-            </div>
-            <div class="form-group radio-group">
-                <input type="radio" id="radio1" name="radio-group" checked />
-                <label for="radio1"></label>
-            </div>
-            <div class="form-group radio-group">
-                <input type="radio" id="radio2" name="radio-group" />
-                <label for="radio2"></label>
-            </div>
-            <div class="form-group select-group">
-                <select>
-                    <option>Choisir</option>
-                </select>
-            </div>
-            <div class="form-group select-group">
-                <select>
-                    <option>Choisir</option>
-                </select>
-            </div>
-            <div class="form-group input-group">
-                <input type="text" placeholder="Taper votr|" />
-                <div class="toggle"></div>
-            </div>
-            <div class="form-group input-group">
-                <input type="text" placeholder="Entrez votre text" />
-                <div class="toggle active"></div>
-            </div>
-            <div class="form-group">
-                <textarea
-                    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum sit amet lectus pulvinar ultrices id a nunc. Nunc pulvinar libero sit amet elementum hendrerit. Praesent ipsum ante, pulvinar vel ligula id, finibus ultrices massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Praesent posuere lectus blandit|"></textarea>
-            </div>
+        <div class="tabs">
+          <div class="tab active">GALLERIE</div>
+          <div class="tab">PHOTO</div>
+          <div class="tab">VIDEO</div>
+          <div class="tab">TEXT</div>
         </div>
+      </div>
+      <div id="form-view" class="form-container">
+        <div class="form-group">
+          <div class="left-align">
+            <div class="checkbox-group">
+              <label> <input type="checkbox" checked /> Checked </label>
+              <label> <input type="checkbox" check /> Checked </label>
+            </div>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="choice" checked />
+              </label>
+              <label> <input type="radio" name="choice" /></label>
+            </div>
+            <input
+              type="text"
+              value="Taper.voir!"
+              placeholder="Entrez votre texte"
+            />
+            <input
+              type="text"
+              placeholder="Entrez votre nom"
+              style="width: auto"
+            />
+          </div>
+          <div class="right-align">
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" class="unchecked1" unchecked disabled />
+                Canceled
+              </label>
+              <label>
+                <input type="checkbox" class="unchecked2" disabled /> Canceled
+              </label>
+            </div>
+
+            <div class="dropdown">
+              <select>
+                <option>Choisir</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+
+              <select>
+                <option>Choisir</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </div>
+
+            <div class="toogle">
+              <div class="toggle-switch">
+                <input type="checkbox" id="toggle" checked />
+                <label for="toggle"></label>
+              </div>
+
+              <div class="toggle-switch">
+                <input type="checkbox" id="toggle" checked />
+                <label for="toggle"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <textarea>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum sit amet lectus pulvinar ultrices id a nunc. Nunc lobortis libero sit amet magna elementum tristique. Praesent rhoncus leo vel arcu. Donec finibus ultricies eros, quis porttitor neque molestie vitae. Praesent sollicitudin nulla vel libero. Nullam accumsan rutrum posuere luctus blandit!</textarea
+        >
+      </div>
     </div>
     <script>
-    function toggleView() {
+      function toggleView() {
         const imageView = document.getElementById("image-upload-view");
         const formView = document.getElementById("form-view");
         if (imageView.style.display === "none") {
-            imageView.style.display = "block";
-            formView.style.display = "none";
+          imageView.style.display = "block";
+          formView.style.display = "none";
         } else {
-            imageView.style.display = "none";
-            formView.style.display = "block";
+          imageView.style.display = "none";
+          formView.style.display = "block";
         }
-    }
+      }
     </script>
-</body>
-
+  </body>
 </html>

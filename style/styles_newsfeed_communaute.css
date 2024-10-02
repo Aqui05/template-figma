@@ -228,6 +228,11 @@ header {
 .tab:hover,
 .tab:active {
   background-color: yellow;
+  color: #392c2c;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .content {

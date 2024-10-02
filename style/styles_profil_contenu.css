@@ -393,11 +393,12 @@ html {
 
 .scrollable-cards {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 20px;
   padding: 20px 0 5;
-  scroll-snap-type: x mandatory;
+  /* scroll-snap-type: x mandatory; */
   height: auto;
+  overflow-y: clip;
 }
 .card {
   flex: 0 0 auto;
@@ -508,4 +509,77 @@ html {
   height: 48px;
   flex-shrink: 0;
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+}
+
+.img-title {
+  /* font-size: 18px; */
+  /* font-weight: bold; */
+  margin-bottom: 5px;
+  top: -40px;
+  position: relative;
+  color: #fff;
+  /* font-family: "MTN Brighter Sans"; */
+  font-size: 8px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  /* display: flex; */
+  align-content: space-between;
+  justify-content: space-evenly;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.img-title button {
+  border-radius: 50px;
+  border: 1px solid #fff;
+  background: transparent;
+  width: 91px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  top: -21px;
+  position: relative;
+  left: 25%;
+}
+
+.img-title button span {
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 10px;
+}
+
+.vid-plus-svg {
+  /* margin-right: 10px; */
+  /* width: 120px; */
+  /* height: 12.833px; */
+  /* flex-shrink: 0; */
+  /* stroke-width: 1px; */
+  /* stroke: #fff; */
+  top: -21px;
+  /* width: 14px; */
+  height: 14px;
+  /* flex-shrink: 0; */
+  /* margin: auto; */
+  padding-left: -8px;
+  position: relative;
+  margin-left: 69px;
+}
+
+.vid-plus {
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  top: -24px;
+  position: relative;
+  left: 50px;
 }
