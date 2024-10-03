@@ -291,7 +291,8 @@
                     <div class="post-comments">
                         <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                         <br>
-                        <span id="see-all-comments">Voir tous les commentaires</span>
+                        <a href="./commentaires.html"><span id="see-all-comments">Voir tous les
+                                commentaires</span></a>
                     </div>
 
 
@@ -807,7 +808,8 @@
                     <div class="post-comments">
                         <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                         <br>
-                        <span id="see-all-comments">Voir tous les commentaires</span>
+                        <a href="./commentaires.html"><span id="see-all-comments">Voir tous les
+                                commentaires</span></a>
                     </div>
 
 
@@ -896,6 +898,20 @@
     document.getElementById('creator').addEventListener('click', function() {
         window.location.href = 'profil_createur_contenu.html';
     });
+
+    let plays = document.getElementsByClassName("play-icon");
+
+    for (let i = 0; i < plays.length; i++) {
+        plays[i].addEventListener("click", function() {
+            window.location.href = "afficher_video.html";
+        });
+    };
+    let plays2 = document.getElementsByClassName("play-btn");
+    for (let i = 0; i < plays2.length; i++) {
+        plays2[i].addEventListener("click", function() {
+            window.location.href = "afficher_video.html";
+        });
+    }
     </script>
 </body>
 

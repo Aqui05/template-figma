@@ -566,37 +566,17 @@
         });
 
 
-        document.getElementById('video1').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-
-        document.getElementById('video2').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-
-        document.getElementById('video3').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-
-        document.getElementById('video4').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-        document.getElementById('video5').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-        document.getElementById('video6').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-        document.getElementById('video7').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-        document.getElementById('video8').addEventListener('click', function() {
-            window.location.href = 'afficher_video.html';
-        });
-
         document.getElementById('add-content').addEventListener('click', function() {
             window.location.href = 'creation_contenu2.html';
-        })
+        });
+
+        let plays = document.getElementsByClassName("play-icon");
+
+        for (let i = 0; i < plays.length; i++) {
+            plays[i].addEventListener("click", function() {
+                window.location.href = "afficher_video.html";
+            });
+        };
         </script>
 </body>
 
