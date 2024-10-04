@@ -94,12 +94,17 @@ html {
   /* border-bottom-right-radius: 17%; */ /* Garde les coins arrondis si nécessaire */
   overflow: hidden; /* Cache tout dépassement de l'image */
   clip-path: ellipse(140% 100% at 51% 0%);
+
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 
 .badge-profile {
   position: absolute;
-  top: 189%;
-  left: 50%;
+  top: 225%;
+  left: 52%;
   transform: translate(-50%, -50%);
   /* width: 79px; */
   /* height: 100px; */
@@ -110,7 +115,7 @@ html {
 }
 
 .bas {
-  margin-top: 50px;
+  margin-top: -39px;
   margin-left: 50px;
   color: black;
   position: absolute;
@@ -187,7 +192,6 @@ html {
 }
 
 /************************************ */
-
 .tabs {
   width: 93%;
   height: 40px;
@@ -200,7 +204,6 @@ html {
   align-content: space-between;
   justify-content: space-between;
   align-items: center;
-  /* flex-wrap: wrap; */
 }
 
 .tab {
@@ -209,26 +212,23 @@ html {
   cursor: pointer;
   margin: 0;
   color: #939393;
-  /* font-family: "MTN Brighter Sans"; */
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: all 0.3s ease;
 }
 
-.tab:hover,
-.tab:active {
+/* Onglet actif */
+.tab.active {
   background-color: #ffcb00;
+  color: #392c2c;
 }
 
-input[type="radio"]:checked + .tab {
-  color: white;
-}
-
-input[type="checkbox"]:checked + .interest-tag {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+/* Onglet par défaut au survol */
+.tab:hover {
+  background-color: #ffcb00;
+  color: #392c2c;
 }
 
 .content {

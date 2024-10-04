@@ -203,6 +203,27 @@
     document.getElementById('add-content').addEventListener('click', function() {
         window.location.href = 'creation_contenu2.html';
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab');
+        const radios = document.querySelectorAll('input[type="radio"]');
+
+        // Fonction pour gérer le changement d'onglet
+        function handleTabChange() {
+            tabs.forEach((tab) => tab.classList.remove('active')); // Supprime l'onglet actif précédent
+            const activeRadio = document.querySelector('input[type="radio"]:checked');
+            const activeLabel = document.querySelector(`label[for="${activeRadio.id}"]`);
+            activeLabel.classList.add('active'); // Ajoute l'onglet actif
+        }
+
+        // Associe l'événement change à chaque input radio
+        radios.forEach((radio) => {
+            radio.addEventListener('change', handleTabChange);
+        });
+
+        // Active par défaut l'onglet initial
+        handleTabChange();
+    });
     </script>
 </body>
 

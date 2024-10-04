@@ -120,7 +120,7 @@ header {
   border-radius: 50%;
   position: absolute;
   top: 1.5em;
-  right: 2.2rem;
+  right: 2.3rem;
   width: 8px;
   height: 8px;
   flex-shrink: 0;
@@ -138,15 +138,16 @@ header {
 
 .stories-container {
   display: flex;
-  overflow: hidden;
-  padding: 10px 0;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 22px;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .story img,
 .story-avatar {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #0076c0;
@@ -352,6 +353,11 @@ header {
       rgba(0, 0, 0, 0.4) 100%
     ),
     lightgray 50% / cover no-repeat, #c4c4c4;
+
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.7);
 }
 
 .promo-section h3 {
@@ -364,7 +370,6 @@ header {
   line-height: normal;
   top: -18px;
   position: relative;
-  left: -10px;
 }
 
 .promo-section button {
@@ -423,7 +428,7 @@ header {
 .slide-content {
   position: absolute;
   top: 33px;
-  left: 40px;
+  left: 9px;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -440,7 +445,7 @@ header {
 .slider-nav {
   position: absolute;
   top: 0.5rem;
-  left: 2.5rem;
+  left: 1.8rem;
   transform: translateX(-50%);
   display: flex;
   gap: 0.2rem;
@@ -683,7 +688,7 @@ header {
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding: 20px 0 5;
+  padding: 10px;
   scroll-snap-type: x mandatory;
   height: auto;
 }
@@ -705,6 +710,10 @@ header {
       rgba(0, 0, 0, 0.5) 100%
     ),
     url(<path-to-image>) lightgray 50% / cover no-repeat, #ffcb00;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 .card-content {
   position: absolute;
@@ -868,6 +877,11 @@ p {
 .post-media img {
   width: 100%;
   border-radius: 10px;
+
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 
 .title {

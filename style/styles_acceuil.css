@@ -31,6 +31,7 @@ html {
   overflow: hidden;
   position: relative;
 }
+
 .slider {
   width: 300%;
   height: 100%;
@@ -112,6 +113,7 @@ html {
   line-height: normal;
   margin-bottom: 50px;
 }
+
 .slider-nav {
   position: fixed;
   bottom: 2rem;
@@ -125,12 +127,25 @@ html {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: #775a18;
   transition: background-color 0.3s;
 }
 
+/* Onglet actif par défaut */
+.default-active {
+  background-color: #ffc53f;
+}
+
+.default-active2 {
+  background-color: #775a18;
+}
+
+.default-active1 {
+  background-color: #775a18;
+}
+
 /* Active par défaut pour le premier slide */
-#slide1:target ~ .slider-nav a[href="#slide1"] {
+#slide1:target ~ .slider-nav a[href="#slide1"],
+.default-active {
   background-color: #ffc53f;
 }
 
@@ -142,6 +157,18 @@ html {
 /* Changement de l'active sur le slide 3 */
 #slide3:target ~ .slider-nav a[href="#slide3"] {
   background-color: #ffc53f;
+}
+
+/* Lorsque un autre slide est actif, désactiver la couleur du default-active */
+#slide2:target ~ .slider-nav a.default-active,
+#slide3:target ~ .slider-nav a.default-active {
+  background-color: #775a18;
+}
+
+/* Lorsque le slide 1 est actif, désactiver la couleur du default-active */
+#slide1:target ~ .slider-nav a.default-active1,
+#slide1:target ~ .slider-nav a.defaul-active2 {
+  background-color: #775a18;
 }
 
 .skip-link {
@@ -182,7 +209,7 @@ html {
 
 .btn-connecter {
   padding: 10px 20px;
-  margin: 30px 5px;
+  margin: 30px 0px;
   border-radius: 30px;
   border: 2px solid white;
   background-color: transparent;
@@ -220,11 +247,6 @@ html {
   margin: 6px;
 }
 
-.btn-inscrire:hover,
-.btn-connecter:hover {
-  background-color: yellow;
-  color: #333;
-}
 #slide1:target ~ .slider {
   transform: translateX(0);
 }

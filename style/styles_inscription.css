@@ -139,6 +139,14 @@ header {
   position: relative;
 }
 
+header h1 {
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 h1 {
   margin: 0;
   text-align: center;
@@ -181,13 +189,12 @@ input {
   width: 90%;
 }
 
-.forgot-password {
-  position: absolute;
-  right: 10px;
-  bottom: -20px; /* Placer en dessous du champ */
-  color: #007bff;
-  text-decoration: none;
-  font-size: 12px;
+input::placeholder {
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .separator {
@@ -196,6 +203,10 @@ input {
   color: white;
   position: relative;
   margin-bottom: 5rem;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .separator::before,
@@ -204,8 +215,8 @@ input {
   position: absolute;
   top: 50%;
   width: 45%;
-  height: 2px;
-  background-color: #ccc;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .separator::before {

@@ -84,6 +84,22 @@
                         <img src="./assets/img7.jfif" alt="Person 4" />
                         <p>Elisée</p>
                     </div>
+                    <div class="story">
+                        <img src="./assets/img12.jfif" alt="Person 1" />
+                        <p>MTN</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img5.jfif" alt="Person 2" />
+                        <p>Bella</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img6.jfif" alt="Person 3" />
+                        <p>Jacob</p>
+                    </div>
+                    <div class="story">
+                        <img src="./assets/img7.jfif" alt="Person 4" />
+                        <p>Elisée</p>
+                    </div>
                 </div>
             </section>
 
@@ -99,25 +115,25 @@
             <div class="tab2">
                 <p>Proposez-nous vos idées pour nous aider à améliorer nos produits et services</p>
                 <div class="grid">
-                    <input type="checkbox" id="Appels & sms" name="interest" value="Appels & sms" />
-                    <label for="Appels & sms" class="interest-tag selected">Appels & sms</label>
+                    <input type="checkbox" id="Appels_sms" name="interest" value="Appels & sms" hidden />
+                    <label for="Appels_sms" class="interest-tag">Appels & sms</label>
 
-                    <input type="checkbox" id="Forfaits" name="interest" value="Forfaits" />
+                    <input type="checkbox" id="Forfaits" name="interest" value="Forfaits" checked hidden />
                     <label for="Forfaits" class="interest-tag">Forfaits</label>
 
-                    <input type="checkbox" id="Internet" name="interest" value="Internet" />
+                    <input type="checkbox" id="Internet" name="interest" value="Internet" hidden />
                     <label for="Internet" class="interest-tag">Internet</label>
 
-                    <input type="checkbox" id="Relations clients" name="interest" value="Relations clients" />
-                    <label for="Relations clients" class="interest-tag">Relations clients</label>
+                    <input type="checkbox" id="Relations_clients" name="interest" value="Relations clients" hidden />
+                    <label for="Relations_clients" class="interest-tag">Relations clients</label>
 
-                    <input type="checkbox" id="Sites & Apps" name="interest" value="Sites & Apps" />
-                    <label for="Sites & Apps" class="interest-tag">Sites & Apps</label>
+                    <input type="checkbox" id="Sites_Apps" name="interest" value="Sites & Apps" hidden />
+                    <label for="Sites_Apps" class="interest-tag">Sites & Apps</label>
 
-                    <input type="checkbox" id="Autres" name="interest" value="Autres" />
+                    <input type="checkbox" id="Autres" name="interest" value="Autres" hidden />
                     <label for="Autres" class="interest-tag">Autres</label>
 
-                    <input type="checkbox" id="evenements" name="interest" value="Evènements" />
+                    <input type="checkbox" id="evenements" name="interest" value="Evènements" hidden />
                     <label for="evenements" class="interest-tag">Evènements</label>
                 </div>
             </div>
@@ -760,7 +776,7 @@
     <script>
     // Add event listeners for redirection
     document.getElementById('home-nav').addEventListener('click', function() {
-        window.location.href = 'newsfeed.html'; // Change to the actual home page URL
+        window.location.href = 'newsfeed.html#slide1'; // Change to the actual home page URL
     });
 
     document.getElementById('trends-nav').addEventListener('click', function() {
@@ -783,17 +799,25 @@
         window.location.href = 'creation_contenu2.html';
     });
 
-    document.getElementById('creator1').addEventListener('click', function() {
-        window.location.href = 'profil_createur_contenu.html';
-    });
-    document.getElementById('creator2').addEventListener('click', function() {
-        window.location.href = 'profil_createur_contenu.html';
-    });
-    document.getElementById('creator3').addEventListener('click', function() {
-        window.location.href = 'profil_createur_contenu.html';
-    });
-    document.getElementById('creator4').addEventListener('click', function() {
-        window.location.href = 'profil_createur_contenu.html';
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab');
+        const radios = document.querySelectorAll('input[type="radio"]');
+
+        // Fonction pour gérer le changement d'onglet
+        function handleTabChange() {
+            tabs.forEach((tab) => tab.classList.remove('active')); // Supprime l'onglet actif précédent
+            const activeRadio = document.querySelector('input[type="radio"]:checked');
+            const activeLabel = document.querySelector(`label[for="${activeRadio.id}"]`);
+            activeLabel.classList.add('active'); // Ajoute l'onglet actif
+        }
+
+        // Associe l'événement change à chaque input radio
+        radios.forEach((radio) => {
+            radio.addEventListener('change', handleTabChange);
+        });
+
+        // Active par défaut l'onglet initial
+        handleTabChange();
     });
     </script>
 </body>

@@ -288,6 +288,10 @@ html {
   height: 150px;
   flex-shrink: 0;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 
 .video-thumbnail {
@@ -418,6 +422,10 @@ html {
       rgba(0, 0, 0, 0.5) 100%
     ),
     url(<path-to-image>) lightgray 50% / cover no-repeat, #ffcb00;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 .card-content {
   position: absolute;
