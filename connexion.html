@@ -1,122 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connexion</title>
     <link rel="stylesheet" href="style/styles_connexion.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <header>
-        <a href="./acceuil.html#slide1" class="back-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-          >
-            <circle cx="15" cy="15" r="15" fill="#0076C0" />
-            <path
-              d="M24 16L9.83 16L13.41 19.59L12 21L6 15L12 9L13.41 10.41L9.83 14L24 14V16Z"
-              fill="white"
-            />
-          </svg>
-        </a>
-        <h1>Connexion</h1>
-      </header>
-      <main>
-        <form id="login-form">
-          <div class="icon-container">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="65"
-              height="79"
-              viewBox="0 0 65 79"
-              fill="none"
-            >
-              <path
-                d="M45.8802 38.46C41.9825 41.4269 37.2186 43.0324 32.3202 43.03C27.4184 43.0338 22.651 41.4283 18.7502 38.46C-2.99981 51.21 0.160191 76.46 0.160191 76.46C9.05019 78.17 22.1602 78.95 32.3202 78.95C42.4802 78.95 55.5902 78.17 64.4802 76.46C64.4802 76.46 67.6302 51.24 45.8802 38.46ZM57.3502 70.28C40.7203 72.2266 23.9201 72.2266 7.2902 70.28C7.45155 67.9848 7.81971 65.709 8.3902 63.48C9.94609 56.9537 13.6687 51.1476 18.9502 47.01C23.1073 49.1137 27.7011 50.2098 32.3602 50.2098C37.0193 50.2098 41.6131 49.1137 45.7702 47.01C51.0309 51.1593 54.7375 56.9623 56.2902 63.48C56.8558 65.71 57.2239 67.9854 57.3902 70.28H57.3502ZM49.9502 17.76C49.9423 14.2412 48.8916 10.8037 46.9309 7.88177C44.9703 4.95984 42.1875 2.68461 38.9343 1.3435C35.6811 0.00239372 32.1034 -0.344407 28.6531 0.34692C25.2029 1.03825 22.035 2.73667 19.5496 5.22763C17.0643 7.71859 15.3729 10.8903 14.6894 14.3421C14.0058 17.7938 14.3606 21.3708 15.709 24.621C17.0574 27.8712 19.3389 30.6488 22.2652 32.6029C25.1916 34.557 28.6314 35.6 32.1502 35.6C34.4904 35.5974 36.8071 35.1338 38.9681 34.2359C41.1291 33.3379 43.0921 32.0231 44.745 30.3665C46.3979 28.7099 47.7083 26.744 48.6014 24.5809C49.4945 22.4179 49.9528 20.1002 49.9502 17.76ZM42.7702 17.76C42.7623 19.8587 42.1327 21.908 40.961 23.6492C39.7893 25.3904 38.1279 26.7454 36.1866 27.543C34.2454 28.3407 32.1114 28.5453 30.0539 28.131C27.9965 27.7168 26.1079 26.7022 24.6267 25.2154C23.1455 23.7285 22.138 21.8362 21.7314 19.7772C21.3249 17.7182 21.5375 15.5849 22.3425 13.6467C23.1474 11.7085 24.5086 10.0522 26.2542 8.88705C27.9998 7.72187 30.0515 7.10002 32.1502 7.1C34.9713 7.10795 37.674 8.23486 39.665 10.2334C41.6561 12.232 42.7729 14.9389 42.7702 17.76Z"
-                fill="#E5E5E5"
-              />
-            </svg>
-          </div>
-          <div class="input-container">
-            <input type="tel" id="tel" placeholder="Tel" required />
-          </div>
-          <div class="input-container">
-            <input
-              type="password"
-              id="password"
-              placeholder="Mot de passe"
-              required
-            />
-            <a href="#" class="forgot-password">Mot de passe oublié?</a>
-          </div>
-          <div class="separator">OU</div>
-          <button type="button" class="facebook-button" id="facebook">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="28"
-              viewBox="0 0 15 28"
-              fill="none"
-            >
-              <path
-                d="M14.4351 0.00574264L10.8373 0C6.7953 0 4.18317 2.66602 4.18317 6.7924V8.92415C4.18317 9.47643 3.73545 9.92415 3.18317 9.92415H0.565722C0.253132 9.92415 0 10.1762 0 10.4872V15.0248C0 15.3357 0.253421 15.5875 0.565722 15.5875H3.18317C3.73545 15.5875 4.18317 16.0353 4.18317 16.5875V27.0372C4.18317 27.3482 4.4363 27.6 4.74889 27.6H9.46863C9.78122 27.6 10.0343 27.3479 10.0343 27.0372V16.5875C10.0343 16.0353 10.4821 15.5875 11.0343 15.5875H14.264C14.5766 15.5875 14.8297 15.3357 14.8297 15.0248L14.8314 10.4872C14.8314 10.3379 14.7717 10.1949 14.6658 10.0892C14.5598 9.98358 14.4155 9.92415 14.2654 9.92415H11.0343C10.4821 9.92415 10.0343 9.47643 10.0343 8.92415V7.26932C10.0343 5.99331 10.34 5.34554 12.0109 5.34554L14.4346 5.34468C14.7469 5.34468 15 5.09257 15 4.7819V0.568522C15 0.258132 14.7472 0.00631691 14.4351 0.00574264Z"
-                fill="#0076C0"
-              /></svg
-            >Facebook
-          </button>
+        <header>
+            <a href="./acceuil.html#slide1" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <circle cx="15" cy="15" r="15" fill="#0076C0" />
+                    <path d="M24 16L9.83 16L13.41 19.59L12 21L6 15L12 9L13.41 10.41L9.83 14L24 14V16Z" fill="white" />
+                </svg>
+            </a>
+            <h1>Connexion</h1>
+        </header>
+        <main>
+            <form id="login-form">
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="65" height="79" viewBox="0 0 65 79" fill="none">
+                        <path
+                            d="M45.8802 38.46C41.9825 41.4269 37.2186 43.0324 32.3202 43.03C27.4184 43.0338 22.651 41.4283 18.7502 38.46C-2.99981 51.21 0.160191 76.46 0.160191 76.46C9.05019 78.17 22.1602 78.95 32.3202 78.95C42.4802 78.95 55.5902 78.17 64.4802 76.46C64.4802 76.46 67.6302 51.24 45.8802 38.46ZM57.3502 70.28C40.7203 72.2266 23.9201 72.2266 7.2902 70.28C7.45155 67.9848 7.81971 65.709 8.3902 63.48C9.94609 56.9537 13.6687 51.1476 18.9502 47.01C23.1073 49.1137 27.7011 50.2098 32.3602 50.2098C37.0193 50.2098 41.6131 49.1137 45.7702 47.01C51.0309 51.1593 54.7375 56.9623 56.2902 63.48C56.8558 65.71 57.2239 67.9854 57.3902 70.28H57.3502ZM49.9502 17.76C49.9423 14.2412 48.8916 10.8037 46.9309 7.88177C44.9703 4.95984 42.1875 2.68461 38.9343 1.3435C35.6811 0.00239372 32.1034 -0.344407 28.6531 0.34692C25.2029 1.03825 22.035 2.73667 19.5496 5.22763C17.0643 7.71859 15.3729 10.8903 14.6894 14.3421C14.0058 17.7938 14.3606 21.3708 15.709 24.621C17.0574 27.8712 19.3389 30.6488 22.2652 32.6029C25.1916 34.557 28.6314 35.6 32.1502 35.6C34.4904 35.5974 36.8071 35.1338 38.9681 34.2359C41.1291 33.3379 43.0921 32.0231 44.745 30.3665C46.3979 28.7099 47.7083 26.744 48.6014 24.5809C49.4945 22.4179 49.9528 20.1002 49.9502 17.76ZM42.7702 17.76C42.7623 19.8587 42.1327 21.908 40.961 23.6492C39.7893 25.3904 38.1279 26.7454 36.1866 27.543C34.2454 28.3407 32.1114 28.5453 30.0539 28.131C27.9965 27.7168 26.1079 26.7022 24.6267 25.2154C23.1455 23.7285 22.138 21.8362 21.7314 19.7772C21.3249 17.7182 21.5375 15.5849 22.3425 13.6467C23.1474 11.7085 24.5086 10.0522 26.2542 8.88705C27.9998 7.72187 30.0515 7.10002 32.1502 7.1C34.9713 7.10795 37.674 8.23486 39.665 10.2334C41.6561 12.232 42.7729 14.9389 42.7702 17.76Z"
+                            fill="#E5E5E5" />
+                    </svg>
+                </div>
+                <div class="input-container">
+                    <input type="tel" id="tel" placeholder="Tel" />
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Mot de passe" />
+                    <a href="#" class="forgot-password">Mot de passe oublié?</a>
+                </div>
+                <div class="separator">OU</div>
+                <button type="button" class="facebook-button" id="facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="28" viewBox="0 0 15 28" fill="none">
+                        <path
+                            d="M14.4351 0.00574264L10.8373 0C6.7953 0 4.18317 2.66602 4.18317 6.7924V8.92415C4.18317 9.47643 3.73545 9.92415 3.18317 9.92415H0.565722C0.253132 9.92415 0 10.1762 0 10.4872V15.0248C0 15.3357 0.253421 15.5875 0.565722 15.5875H3.18317C3.73545 15.5875 4.18317 16.0353 4.18317 16.5875V27.0372C4.18317 27.3482 4.4363 27.6 4.74889 27.6H9.46863C9.78122 27.6 10.0343 27.3479 10.0343 27.0372V16.5875C10.0343 16.0353 10.4821 15.5875 11.0343 15.5875H14.264C14.5766 15.5875 14.8297 15.3357 14.8297 15.0248L14.8314 10.4872C14.8314 10.3379 14.7717 10.1949 14.6658 10.0892C14.5598 9.98358 14.4155 9.92415 14.2654 9.92415H11.0343C10.4821 9.92415 10.0343 9.47643 10.0343 8.92415V7.26932C10.0343 5.99331 10.34 5.34554 12.0109 5.34554L14.4346 5.34468C14.7469 5.34468 15 5.09257 15 4.7819V0.568522C15 0.258132 14.7472 0.00631691 14.4351 0.00574264Z"
+                            fill="#0076C0" />
+                    </svg>Facebook
+                </button>
 
-          <footer>
-            <button type="submit" class="submit-button" id="acceuil">
-              Continuer<svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="12"
-                viewBox="0 0 18 12"
-                fill="none"
-              >
-                <path
-                  d="M0 5H14.17L10.59 1.41L12 0L18 6L12 12L10.59 10.59L14.17 7H0V5Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-          </footer>
-        </form>
-      </main>
+                <footer>
+                    <button type="submit" class="submit-button" id="acceuil">
+                        Continuer<svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12"
+                            fill="none">
+                            <path d="M0 5H14.17L10.59 1.41L12 0L18 6L12 12L10.59 10.59L14.17 7H0V5Z" fill="white" />
+                        </svg>
+                    </button>
+                </footer>
+            </form>
+        </main>
     </div>
 
     <script>
-      document
+    document
         .getElementById("login-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form from reloading the page
-          const tel = document.getElementById("tel").value;
-          const password = document.getElementById("password").value;
-
-          if (tel && password) {
+        .addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            const tel = document.getElementById("tel").value;
+            const password = document.getElementById("password").value;
             window.location.href = "./newsfeed.html#slide1";
-          } else {
-            alert("Veuillez remplir les champs requis");
-          }
         });
 
-      // Handle Facebook login redirection
-      document
+    // Handle Facebook login redirection
+    document
         .getElementById("facebook")
-        .addEventListener("click", function () {
-          //redirection vers facebook
-          window.location.href = "https://www.facebook.com";
+        .addEventListener("click", function() {
+            //redirection vers facebook
+            window.location.href = "https://www.facebook.com";
         });
     </script>
-  </body>
+</body>
+
 </html>
