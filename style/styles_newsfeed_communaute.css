@@ -22,7 +22,7 @@ html {
   padding: 0;
   height: 100%;
   font-family: "MaPolice", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fff;
   overflow-y: scroll;
 }
 
@@ -454,7 +454,8 @@ header {
 .comment {
   display: flex;
   padding: 0.5rem;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
 }
 
 .avatar {
@@ -504,10 +505,12 @@ header {
 .comment-bar {
   display: flex;
   align-items: center;
-  background-color: #f0f0f0;
-  border-radius: 20px;
+  background-color: transparent;
   padding: 5px 15px;
   margin-top: 10px;
+
+  border-radius: 69px;
+  border: 1px solid #c4c4c4;
 }
 
 .comment-bar input {
@@ -584,7 +587,6 @@ p {
   margin-bottom: 1em;
   margin-top: 1em;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
   justify-content: center;
   align-items: center;
   align-content: space-between;
@@ -600,7 +602,7 @@ input[type="checkbox"] {
 
 .interest-tag {
   padding: 8px 15px;
-  background-color: #f0f0f0;
+  background-color: transparent;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -609,6 +611,12 @@ input[type="checkbox"] {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border-radius: 59px;
+  border: 1px solid #c4c4c4;
+  -webkit-border-radius: 59px;
+  -moz-border-radius: 59px;
+  -ms-border-radius: 59px;
+  -o-border-radius: 59px;
 }
 
 input[type="checkbox"]:checked + .interest-tag {

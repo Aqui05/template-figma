@@ -22,7 +22,7 @@ html {
   padding: 0;
   height: 100%;
   font-family: "MaPolice", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fff;
   overflow-y: scroll;
 }
 
@@ -121,7 +121,6 @@ header {
 }
 
 .all-sections {
-  background-color: #f9f9f9;
   padding-top: 22%;
 }
 
@@ -158,8 +157,6 @@ header {
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: #ffb200;
-  color: black;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -168,7 +165,6 @@ header {
   align-items: center;
   font-weight: bold;
 }
-
 .story {
   display: flex;
   flex-direction: column;
@@ -254,11 +250,10 @@ header {
   object-fit: cover;
   border-radius: 5px;
   background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    url(<path-to-image>) lightgray 50% / cover no-repeat, #ffcb00;
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
   background-size: cover;
   background-position: center;
   -webkit-filter: brightness(0.5);
@@ -565,7 +560,7 @@ header {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(255, 215, 0, 0.9); /* Couleur de fond jaune */
+  background-color: #ffcb00; /* Couleur de fond jaune */
   border-radius: 50%;
   /* width: 30px; */
   /* height: 30px; */

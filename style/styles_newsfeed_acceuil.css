@@ -166,8 +166,6 @@ header {
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: #ffb200;
-  color: black;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -363,7 +361,6 @@ header {
 .promo-section h3 {
   font-size: 16px;
   color: #fff;
-  font-family: "MTN Brighter Sans";
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
@@ -388,6 +385,8 @@ header {
   border: 2px solid #fff;
   justify-content: space-between;
   display: flex;
+  top: -9px;
+  position: relative;
 }
 
 .posts-section {
@@ -427,7 +426,7 @@ header {
 
 .slide-content {
   position: absolute;
-  top: 33px;
+  top: 36px;
   left: 9px;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -641,7 +640,7 @@ header {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(255, 215, 0, 0.9); /* Couleur de fond jaune */
+  background-color: #ffcb00; /* Couleur de fond jaune */
   border-radius: 50%;
   /* width: 30px; */
   /* height: 30px; */
@@ -657,7 +656,7 @@ header {
 
 .audio-bar {
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   width: 100%;
   height: 40px;
   display: flex;
@@ -822,10 +821,13 @@ p {
 .post-card {
   background-color: white;
   padding: 15px;
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   bottom: 5px;
+
+  width: 91%;
+  margin: 10px auto;
+  border-radius: 5px;
+  background: #f9f9f9;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .post-header {
@@ -876,12 +878,13 @@ p {
 
 .post-media img {
   width: 100%;
-  border-radius: 10px;
-
+  border-radius: 5px;
   background-size: cover;
   background-position: center;
-  -webkit-filter: brightness(0.6);
-  filter: brightness(0.6);
+  /*-webkit-filter: brightness(0.6);
+  filter: brightness(0.6);*/
+  height: 133px;
+  object-fit: cover;
 }
 
 .title {
@@ -964,7 +967,7 @@ p {
 
 .audio-bar {
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   width: 100%;
   height: 40px;
   display: flex;
@@ -989,4 +992,50 @@ p {
   50% {
     height: 30px;
   }
+}
+
+.image-wrapper1 {
+  position: relative;
+  border-radius: 5px;
+}
+
+.image-wrapper1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000 100%);
+  z-index: 0;
+}
+
+.image-wrapper1 img {
+  object-fit: cover;
+  display: block;
+}
+
+.image-wrapper2 {
+  position: relative;
+  border-radius: 5px;
+}
+
+.image-wrapper2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.image-wrapper2 img {
+  object-fit: cover;
+  display: block;
 }

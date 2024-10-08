@@ -144,10 +144,11 @@ html {
   /* margin-top: 10px; */
   width: 92%;
   margin: 10px auto;
+  height: 40px;
 }
 
 .comment-bar input {
-  border: none;
+  border: #f0f0f0;
   background-color: transparent;
   flex-grow: 1;
   padding: 5px;
