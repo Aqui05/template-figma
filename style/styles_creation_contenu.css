@@ -77,23 +77,9 @@ html {
   object-fit: cover;
 }
 
-.tabs {
-  display: flex;
-  justify-content: flex-start;
-  border-top: 1px solid #e0e0e0;
-  margin-top: 10px;
-  width: 100%;
-  overflow: hidden;
-}
-
 .tab {
   /* padding: 10px 0px; */
   /* cursor: pointer; */
-}
-
-.tab.active {
-  border-bottom: 2px solid #0080ff;
-  color: #0080ff;
 }
 
 .form-container {
@@ -287,8 +273,10 @@ textarea {
 .tabs {
   display: flex;
   justify-content: flex-start;
-  border-top: 1px solid #e0e0e0;
+  /*border-top: 1px solid #e0e0e0;*/
   margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .tab {
@@ -304,13 +292,7 @@ textarea {
 }
 
 .tab.active {
-  border-bottom: 2px solid #0080ff;
-  color: #0080ff;
-
-  padding: 10px 10px;
-  cursor: pointer;
-  margin: auto;
-  /* font-family: "MTN Brighter Sans"; */
+  color: #000;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;

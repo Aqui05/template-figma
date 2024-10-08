@@ -51,7 +51,11 @@ html {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.6);
-  background: linear-gradient(    180deg,    rgba(0, 0, 0, 1) 0%,    rgba(0, 0, 0, 0.4) 100%  );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
   -webkit-filter: brightness(0.6);
 }
 
@@ -104,11 +108,11 @@ html {
 .slide-content2 p {
   opacity: 0.8;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .slider-nav {
@@ -121,9 +125,9 @@ html {
 }
 
 .slider-nav a {
-width: 10px;
-height: 10px;
-opacity: 0px;
+  width: 10px;
+  height: 10px;
+  opacity: 0px;
 
   border-radius: 50%;
   transition: background-color 0.3s;

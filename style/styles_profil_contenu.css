@@ -54,12 +54,6 @@ html {
   overflow-y: auto;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .profile-container {
   position: relative;
   height: 70%;
