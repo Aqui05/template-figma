@@ -406,6 +406,14 @@ header {
   height: 124px;
 }
 
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
 .svg-overlay {
   position: absolute;
   bottom: 0;
@@ -419,9 +427,10 @@ header {
 }
 
 .slider-container {
-  width: 100%;
+  width: 322px;
   overflow: hidden;
   position: relative;
+  margin: auto;
 }
 
 .slide-content {
@@ -452,11 +461,13 @@ header {
   /* height: 15px; */
 }
 
-.slider-nav a:hover,
-.slider-nav a:active,
-.slider-nav a:focus,
-.slider-nav a:target {
-  background-color: yellow;
+/* Cercle de navigation actif */
+.slider-nav circle.active {
+  fill: #ffcb00;
+}
+
+.slider-nav circle {
+  fill: white;
 }
 
 .slider-nav a {
