@@ -259,6 +259,22 @@ header {
   -webkit-filter: brightness(0.5);
   filter: brightness(0.5);
 }
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Empêche le crop et maintient le ratio */
+  background: lightgray;
+  border-radius: 5px;
+}
+
+.card-video {
+  width: 100%;
+  display: block;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 5px;
+}
 .card-content {
   position: absolute;
   bottom: 10px;
@@ -302,7 +318,6 @@ header {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(255, 215, 0, 0.9); /* Couleur de fond jaune */
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -581,7 +596,7 @@ header {
 
 .audio-bar {
   position: absolute;
-  bottom: -27px;
+  bottom: -35px;
   width: 100%;
   height: 40px;
   display: flex;

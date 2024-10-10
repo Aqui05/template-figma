@@ -618,7 +618,6 @@ header {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(255, 215, 0, 0.9); /* Couleur de fond jaune */
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -642,21 +641,17 @@ header {
   left: 10px;
   background-color: #ffcb00; /* Couleur de fond jaune */
   border-radius: 50%;
-  /* width: 30px; */
-  /* height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 26px;
   height: 26px;
   flex-shrink: 0;
-  left: px;
-  top: 7px;
 }
 
 .audio-bar {
   position: absolute;
-  bottom: -4px;
+  bottom: -28px;
   width: 100%;
   height: 40px;
   display: flex;
@@ -666,22 +661,20 @@ header {
   margin-bottom: 5px;
 }
 
+.audio-bar svg {
+  width: 100%;
+  height: auto;
+}
+.audio-bar rect {
+  width: 3px;
+}
+
 .bar {
   width: 1rem;
   height: 20px; /* La hauteur sera animée pour simuler l'effet audio */
   background-color: #ffcb00;
   animation: bounce 1s infinite ease-in-out;
 }
-
-/* @keyframes bounce {
-  0%,
-  100% {
-    height: 10px;
-  }
-  50% {
-    height: 30px;
-  }
-}*/
 
 .scrollable-cards {
   display: flex;
@@ -728,16 +721,12 @@ header {
   left: 30px;
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  /* display: contents; */
 }
 .card-title {
-  /* font-size: 18px; */
-  /* font-weight: bold; */
   margin-bottom: 5px;
   top: -40px;
   position: relative;
   color: #fff;
-  /* font-family: "MTN Brighter Sans"; */
   font-size: 8px;
   font-style: italic;
   font-weight: 400;
@@ -779,6 +768,13 @@ header {
   object-fit: contain; /* Empêche le crop et maintient le ratio */
   background: lightgray;
   border-radius: 5px;
+}
+
+.card-video {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 .overlay {
@@ -826,7 +822,7 @@ p {
   width: 91%;
   margin: 10px auto;
   border-radius: 5px;
-  background: #f9f9f9;
+  background-: #f9f9f9;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -838,8 +834,6 @@ p {
 }
 
 .post-header img {
-  /* width: 40px; */
-  /* height: 40px; */
   border-radius: 50%;
   margin-right: 10px;
   width: 50px;
@@ -883,7 +877,22 @@ p {
   background-position: center;
   /*-webkit-filter: brightness(0.6);
   filter: brightness(0.6);*/
-  height: 133px;
+  height: 153px;
+  object-fit: cover;
+}
+
+.post-media video {
+  width: 100%;
+  display: block;
+  height: 153px;
+  object-fit: cover;
+}
+
+post-media img,
+.post-media video {
+  width: 100%;
+  border-radius: 5px;
+  height: 153px;
   object-fit: cover;
 }
 
@@ -965,33 +974,11 @@ p {
   border-radius: 10px; /* Optionnel, pour des coins arrondis */
 }
 
-.audio-bar {
-  position: absolute;
-  bottom: -4px;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  background-color: transparent;
-  margin-bottom: 5px;
-}
-
 .bar {
   width: 1rem;
   height: 20px; /* La hauteur sera animée pour simuler l'effet audio */
   background-color: #ffcb00;
   animation: bounce 1s infinite ease-in-out;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    height: 10px;
-  }
-  50% {
-    height: 30px;
-  }
 }
 
 .image-wrapper1 {
@@ -1018,6 +1005,12 @@ p {
 .image-wrapper2 {
   position: relative;
   border-radius: 5px;
+}
+
+.image-wrapper2 img,
+.image-wrapper2 video {
+  object-fit: cover;
+  display: block;
 }
 
 .image-wrapper2::before {
