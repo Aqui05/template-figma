@@ -24,6 +24,7 @@ html {
   font-family: "MaPolice", sans-serif;
   background-color: #fff;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .container {
@@ -410,14 +411,6 @@ header {
 .post-actions {
   display: flex;
   margin: 10px 0;
-}
-
-.post-actions button {
-  /* background-color: transparent; */
-  /* border: none; */
-  /* cursor: pointer; */
-  /* display: flex; */
-  /* align-items: center; */
 }
 
 .post-actions i {

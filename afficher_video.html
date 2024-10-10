@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lecteur Vidéo MTN avec Options de Partage</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-    @font-face {
+      @font-face {
         font-family: "MaPolice";
         src: url("fonts/MTNBrighterSans-Regular.otf") format("opentype"),
-            url("fonts/MTNBrighterSans-Bold.otf") format("opentype"),
-            url("fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
+          url("fonts/MTNBrighterSans-Bold.otf") format("opentype"),
+          url("fonts/MTNBrighterSans-RegularItalic.otf") format("opentype");
         font-weight: normal;
         font-style: normal;
-    }
+      }
 
-    body,
-    html {
+      body,
+      html {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: "MaPolice", sans-serif;
         background-color: #000;
         overflow: hidden;
-    }
+      }
 
-    .video-container {
+      .video-container {
         width: 100%;
         height: 100%;
         position: relative;
@@ -36,44 +38,46 @@
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-    }
+      }
 
-    * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+      }
 
-    video {
+      video {
         width: 100%;
         display: block;
-    }
+      }
 
-    .video-overlay {
+      .video-overlay {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.7) 0%,
-                rgba(0, 0, 0, 0) 30%,
-                rgba(0, 0, 0, 0) 70%,
-                rgba(0, 0, 0, 0.7) 100%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.7) 0%,
+          rgba(0, 0, 0, 0) 30%,
+          rgba(0, 0, 0, 0) 70%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
         color: white;
         padding: 10px;
         height: 100%;
-    }
+      }
 
-    .video-header {
+      .video-header {
         display: flex;
         align-items: center;
         margin-bottom: 10px;
         left: 12px;
         position: relative;
-    }
+      }
 
-    .mtn-logo {
+      .mtn-logo {
         display: flex;
         align-items: center;
         color: #fff;
@@ -82,16 +86,16 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-    }
+      }
 
-    .mtn-logo img {
+      .mtn-logo img {
         width: 30px;
         height: 30px;
         border-radius: 50%;
         margin-right: 5px;
-    }
+      }
 
-    .video-title {
+      .video-title {
         /* font-size: 18px; */
         /* font-weight: bold; */
         margin-bottom: 1em;
@@ -105,9 +109,9 @@
         margin-right: 35px;
         left: 12px;
         position: relative;
-    }
+      }
 
-    .video-subtitle {
+      .video-subtitle {
         font-size: 14px;
         opacity: 0.8;
         margin-left: 1rem;
@@ -117,33 +121,33 @@
         font-style: normal;
         font-weight: 300;
         line-height: normal;
-    }
+      }
 
-    .video-controls {
+      .video-controls {
         position: absolute;
         bottom: 10px;
         left: 10px;
         right: 10px;
-    }
+      }
 
-    .video-actions {
+      .video-actions {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
-        bottom: 30px;
+        bottom: 47px;
         position: relative;
-    }
+      }
 
-    .action-buttons {
+      .action-buttons {
         display: flex;
         flex-wrap: wrap;
         align-content: stretch;
         justify-content: space-evenly;
         align-items: baseline;
-    }
+      }
 
-    .action-button {
+      .action-button {
         background-color: transparent;
         border: none;
         color: white;
@@ -156,13 +160,13 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 7px;
-    }
+      }
 
-    .action-button i {
+      .action-button i {
         margin-right: 5px;
-    }
+      }
 
-    .see-more {
+      .see-more {
         cursor: pointer;
         padding: 5px;
 
@@ -171,38 +175,38 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
+      }
 
-    .video-progress-container {
+      .video-progress-container {
         display: flex;
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
         align-content: center;
         width: 100%;
-    }
+      }
 
-    .video-time {
+      .video-time {
         font-size: 12px;
         margin-right: 10px;
-    }
+      }
 
-    .video-progress {
+      .video-progress {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-content: space-between;
         justify-content: space-evenly;
         align-items: center;
-    }
+      }
 
-    .video-progress-inner {
+      .video-progress-inner {
         width: 30%;
         height: 100%;
         background-color: #ffcc00;
-    }
+      }
 
-    .share-overlay {
+      .share-overlay {
         display: none;
         position: fixed;
         top: 0;
@@ -212,9 +216,9 @@
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 2;
         /* width: 10%; */
-    }
+      }
 
-    .share-container {
+      .share-container {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -226,17 +230,17 @@
         /* align-items: center; */
         /* justify-content: space-around; */
         /* flex-direction: row-reverse; */
-    }
+      }
 
-    .share-header {
+      .share-header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         margin-bottom: 20px;
         flex-direction: row-reverse;
-    }
+      }
 
-    .share-title {
+      .share-title {
         /* font-size: 18px; */
         /* font-weight: bold; */
         /* color: #333; */
@@ -250,17 +254,17 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
+      }
 
-    .close-button {
+      .close-button {
         background: none;
         border: none;
         font-size: 24px;
         cursor: pointer;
         color: #333;
-    }
+      }
 
-    .share-options {
+      .share-options {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -270,45 +274,45 @@
         margin-left: auto;
         margin-right: auto;
         align-content: center;
-    }
+      }
 
-    .share-option {
+      .share-option {
         display: flex;
         flex-direction: column;
         align-items: center;
         color: #333;
         text-decoration: none;
         padding: 13px;
-    }
+      }
 
-    .share-option svg {
+      .share-option svg {
         width: 35px;
         height: 35px;
-    }
+      }
 
-    #share-toggle {
+      #share-toggle {
         display: none;
-    }
+      }
 
-    #share-toggle:checked+.share-overlay {
+      #share-toggle:checked + .share-overlay {
         display: block;
-    }
+      }
 
-    .action-button span {
+      .action-button span {
         color: #fff;
         font-size: 8px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
+      }
 
-    .action-button svg {
+      .action-button svg {
         width: 15px;
         height: 14.402px;
         flex-shrink: 0;
-    }
+      }
 
-    .voir-plus {
+      .voir-plus {
         border-radius: 30px;
         border: 1.5px solid #fff;
         padding: 3px;
@@ -327,35 +331,35 @@
         height: 26px;
         flex-shrink: 0;
         left: -19px;
-    }
+      }
 
-    .voir-plus span {
+      .voir-plus span {
         width: 5.263px;
         height: 10px;
         transform: rotate(90deg);
         flex-shrink: 0;
         stroke-width: 2px;
         stroke: #fff;
-    }
+      }
 
-    .video-progress span {
+      .video-progress span {
         color: #fff;
         font-size: 10px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         margin-left: 26px;
-    }
+      }
 
-    .voir-plus svg {
+      .voir-plus svg {
         transition: transform 0.3s ease;
-    }
+      }
 
-    .voir-plus.active svg {
+      .voir-plus.active svg {
         transform: rotate(180deg);
-    }
+      }
 
-    .plus-overlay {
+      .plus-overlay {
         position: fixed;
         bottom: -13px;
         left: 0px;
@@ -370,16 +374,16 @@
         transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
         margin-bottom: 13px;
         width: 144%;
-    }
+      }
 
-    .plus-overlay.active {
+      .plus-overlay.active {
         display: block;
         /* Affiche la section quand active */
         max-height: 200px;
         opacity: 1;
-    }
+      }
 
-    .plus-container {
+      .plus-container {
         display: flex;
         flex-direction: row;
         /* Disposition horizontale des cartes */
@@ -387,9 +391,9 @@
         /* padding: 20px; */
         width: 114%;
         /* La largeur s'adapte à la taille des cartes */
-    }
+      }
 
-    .plus-card {
+      .plus-card {
         width: 130px;
         height: 190px;
         border-radius: 5px;
@@ -399,9 +403,9 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-    }
+      }
 
-    .plus-card img {
+      .plus-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -413,9 +417,9 @@
         background-position: center;
         -webkit-filter: brightness(0.8);
         filter: brightness(0.8);
-    }
+      }
 
-    .plus-card-content {
+      .plus-card-content {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -426,16 +430,16 @@
         /* Assure que le texte est lisible */
         text-align: center;
         border-radius: 0 0 5px 5px;
-    }
+      }
 
-    .plus-card h3,
-    .plus-card p {
+      .plus-card h3,
+      .plus-card p {
         margin: 0;
         /* font-size: 12px; */
         /* line-height: 1.2; */
-    }
+      }
 
-    .plus-card h3 {
+      .plus-card h3 {
         /* font-size: 14px; */
         /* font-weight: bold; */
         color: #fff;
@@ -447,13 +451,13 @@
         top: -18px;
         position: relative;
         margin: auto;
-    }
+      }
 
-    .plus-card p {
+      .plus-card p {
         font-size: 12px;
-    }
+      }
 
-    .voir-plus-logo {
+      .voir-plus-logo {
         display: flex;
         align-items: center;
         color: #fff;
@@ -462,9 +466,9 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-    }
+      }
 
-    .voir-plus-logo img {
+      .voir-plus-logo img {
         /* width: 30px; */
         /* height: 30px; */
         border-radius: 50%;
@@ -474,9 +478,9 @@
         flex-shrink: 0;
         top: 28px;
         left: 10px;
-    }
+      }
 
-    .voir-plus-logo span {
+      .voir-plus-logo span {
         color: #fff;
         font-size: 10px;
         font-style: normal;
@@ -484,9 +488,9 @@
         line-height: normal;
         left: 33px;
         position: relative;
-    }
+      }
 
-    .plus-card-content p {
+      .plus-card-content p {
         color: #fff;
         font-size: 10px;
         font-style: normal;
@@ -495,280 +499,399 @@
         top: -120px;
         position: relative;
         right: -42px;
-    }
+      }
 
-    ::-webkit-scrollbar {
+      ::-webkit-scrollbar {
         display: none;
-    }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="video-container">
-        <img src="./assets/img7.jfif" alt="Video Placeholder" style="width: 100%; height: 100%; object-fit: cover" />
-        <div class="video-overlay">
-            <div class="video-title">
-                Les délices de Fatou, les meilleures recettes de la semaine
-            </div>
-            <div class="video-header">
-                <div class="mtn-logo">
-                    <img src="./assets/img12.jfif" alt="MTN Logo" />
-                    MTN
-                </div>
-                <div class="video-subtitle">Il y a 2 min</div>
-            </div>
+      <video
+        id="videoElement"
+        controls
+        style="width: 100%; height: 100%; object-fit: cover"
+      >
+        <source id="videoSource" src="" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
 
-            <div class="video-controls">
-                <div class="video-actions">
-                    <div class="action-buttons">
-                        <button class="action-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15"
-                                fill="none">
-                                <path
-                                    d="M13.5798 9.79109C13.875 9.41463 14.0165 9.01106 13.9985 8.59544C13.9804 8.13766 13.7756 7.77927 13.6069 7.55941C13.8027 7.07151 13.878 6.30353 13.2245 5.70721C12.7456 5.27051 11.9324 5.07474 10.806 5.12896C10.014 5.1651 9.35138 5.31267 9.32428 5.31869H9.32127C9.17068 5.3458 9.01106 5.37893 8.84843 5.41507C8.83638 5.22232 8.86951 4.74346 9.22489 3.66526C9.64653 2.38227 9.62244 1.40045 9.14659 0.743894C8.64664 0.054211 7.84854 0 7.61362 0C7.38774 0 7.17994 0.0933633 7.03236 0.265031C6.69806 0.653543 6.73721 1.37033 6.77938 1.70162C6.38183 2.76777 5.26749 5.38194 4.32483 6.10776C4.30676 6.11981 4.2917 6.13487 4.27664 6.14993C3.99956 6.44206 3.81283 6.7583 3.68634 7.03537C3.50865 6.939 3.30687 6.88479 3.09002 6.88479H1.25287C0.56018 6.88479 0 7.44798 0 8.13766V13.0317C0 13.7244 0.563191 14.2846 1.25287 14.2846H3.09002C3.35807 14.2846 3.60804 14.2002 3.81283 14.0557L4.52059 14.14C4.62901 14.1551 6.55651 14.399 8.53521 14.3599C8.8936 14.387 9.23092 14.402 9.54413 14.402C10.0832 14.402 10.5531 14.3599 10.9446 14.2755C11.8662 14.0798 12.4956 13.6883 12.8149 13.113C13.0588 12.6733 13.0588 12.2366 13.0197 11.9595C13.619 11.4174 13.7244 10.8181 13.7033 10.3965C13.6913 10.1525 13.6371 9.94469 13.5798 9.79109ZM1.25287 13.4714C1.00893 13.4714 0.813164 13.2726 0.813164 13.0317V8.13465C0.813164 7.8907 1.01194 7.69494 1.25287 7.69494H3.09002C3.33397 7.69494 3.52973 7.89371 3.52973 8.13465V13.0287C3.52973 13.2726 3.33096 13.4684 3.09002 13.4684H1.25287V13.4714ZM12.8088 9.43872C12.6823 9.57124 12.6582 9.77302 12.7546 9.92963C12.7546 9.93265 12.8781 10.1435 12.8932 10.4326C12.9142 10.8271 12.7245 11.1765 12.327 11.4746C12.1854 11.5831 12.1282 11.7698 12.1884 11.9384C12.1884 11.9415 12.3179 12.339 12.1071 12.7155C11.9053 13.0769 11.4566 13.3359 10.7759 13.4804C10.2308 13.5979 9.48992 13.619 8.58039 13.5467C8.56834 13.5467 8.55328 13.5467 8.53822 13.5467C6.60169 13.5889 4.64407 13.3359 4.62299 13.3329H4.61998L4.31579 13.2967C4.33386 13.2124 4.3429 13.1221 4.3429 13.0317V8.13465C4.3429 8.00515 4.32182 7.87865 4.28567 7.7612C4.33989 7.55941 4.49047 7.11067 4.84585 6.72818C6.19812 5.65601 7.52026 2.03893 7.57748 1.88232C7.60158 1.81908 7.6076 1.74981 7.59555 1.68054C7.54435 1.34323 7.56242 0.930621 7.6347 0.80714C7.79433 0.810152 8.225 0.855328 8.48401 1.21372C8.7912 1.63837 8.77916 2.39733 8.44787 3.40324C7.9419 4.93621 7.89974 5.74335 8.30029 6.09873C8.49907 6.27642 8.7641 6.28545 8.95685 6.21619C9.14056 6.17402 9.31524 6.13788 9.48089 6.11078C9.49294 6.10776 9.50799 6.10475 9.52004 6.10174C10.4446 5.89996 12.1011 5.77647 12.6763 6.30051C13.1642 6.74625 12.8179 7.33654 12.7787 7.39979C12.6673 7.56845 12.7004 7.7883 12.851 7.92383C12.854 7.92684 13.1702 8.225 13.1853 8.62556C13.1973 8.8936 13.0709 9.16767 12.8088 9.43872Z"
-                                    fill="white" />
-                            </svg>
-                            <span>30k</span>
-                        </button>
-                        <button class="action-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15"
-                                fill="none">
-                                <path
-                                    d="M0.420163 4.61094C0.125015 4.98741 -0.0165358 5.39098 0.00153542 5.8066C0.0196056 6.26438 0.224402 6.62277 0.393058 6.84263C0.197296 7.33052 0.122004 8.09851 0.775547 8.69483C1.25441 9.13153 2.06757 9.32729 3.19396 9.27308C3.98604 9.23694 4.64862 9.08937 4.67572 9.08334H4.67873C4.82932 9.05624 4.98894 9.02311 5.15157 8.98697C5.16362 9.17972 5.13049 9.65858 4.77511 10.7368C4.35347 12.0198 4.37756 13.0016 4.85341 13.6581C5.35336 14.3478 6.15146 14.402 6.38638 14.402C6.61226 14.402 6.82006 14.3087 6.96764 14.137C7.30194 13.7485 7.26279 13.0317 7.22062 12.7004C7.61817 11.6343 8.73251 9.0201 9.67517 8.29427C9.69324 8.28223 9.7083 8.26717 9.72336 8.25211C10.0004 7.95997 10.1872 7.64374 10.3137 7.36667C10.4913 7.46304 10.6931 7.51725 10.91 7.51725H12.7471C13.4398 7.51725 14 6.95406 14 6.26438V1.37034C14 0.67764 13.4368 0.117461 12.7471 0.117461H10.91C10.6419 0.117461 10.392 0.201789 10.1872 0.346351L9.47941 0.262023C9.37099 0.246964 7.44349 0.00301552 5.46479 0.0421686C5.1064 0.0150633 4.76908 3.8147e-06 4.45587 3.8147e-06C3.91677 3.8147e-06 3.44694 0.0421677 3.05542 0.126496C2.13383 0.322258 1.50438 0.713781 1.18514 1.28902C0.941192 1.72873 0.941191 2.16543 0.980343 2.44251C0.381011 2.98462 0.275601 3.58395 0.296684 4.00559C0.308731 4.24954 0.362941 4.45735 0.420163 4.61094ZM12.7471 0.930625C12.9911 0.930625 13.1868 1.1294 13.1868 1.37034V6.26739C13.1868 6.51134 12.9881 6.7071 12.7471 6.7071H10.91C10.666 6.7071 10.4703 6.50833 10.4703 6.26739V1.37335C10.4703 1.1294 10.669 0.933636 10.91 0.933636H12.7471V0.930625ZM1.19116 4.96332C1.31766 4.8308 1.34175 4.62901 1.24537 4.4724C1.24537 4.46939 1.12189 4.25857 1.10684 3.96945C1.08575 3.57491 1.27549 3.22555 1.67304 2.92739C1.81459 2.81897 1.87181 2.63225 1.81158 2.46359C1.81158 2.46058 1.68207 2.06303 1.89289 1.68657C2.09468 1.32516 2.54342 1.06615 3.22407 0.921589C3.76919 0.804132 4.51008 0.783051 5.41961 0.855332C5.43166 0.855332 5.44672 0.855332 5.46178 0.855332C7.39831 0.813169 9.35593 1.06615 9.37701 1.06916H9.38002L9.68421 1.1053C9.66614 1.18963 9.6571 1.27998 9.6571 1.37034V6.26739C9.6571 6.39689 9.67818 6.52338 9.71433 6.64084C9.66011 6.84263 9.50953 7.29137 9.15415 7.67386C7.80188 8.74603 6.47974 12.3631 6.42252 12.5197C6.39842 12.583 6.3924 12.6522 6.40445 12.7215C6.45565 13.0588 6.43758 13.4714 6.3653 13.5949C6.20567 13.5919 5.775 13.5467 5.51599 13.1883C5.2088 12.7637 5.22084 12.0047 5.55213 10.9988C6.0581 9.46583 6.10026 8.65869 5.69971 8.30331C5.50093 8.12562 5.2359 8.11658 5.04315 8.18585C4.85944 8.22802 4.68476 8.26416 4.51911 8.29126C4.50706 8.29427 4.49201 8.29729 4.47996 8.3003C3.55536 8.50208 1.89892 8.62556 1.32368 8.10152C0.83578 7.65579 1.18213 7.06549 1.22128 7.00225C1.33271 6.83359 1.29959 6.61374 1.149 6.47821C1.14599 6.4752 0.829758 6.17704 0.814699 5.77648C0.802652 5.50844 0.929144 5.23437 1.19116 4.96332Z"
-                                    fill="white" />
-                            </svg>
-                            <span>10</span>
-                        </button>
-                        <label for="share-toggle" class="action-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14"
-                                fill="none">
-                                <path
-                                    d="M10.7667 3.73333V4.16698L10.3374 4.22831C7.18597 4.67851 4.96213 6.02163 3.40963 7.79592C2.33296 9.02639 1.56857 10.4768 1.0487 12.0053C3.35051 9.76879 6.35576 8.74 10.2667 8.74H10.7667V9.24V11.8596L16.0929 6.53333L10.7667 1.20711V3.73333Z"
-                                    stroke="white" />
-                            </svg>
-                            <span>15k</span>
-                        </label>
-                    </div>
-                    <button class="voir-plus" id="voirPlusBtn">
-                        <span class="see-more">Voir plus</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                            <path d="M11 7.26316L6 2L1 7.26316" stroke="white" stroke-width="2" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="video-progress-container">
-                    <span class="video-time"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-                            viewBox="0 0 19 18" fill="none">
-                            <path d="M3 0V18" stroke="white" stroke-width="5" />
-                            <path d="M16.5 0V18" stroke="white" stroke-width="5" />
-                        </svg></span>
-                    <div class="video-progress">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="241" height="10" viewBox="0 0 241 10"
-                            fill="none">
-                            <line x1="134" y1="5" x2="240" y2="4.99999" stroke="white" stroke-opacity="0.5"
-                                stroke-width="2" stroke-linecap="round" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M133 5C133 6.65685 131.657 8 130 8C128.343 8 127 6.65685 127 5C127 3.34315 128.343 2 130 2C131.657 2 133 3.34315 133 5ZM135 5C135 7.76142 132.761 10 130 10C127.579 10 125.56 8.27981 125.099 5.99515C125.066 5.99836 125.033 6 125 6H1C0.447715 6 0 5.55228 0 5C0 4.44772 0.447715 4 1 4H125C125.033 4 125.066 4.00164 125.099 4.00485C125.56 1.72019 127.579 0 130 0C132.761 0 135 2.23858 135 5Z"
-                                fill="white" />
-                        </svg>
-                        <span>1:03</span>
-                    </div>
-                </div>
-            </div>
+      <div class="video-overlay">
+        <div class="video-title">
+          Les délices de Fatou, les meilleures recettes de la semaine
         </div>
+        <div class="video-header">
+          <div class="mtn-logo">
+            <img src="./assets/img12.jfif" alt="MTN Logo" />
+            MTN
+          </div>
+          <div class="video-subtitle">Il y a 2 min</div>
+        </div>
+
+        <div class="video-controls">
+          <div class="video-actions">
+            <div class="action-buttons">
+              <button class="action-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="15"
+                  viewBox="0 0 14 15"
+                  fill="none"
+                >
+                  <path
+                    d="M13.5798 9.79109C13.875 9.41463 14.0165 9.01106 13.9985 8.59544C13.9804 8.13766 13.7756 7.77927 13.6069 7.55941C13.8027 7.07151 13.878 6.30353 13.2245 5.70721C12.7456 5.27051 11.9324 5.07474 10.806 5.12896C10.014 5.1651 9.35138 5.31267 9.32428 5.31869H9.32127C9.17068 5.3458 9.01106 5.37893 8.84843 5.41507C8.83638 5.22232 8.86951 4.74346 9.22489 3.66526C9.64653 2.38227 9.62244 1.40045 9.14659 0.743894C8.64664 0.054211 7.84854 0 7.61362 0C7.38774 0 7.17994 0.0933633 7.03236 0.265031C6.69806 0.653543 6.73721 1.37033 6.77938 1.70162C6.38183 2.76777 5.26749 5.38194 4.32483 6.10776C4.30676 6.11981 4.2917 6.13487 4.27664 6.14993C3.99956 6.44206 3.81283 6.7583 3.68634 7.03537C3.50865 6.939 3.30687 6.88479 3.09002 6.88479H1.25287C0.56018 6.88479 0 7.44798 0 8.13766V13.0317C0 13.7244 0.563191 14.2846 1.25287 14.2846H3.09002C3.35807 14.2846 3.60804 14.2002 3.81283 14.0557L4.52059 14.14C4.62901 14.1551 6.55651 14.399 8.53521 14.3599C8.8936 14.387 9.23092 14.402 9.54413 14.402C10.0832 14.402 10.5531 14.3599 10.9446 14.2755C11.8662 14.0798 12.4956 13.6883 12.8149 13.113C13.0588 12.6733 13.0588 12.2366 13.0197 11.9595C13.619 11.4174 13.7244 10.8181 13.7033 10.3965C13.6913 10.1525 13.6371 9.94469 13.5798 9.79109ZM1.25287 13.4714C1.00893 13.4714 0.813164 13.2726 0.813164 13.0317V8.13465C0.813164 7.8907 1.01194 7.69494 1.25287 7.69494H3.09002C3.33397 7.69494 3.52973 7.89371 3.52973 8.13465V13.0287C3.52973 13.2726 3.33096 13.4684 3.09002 13.4684H1.25287V13.4714ZM12.8088 9.43872C12.6823 9.57124 12.6582 9.77302 12.7546 9.92963C12.7546 9.93265 12.8781 10.1435 12.8932 10.4326C12.9142 10.8271 12.7245 11.1765 12.327 11.4746C12.1854 11.5831 12.1282 11.7698 12.1884 11.9384C12.1884 11.9415 12.3179 12.339 12.1071 12.7155C11.9053 13.0769 11.4566 13.3359 10.7759 13.4804C10.2308 13.5979 9.48992 13.619 8.58039 13.5467C8.56834 13.5467 8.55328 13.5467 8.53822 13.5467C6.60169 13.5889 4.64407 13.3359 4.62299 13.3329H4.61998L4.31579 13.2967C4.33386 13.2124 4.3429 13.1221 4.3429 13.0317V8.13465C4.3429 8.00515 4.32182 7.87865 4.28567 7.7612C4.33989 7.55941 4.49047 7.11067 4.84585 6.72818C6.19812 5.65601 7.52026 2.03893 7.57748 1.88232C7.60158 1.81908 7.6076 1.74981 7.59555 1.68054C7.54435 1.34323 7.56242 0.930621 7.6347 0.80714C7.79433 0.810152 8.225 0.855328 8.48401 1.21372C8.7912 1.63837 8.77916 2.39733 8.44787 3.40324C7.9419 4.93621 7.89974 5.74335 8.30029 6.09873C8.49907 6.27642 8.7641 6.28545 8.95685 6.21619C9.14056 6.17402 9.31524 6.13788 9.48089 6.11078C9.49294 6.10776 9.50799 6.10475 9.52004 6.10174C10.4446 5.89996 12.1011 5.77647 12.6763 6.30051C13.1642 6.74625 12.8179 7.33654 12.7787 7.39979C12.6673 7.56845 12.7004 7.7883 12.851 7.92383C12.854 7.92684 13.1702 8.225 13.1853 8.62556C13.1973 8.8936 13.0709 9.16767 12.8088 9.43872Z"
+                    fill="white"
+                  />
+                </svg>
+                <span>30k</span>
+              </button>
+              <button class="action-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="15"
+                  viewBox="0 0 14 15"
+                  fill="none"
+                >
+                  <path
+                    d="M0.420163 4.61094C0.125015 4.98741 -0.0165358 5.39098 0.00153542 5.8066C0.0196056 6.26438 0.224402 6.62277 0.393058 6.84263C0.197296 7.33052 0.122004 8.09851 0.775547 8.69483C1.25441 9.13153 2.06757 9.32729 3.19396 9.27308C3.98604 9.23694 4.64862 9.08937 4.67572 9.08334H4.67873C4.82932 9.05624 4.98894 9.02311 5.15157 8.98697C5.16362 9.17972 5.13049 9.65858 4.77511 10.7368C4.35347 12.0198 4.37756 13.0016 4.85341 13.6581C5.35336 14.3478 6.15146 14.402 6.38638 14.402C6.61226 14.402 6.82006 14.3087 6.96764 14.137C7.30194 13.7485 7.26279 13.0317 7.22062 12.7004C7.61817 11.6343 8.73251 9.0201 9.67517 8.29427C9.69324 8.28223 9.7083 8.26717 9.72336 8.25211C10.0004 7.95997 10.1872 7.64374 10.3137 7.36667C10.4913 7.46304 10.6931 7.51725 10.91 7.51725H12.7471C13.4398 7.51725 14 6.95406 14 6.26438V1.37034C14 0.67764 13.4368 0.117461 12.7471 0.117461H10.91C10.6419 0.117461 10.392 0.201789 10.1872 0.346351L9.47941 0.262023C9.37099 0.246964 7.44349 0.00301552 5.46479 0.0421686C5.1064 0.0150633 4.76908 3.8147e-06 4.45587 3.8147e-06C3.91677 3.8147e-06 3.44694 0.0421677 3.05542 0.126496C2.13383 0.322258 1.50438 0.713781 1.18514 1.28902C0.941192 1.72873 0.941191 2.16543 0.980343 2.44251C0.381011 2.98462 0.275601 3.58395 0.296684 4.00559C0.308731 4.24954 0.362941 4.45735 0.420163 4.61094ZM12.7471 0.930625C12.9911 0.930625 13.1868 1.1294 13.1868 1.37034V6.26739C13.1868 6.51134 12.9881 6.7071 12.7471 6.7071H10.91C10.666 6.7071 10.4703 6.50833 10.4703 6.26739V1.37335C10.4703 1.1294 10.669 0.933636 10.91 0.933636H12.7471V0.930625ZM1.19116 4.96332C1.31766 4.8308 1.34175 4.62901 1.24537 4.4724C1.24537 4.46939 1.12189 4.25857 1.10684 3.96945C1.08575 3.57491 1.27549 3.22555 1.67304 2.92739C1.81459 2.81897 1.87181 2.63225 1.81158 2.46359C1.81158 2.46058 1.68207 2.06303 1.89289 1.68657C2.09468 1.32516 2.54342 1.06615 3.22407 0.921589C3.76919 0.804132 4.51008 0.783051 5.41961 0.855332C5.43166 0.855332 5.44672 0.855332 5.46178 0.855332C7.39831 0.813169 9.35593 1.06615 9.37701 1.06916H9.38002L9.68421 1.1053C9.66614 1.18963 9.6571 1.27998 9.6571 1.37034V6.26739C9.6571 6.39689 9.67818 6.52338 9.71433 6.64084C9.66011 6.84263 9.50953 7.29137 9.15415 7.67386C7.80188 8.74603 6.47974 12.3631 6.42252 12.5197C6.39842 12.583 6.3924 12.6522 6.40445 12.7215C6.45565 13.0588 6.43758 13.4714 6.3653 13.5949C6.20567 13.5919 5.775 13.5467 5.51599 13.1883C5.2088 12.7637 5.22084 12.0047 5.55213 10.9988C6.0581 9.46583 6.10026 8.65869 5.69971 8.30331C5.50093 8.12562 5.2359 8.11658 5.04315 8.18585C4.85944 8.22802 4.68476 8.26416 4.51911 8.29126C4.50706 8.29427 4.49201 8.29729 4.47996 8.3003C3.55536 8.50208 1.89892 8.62556 1.32368 8.10152C0.83578 7.65579 1.18213 7.06549 1.22128 7.00225C1.33271 6.83359 1.29959 6.61374 1.149 6.47821C1.14599 6.4752 0.829758 6.17704 0.814699 5.77648C0.802652 5.50844 0.929144 5.23437 1.19116 4.96332Z"
+                    fill="white"
+                  />
+                </svg>
+                <span>10</span>
+              </button>
+              <label for="share-toggle" class="action-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="14"
+                  viewBox="0 0 17 14"
+                  fill="none"
+                >
+                  <path
+                    d="M10.7667 3.73333V4.16698L10.3374 4.22831C7.18597 4.67851 4.96213 6.02163 3.40963 7.79592C2.33296 9.02639 1.56857 10.4768 1.0487 12.0053C3.35051 9.76879 6.35576 8.74 10.2667 8.74H10.7667V9.24V11.8596L16.0929 6.53333L10.7667 1.20711V3.73333Z"
+                    stroke="white"
+                  />
+                </svg>
+                <span>15k</span>
+              </label>
+            </div>
+            <button class="voir-plus" id="voirPlusBtn">
+              <span class="see-more">Voir plus</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+              >
+                <path
+                  d="M11 7.26316L6 2L1 7.26316"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <input type="checkbox" id="share-toggle" />
     <div class="share-overlay">
-        <div class="share-container">
-            <div class="share-header">
-                <span class="share-title">Partager la vidéo</span>
-                <label for="share-toggle" class="close-button"><svg xmlns="http://www.w3.org/2000/svg" width="28"
-                        height="28" viewBox="0 0 28 28" fill="none">
-                        <path d="M6.78676 20.9289L20.9289 6.78675" stroke="#0076C0" stroke-width="2" />
-                        <path d="M20.4332 20.5789L6.99822 7.1439" stroke="#0076C0" stroke-width="2" />
-                    </svg></label>
-            </div>
-            <div class="share-options">
-                <div class="share-option">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <g clip-path="url(#clip0_2_4697)">
-                            <path
-                                d="M17.4999 0C27.1655 0 35 7.83562 35 17.5001C35 27.1656 27.1655 35 17.4999 35C7.83442 35 0 27.1655 0 17.5001C0 7.83562 7.83454 0 17.4999 0Z"
-                                fill="#3B5998" />
-                            <path
-                                d="M19.6308 12.0476H21.8861V8.71603H19.2349V8.72805C16.0225 8.84182 15.3641 10.6476 15.3061 12.5442H15.2995V14.2078H13.1121V17.4704H15.2995V26.216H18.5961V17.4704H21.2966L21.8182 14.2078H18.5972V13.2027C18.5972 12.5617 19.0237 12.0476 19.6308 12.0476Z"
-                                fill="white" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_2_4697">
-                                <rect width="35" height="35" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="share-option">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <g clip-path="url(#clip0_2_4701)">
-                            <path
-                                d="M24.5733 0H10.4267C4.67739 0 0 4.67739 0 10.4267V24.5733C0 30.3226 4.67739 35 10.4267 35H24.5733C30.3226 35 35 30.3226 35 24.5733V10.4267C34.9999 4.67739 30.3225 0 24.5733 0ZM31.479 24.5733C31.479 28.3872 28.3872 31.479 24.5733 31.479H10.4267C6.61281 31.479 3.521 28.3872 3.521 24.5733V10.4267C3.521 6.61275 6.61281 3.521 10.4267 3.521H24.5733C28.3872 3.521 31.479 6.61275 31.479 10.4267V24.5733Z"
-                                fill="url(#paint0_linear_2_4701)" />
-                            <path
-                                d="M17.5 8.44775C12.5086 8.44775 8.4478 12.5086 8.4478 17.4999C8.4478 22.4913 12.5086 26.5522 17.5 26.5522C22.4915 26.5522 26.5523 22.4914 26.5523 17.4999C26.5523 12.5085 22.4915 8.44775 17.5 8.44775ZM17.5 23.0312C14.4452 23.0312 11.9688 20.5548 11.9688 17.5C11.9688 14.4452 14.4453 11.9688 17.5 11.9688C20.5549 11.9688 23.0313 14.4452 23.0313 17.5C23.0313 20.5548 20.5548 23.0312 17.5 23.0312Z"
-                                fill="url(#paint1_linear_2_4701)" />
-                            <path
-                                d="M26.5697 10.6848C27.7677 10.6848 28.7388 9.71369 28.7388 8.51573C28.7388 7.31776 27.7677 6.34662 26.5697 6.34662C25.3717 6.34662 24.4006 7.31776 24.4006 8.51573C24.4006 9.71369 25.3717 10.6848 26.5697 10.6848Z"
-                                fill="url(#paint2_linear_2_4701)" />
-                        </g>
-                        <defs>
-                            <linearGradient id="paint0_linear_2_4701" x1="17.5" y1="34.8981" x2="17.5" y2="0.271851"
-                                gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#E09B3D" />
-                                <stop offset="0.3" stop-color="#C74C4D" />
-                                <stop offset="0.6" stop-color="#C21975" />
-                                <stop offset="1" stop-color="#7024C4" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_2_4701" x1="17.5" y1="34.8981" x2="17.5" y2="0.271852"
-                                gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#E09B3D" />
-                                <stop offset="0.3" stop-color="#C74C4D" />
-                                <stop offset="0.6" stop-color="#C21975" />
-                                <stop offset="1" stop-color="#7024C4" />
-                            </linearGradient>
-                            <linearGradient id="paint2_linear_2_4701" x1="26.5697" y1="34.8981" x2="26.5697"
-                                y2="0.27186" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#E09B3D" />
-                                <stop offset="0.3" stop-color="#C74C4D" />
-                                <stop offset="0.6" stop-color="#C21975" />
-                                <stop offset="1" stop-color="#7024C4" />
-                            </linearGradient>
-                            <clipPath id="clip0_2_4701">
-                                <rect width="35" height="35" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="share-option">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <g clip-path="url(#clip0_2_4706)">
-                            <path
-                                d="M17.5009 34.9997C27.1657 34.9997 35.0007 27.1647 35.0007 17.4998C35.0007 7.83495 27.1657 0 17.5009 0C7.83595 0 0.00100708 7.83495 0.00100708 17.4998C0.00100708 27.1647 7.83595 34.9997 17.5009 34.9997Z"
-                                fill="#55ACEE" />
-                            <path
-                                d="M28.2194 12.5766C27.4695 12.9092 26.6628 13.1341 25.8168 13.2345C26.6806 12.717 27.3435 11.8981 27.6563 10.9208C26.8481 11.4002 25.9525 11.7481 25.0001 11.9356C24.237 11.1229 23.1499 10.6151 21.9461 10.6151C19.6364 10.6151 17.7631 12.4883 17.7631 14.798C17.7631 15.1259 17.8002 15.445 17.872 15.7513C14.3956 15.577 11.3132 13.9118 9.24997 11.3803C8.88998 11.9979 8.68346 12.717 8.68346 13.4835C8.68346 14.9343 9.42248 16.2152 10.5443 16.9651C9.8589 16.9436 9.21347 16.7555 8.64977 16.4414C8.64946 16.4592 8.64946 16.4769 8.64946 16.4944C8.64946 18.5212 10.0919 20.2116 12.0051 20.5956C11.6545 20.6917 11.2842 20.7426 10.9033 20.7426C10.6332 20.7426 10.3714 20.7167 10.1163 20.668C10.6484 22.3295 12.1929 23.5389 14.0238 23.5729C12.5919 24.695 10.7885 25.3635 8.82821 25.3635C8.4913 25.3635 8.15752 25.3438 7.8309 25.3049C9.68109 26.4921 11.8803 27.1844 14.2424 27.1844C21.9364 27.1844 26.144 20.8106 26.144 15.2825C26.144 15.1012 26.1399 14.9206 26.1318 14.7416C26.9498 14.152 27.6588 13.4155 28.2194 12.5766Z"
-                                fill="#F1F2F2" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_2_4706">
-                                <rect width="35" height="35" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="share-option">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <path d="M30.625 4.375H4.375V30.625H30.625V4.375Z" fill="#ECEFF1" />
-                        <path d="M17.5 20.2606L30.625 30.625V10.1631L17.5 20.2606Z" fill="#CFD8DC" />
-                        <path
-                            d="M31.7188 4.375H30.625L17.5 14.7394L4.375 4.375H3.28125C1.47 4.375 0 5.845 0 7.65625V27.3438C0 29.155 1.47 30.625 3.28125 30.625H4.375V10.1631L17.5 20.2584L30.625 10.1609V30.625H31.7188C33.53 30.625 35 29.155 35 27.3438V7.65625C35 5.845 33.53 4.375 31.7188 4.375Z"
-                            fill="#F44336" />
-                    </svg>
-                </div>
-                <div class="share-option">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <g clip-path="url(#clip0_2_4712)">
-                            <path
-                                d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35Z"
-                                fill="#D22215" />
-                            <path
-                                d="M26.3086 11.6443C25.7838 11.8044 25.2366 11.9421 24.6885 12.0791C20.7996 12.904 15.6144 10.665 13.3754 14.3182C11.508 17.223 10.9184 20.858 8.79414 23.4553L20.1406 34.8018C27.6923 33.6588 33.6603 27.6899 34.8021 20.1379L26.3086 11.6443Z"
-                                fill="#A81411" />
-                            <path
-                                d="M23.3548 10.4134H11.645C9.34758 10.4134 7.4852 12.2758 7.4852 14.5732V20.4269C7.4852 22.7243 9.34765 24.5867 11.645 24.5867H23.3548C25.6523 24.5867 27.5146 22.7243 27.5146 20.4269V14.5732C27.5146 12.2758 25.6522 10.4134 23.3548 10.4134ZM20.5415 17.7848L15.0645 20.397C14.9185 20.4666 14.7499 20.3603 14.7499 20.1987V14.811C14.7499 14.6469 14.923 14.5406 15.0691 14.6148L20.5461 17.3903C20.7092 17.4728 20.7062 17.7064 20.5415 17.7848Z"
-                                fill="white" />
-                            <path
-                                d="M23.3549 10.4134H17.3822V15.7868L20.5463 17.3901C20.7093 17.4727 20.7064 17.7062 20.5416 17.7848L17.3822 19.2917V24.5867H23.3549C25.6524 24.5867 27.5148 22.7243 27.5148 20.4269V14.5732C27.5148 12.2758 25.6523 10.4134 23.3549 10.4134Z"
-                                fill="#D1D1D1" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_2_4712">
-                                <rect width="35" height="35" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
+      <div class="share-container">
+        <div class="share-header">
+          <span class="share-title">Partager la vidéo</span>
+          <label for="share-toggle" class="close-button"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M6.78676 20.9289L20.9289 6.78675"
+                stroke="#0076C0"
+                stroke-width="2"
+              />
+              <path
+                d="M20.4332 20.5789L6.99822 7.1439"
+                stroke="#0076C0"
+                stroke-width="2"
+              /></svg
+          ></label>
         </div>
+        <div class="share-options">
+          <div class="share-option">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_2_4697)">
+                <path
+                  d="M17.4999 0C27.1655 0 35 7.83562 35 17.5001C35 27.1656 27.1655 35 17.4999 35C7.83442 35 0 27.1655 0 17.5001C0 7.83562 7.83454 0 17.4999 0Z"
+                  fill="#3B5998"
+                />
+                <path
+                  d="M19.6308 12.0476H21.8861V8.71603H19.2349V8.72805C16.0225 8.84182 15.3641 10.6476 15.3061 12.5442H15.2995V14.2078H13.1121V17.4704H15.2995V26.216H18.5961V17.4704H21.2966L21.8182 14.2078H18.5972V13.2027C18.5972 12.5617 19.0237 12.0476 19.6308 12.0476Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_4697">
+                  <rect width="35" height="35" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="share-option">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_2_4701)">
+                <path
+                  d="M24.5733 0H10.4267C4.67739 0 0 4.67739 0 10.4267V24.5733C0 30.3226 4.67739 35 10.4267 35H24.5733C30.3226 35 35 30.3226 35 24.5733V10.4267C34.9999 4.67739 30.3225 0 24.5733 0ZM31.479 24.5733C31.479 28.3872 28.3872 31.479 24.5733 31.479H10.4267C6.61281 31.479 3.521 28.3872 3.521 24.5733V10.4267C3.521 6.61275 6.61281 3.521 10.4267 3.521H24.5733C28.3872 3.521 31.479 6.61275 31.479 10.4267V24.5733Z"
+                  fill="url(#paint0_linear_2_4701)"
+                />
+                <path
+                  d="M17.5 8.44775C12.5086 8.44775 8.4478 12.5086 8.4478 17.4999C8.4478 22.4913 12.5086 26.5522 17.5 26.5522C22.4915 26.5522 26.5523 22.4914 26.5523 17.4999C26.5523 12.5085 22.4915 8.44775 17.5 8.44775ZM17.5 23.0312C14.4452 23.0312 11.9688 20.5548 11.9688 17.5C11.9688 14.4452 14.4453 11.9688 17.5 11.9688C20.5549 11.9688 23.0313 14.4452 23.0313 17.5C23.0313 20.5548 20.5548 23.0312 17.5 23.0312Z"
+                  fill="url(#paint1_linear_2_4701)"
+                />
+                <path
+                  d="M26.5697 10.6848C27.7677 10.6848 28.7388 9.71369 28.7388 8.51573C28.7388 7.31776 27.7677 6.34662 26.5697 6.34662C25.3717 6.34662 24.4006 7.31776 24.4006 8.51573C24.4006 9.71369 25.3717 10.6848 26.5697 10.6848Z"
+                  fill="url(#paint2_linear_2_4701)"
+                />
+              </g>
+              <defs>
+                <linearGradient
+                  id="paint0_linear_2_4701"
+                  x1="17.5"
+                  y1="34.8981"
+                  x2="17.5"
+                  y2="0.271851"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#E09B3D" />
+                  <stop offset="0.3" stop-color="#C74C4D" />
+                  <stop offset="0.6" stop-color="#C21975" />
+                  <stop offset="1" stop-color="#7024C4" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_2_4701"
+                  x1="17.5"
+                  y1="34.8981"
+                  x2="17.5"
+                  y2="0.271852"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#E09B3D" />
+                  <stop offset="0.3" stop-color="#C74C4D" />
+                  <stop offset="0.6" stop-color="#C21975" />
+                  <stop offset="1" stop-color="#7024C4" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_2_4701"
+                  x1="26.5697"
+                  y1="34.8981"
+                  x2="26.5697"
+                  y2="0.27186"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#E09B3D" />
+                  <stop offset="0.3" stop-color="#C74C4D" />
+                  <stop offset="0.6" stop-color="#C21975" />
+                  <stop offset="1" stop-color="#7024C4" />
+                </linearGradient>
+                <clipPath id="clip0_2_4701">
+                  <rect width="35" height="35" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="share-option">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_2_4706)">
+                <path
+                  d="M17.5009 34.9997C27.1657 34.9997 35.0007 27.1647 35.0007 17.4998C35.0007 7.83495 27.1657 0 17.5009 0C7.83595 0 0.00100708 7.83495 0.00100708 17.4998C0.00100708 27.1647 7.83595 34.9997 17.5009 34.9997Z"
+                  fill="#55ACEE"
+                />
+                <path
+                  d="M28.2194 12.5766C27.4695 12.9092 26.6628 13.1341 25.8168 13.2345C26.6806 12.717 27.3435 11.8981 27.6563 10.9208C26.8481 11.4002 25.9525 11.7481 25.0001 11.9356C24.237 11.1229 23.1499 10.6151 21.9461 10.6151C19.6364 10.6151 17.7631 12.4883 17.7631 14.798C17.7631 15.1259 17.8002 15.445 17.872 15.7513C14.3956 15.577 11.3132 13.9118 9.24997 11.3803C8.88998 11.9979 8.68346 12.717 8.68346 13.4835C8.68346 14.9343 9.42248 16.2152 10.5443 16.9651C9.8589 16.9436 9.21347 16.7555 8.64977 16.4414C8.64946 16.4592 8.64946 16.4769 8.64946 16.4944C8.64946 18.5212 10.0919 20.2116 12.0051 20.5956C11.6545 20.6917 11.2842 20.7426 10.9033 20.7426C10.6332 20.7426 10.3714 20.7167 10.1163 20.668C10.6484 22.3295 12.1929 23.5389 14.0238 23.5729C12.5919 24.695 10.7885 25.3635 8.82821 25.3635C8.4913 25.3635 8.15752 25.3438 7.8309 25.3049C9.68109 26.4921 11.8803 27.1844 14.2424 27.1844C21.9364 27.1844 26.144 20.8106 26.144 15.2825C26.144 15.1012 26.1399 14.9206 26.1318 14.7416C26.9498 14.152 27.6588 13.4155 28.2194 12.5766Z"
+                  fill="#F1F2F2"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_4706">
+                  <rect width="35" height="35" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="share-option">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <path
+                d="M30.625 4.375H4.375V30.625H30.625V4.375Z"
+                fill="#ECEFF1"
+              />
+              <path
+                d="M17.5 20.2606L30.625 30.625V10.1631L17.5 20.2606Z"
+                fill="#CFD8DC"
+              />
+              <path
+                d="M31.7188 4.375H30.625L17.5 14.7394L4.375 4.375H3.28125C1.47 4.375 0 5.845 0 7.65625V27.3438C0 29.155 1.47 30.625 3.28125 30.625H4.375V10.1631L17.5 20.2584L30.625 10.1609V30.625H31.7188C33.53 30.625 35 29.155 35 27.3438V7.65625C35 5.845 33.53 4.375 31.7188 4.375Z"
+                fill="#F44336"
+              />
+            </svg>
+          </div>
+          <div class="share-option">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_2_4712)">
+                <path
+                  d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35Z"
+                  fill="#D22215"
+                />
+                <path
+                  d="M26.3086 11.6443C25.7838 11.8044 25.2366 11.9421 24.6885 12.0791C20.7996 12.904 15.6144 10.665 13.3754 14.3182C11.508 17.223 10.9184 20.858 8.79414 23.4553L20.1406 34.8018C27.6923 33.6588 33.6603 27.6899 34.8021 20.1379L26.3086 11.6443Z"
+                  fill="#A81411"
+                />
+                <path
+                  d="M23.3548 10.4134H11.645C9.34758 10.4134 7.4852 12.2758 7.4852 14.5732V20.4269C7.4852 22.7243 9.34765 24.5867 11.645 24.5867H23.3548C25.6523 24.5867 27.5146 22.7243 27.5146 20.4269V14.5732C27.5146 12.2758 25.6522 10.4134 23.3548 10.4134ZM20.5415 17.7848L15.0645 20.397C14.9185 20.4666 14.7499 20.3603 14.7499 20.1987V14.811C14.7499 14.6469 14.923 14.5406 15.0691 14.6148L20.5461 17.3903C20.7092 17.4728 20.7062 17.7064 20.5415 17.7848Z"
+                  fill="white"
+                />
+                <path
+                  d="M23.3549 10.4134H17.3822V15.7868L20.5463 17.3901C20.7093 17.4727 20.7064 17.7062 20.5416 17.7848L17.3822 19.2917V24.5867H23.3549C25.6524 24.5867 27.5148 22.7243 27.5148 20.4269V14.5732C27.5148 12.2758 25.6523 10.4134 23.3549 10.4134Z"
+                  fill="#D1D1D1"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_4712">
+                  <rect width="35" height="35" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="plus-overlay" id="plusOverlay">
-        <div class="plus-container">
-            <div class="plus-card">
-                <img src="./assets/img4.jfif" alt="Image 1" />
-                <div class="plus-card-content">
-                    <p>1:03</p>
-                    <h3>Les delices de fatou...</h3>
-                    <div class="voir-plus-logo">
-                        <img src="./assets/img12.jfif" alt="MTN Logo" />
-                        <span>MTN</span>
-                    </div>
-                </div>
+      <div class="plus-container">
+        <div class="plus-card">
+          <img src="./assets/img4.jfif" alt="Image 1" />
+          <div class="plus-card-content">
+            <p>1:03</p>
+            <h3>Les delices de fatou...</h3>
+            <div class="voir-plus-logo">
+              <img src="./assets/img12.jfif" alt="MTN Logo" />
+              <span>MTN</span>
             </div>
-            <div class="plus-card">
-                <img src="./assets/img5.jfif" alt="Image 2" />
-                <div class="plus-card-content">
-                    <p>1:03</p>
-                    <h3>Africa fashion night...</h3>
-                    <div class="voir-plus-logo">
-                        <img src="./assets/img12.jfif" alt="MTN Logo" />
-                        <span>MTN</span>
-                    </div>
-                </div>
-            </div>
-            <div class="plus-card">
-                <img src="./assets/img6.jfif" alt="Image 1" />
-                <div class="plus-card-content">
-                    <p>1:03</p>
-                    <h3>La nuit dernière</h3>
-                    <div class="voir-plus-logo">
-                        <img src="./assets/img12.jfif" alt="MTN Logo" />
-                        <span>MTN</span>
-                    </div>
-                </div>
-            </div>
-            <div class="plus-card">
-                <img src="./assets/img7.jfif" alt="Image 2" />
-                <div class="plus-card-content">
-                    <p>1:03</p>
-                    <h3>Card Title 2</h3>
-                    <div class="voir-plus-logo">
-                        <img src="./assets/img12.jfif" alt="MTN Logo" />
-                        <span>MTN</span>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="plus-card">
+          <img src="./assets/img5.jfif" alt="Image 2" />
+          <div class="plus-card-content">
+            <p>1:03</p>
+            <h3>Africa fashion night...</h3>
+            <div class="voir-plus-logo">
+              <img src="./assets/img12.jfif" alt="MTN Logo" />
+              <span>MTN</span>
+            </div>
+          </div>
+        </div>
+        <div class="plus-card">
+          <img src="./assets/img6.jfif" alt="Image 1" />
+          <div class="plus-card-content">
+            <p>1:03</p>
+            <h3>La nuit dernière</h3>
+            <div class="voir-plus-logo">
+              <img src="./assets/img12.jfif" alt="MTN Logo" />
+              <span>MTN</span>
+            </div>
+          </div>
+        </div>
+        <div class="plus-card">
+          <img src="./assets/img7.jfif" alt="Image 2" />
+          <div class="plus-card-content">
+            <p>1:03</p>
+            <h3>Card Title 2</h3>
+            <div class="voir-plus-logo">
+              <img src="./assets/img12.jfif" alt="MTN Logo" />
+              <span>MTN</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         const voirPlusBtn = document.getElementById("voirPlusBtn");
         const plusOverlay = document.getElementById("plusOverlay");
 
-        voirPlusBtn.addEventListener("click", function() {
-            voirPlusBtn.classList.toggle("active");
-            plusOverlay.classList.toggle("active");
+        voirPlusBtn.addEventListener("click", function () {
+          voirPlusBtn.classList.toggle("active");
+          plusOverlay.classList.toggle("active");
         });
-    });
+      });
 
-    let cards = document.getElementsByClassName("plus-card");
+      let cards = document.getElementsByClassName("plus-card");
 
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("click", function() {
-            window.location.href = "afficher_video.html";
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("click", function () {
+          window.location.href = "afficher_video.html";
         });
-    }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer le paramètre 'video' de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoSrc = urlParams.get("video");
+
+        // Définir une source vidéo par défaut
+        const defaultVideoSrc = "./assets/vid3.mp4";
+
+        const videoElement = document.getElementById("videoElement");
+        const videoSource = document.getElementById("videoSource");
+
+        if (videoElement && videoSource) {
+          // Si le paramètre 'video' est vide ou absent, utiliser la vidéo par défaut
+          videoSource.src = videoSrc
+            ? decodeURIComponent(videoSrc)
+            : defaultVideoSrc;
+          videoElement.load(); // Recharger la vidéo avec la nouvelle source
+        } else {
+          console.error("Éléments vidéo non trouvés dans le DOM");
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
