@@ -1,3 +1,5 @@
 .dist
 .history
 /fonts
+.vscode
+.idea
