@@ -53,6 +53,7 @@ header i {
   position: absolute;
   left: 20px;
   font-size: 20px;
+  top: 16px;
 }
 
 .back-button svg {
@@ -85,7 +86,7 @@ main {
 .icon-container {
   text-align: center;
   margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .icon-container i {
@@ -111,6 +112,11 @@ input {
   transition: background-color 0.9s ease;
   height: 50px;
   width: 90%;
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 input::placeholder {
@@ -124,7 +130,7 @@ input::placeholder {
 .forgot-password {
   position: absolute;
   right: 10px;
-  bottom: -20px; /* Placer en dessous du champ */
+  bottom: -5px; /* Placer en dessous du champ */
   color: white;
   text-decoration: none;
   font-size: 12px;
@@ -172,7 +178,7 @@ input::placeholder {
   font-size: 16px;
   margin-bottom: 10px;
   cursor: pointer;
-  top: 35rem;
+  top: 79%;
   position: fixed;
   height: 50px;
   display: flex;
@@ -183,13 +189,11 @@ input::placeholder {
   align-items: center;
   padding-right: 37%;
 }
-
 .submit-button {
   background-color: #0076c0;
   color: white;
   width: 100%;
   border: none;
-  font-size: 16px;
   margin: auto;
   cursor: pointer;
 }
@@ -198,10 +202,19 @@ input::placeholder {
 footer {
   background-color: #0076c0;
   padding: 20px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.submit-button span {
+  color: #fff;
+  font-family: "MaPolice";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .facebook-button i,

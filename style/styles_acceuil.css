@@ -61,7 +61,7 @@ html {
 
 .slide-content {
   position: absolute;
-  top: 78%;
+  top: 83%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;
@@ -78,12 +78,11 @@ html {
 }
 .slide-content2 {
   position: absolute;
-  top: 57%;
+  top: 61%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   width: 85%;
   margin: auto;
   height: 68px;
@@ -96,7 +95,6 @@ html {
 
 .slide-content h2,
 .slide-content2 h2 {
-  margin-bottom: 0.5rem;
   font-style: normal;
   font-weight: 700;
   opacity: 1;
@@ -108,11 +106,12 @@ html {
 .slide-content2 p {
   opacity: 0.8;
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   margin-bottom: 40px;
+  margin-top: -18px;
 }
 
 .slider-nav {

@@ -26,6 +26,7 @@ html {
   background-color: #f0f0f0;
   scrollbar-width: none; /* Pour Firefox */
   -ms-overflow-style: none;
+  overflow: hidden;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -78,6 +79,8 @@ html {
   font-size: 24px;
   cursor: pointer;
   color: #999;
+  position: relative;
+  top: -1px;
 }
 
 .carousel-container {
@@ -91,11 +94,12 @@ html {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 20px;
+  height: 57%;
 }
 
 .card {
   flex: 0 0 auto;
-  width: calc(100% - 40px);
+  width: calc(100% - 20%);
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -106,7 +110,7 @@ html {
 
 .card img {
   width: 100%;
-  height: 55%;
+  height: 66%;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -156,18 +160,30 @@ html {
 .follow-btn {
   display: block;
   /* width: 50%; */
-  padding: 10px;
-  /* background-color: #0056b3; */
+  /* padding: 10px; */
   color: white;
   border: none;
   /* border-radius: 30px; */
-  margin-top: 35px;
+  margin-top: 0px;
   cursor: pointer;
   width: 82px;
   height: 35px;
   flex-shrink: 0;
   border-radius: 30px;
   background: #0076c0;
+  top: 33px;
+  position: relative;
+}
+
+.follow-btn span {
+  color: #fff;
+  font-family: "MaPolice";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  top: -1px;
+  position: relative;
 }
 
 /* Footer */
@@ -183,13 +199,40 @@ footer {
   color: white;
   width: 100%;
   border: none;
-  font-size: 16px;
   margin: auto;
   cursor: pointer;
 }
 
-.submit-button i {
-  margin-right: 10px;
+.submit-button svg {
+  margin-left: 10px;
+}
+
+.submit-button {
+  background-color: #0076c0;
+  color: white;
+  width: 100%;
+  border: none;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #0076c0;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.submit-button span {
+  color: #fff;
+  font-family: "MaPolice";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 @media (min-width: 768px) {
