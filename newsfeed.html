@@ -783,83 +783,91 @@
     };*/
 
 
-    //Lecture des vidéos de tendances.
+    // Fonction pour mettre en pause toutes les vidéos sauf celle spécifiée
+function pauseAllVideosExcept(exceptVideo) {
+    document.querySelectorAll('video').forEach(video => {
+        if (video !== exceptVideo) {
+            video.pause();
+            const card = video.closest('.card');
+            const postMedia = video.closest('.post-media');
+            if (card) {
+                card.querySelector('.play-icon').style.display = 'block';
+                card.querySelector('.fullscreen-icon').style.display = 'none';
+            } else if (postMedia) {
+                postMedia.querySelector('.play-btn').style.display = 'block';
+                postMedia.querySelector('.fullscreen-icon').style.display = 'none';
+            }
+        }
+    });
+}
+
+// Fonction pour gérer le clic sur une vidéo
+function handleVideoClick(video, playIcon, fullscreenBtn) {
+    if (video.paused) {
+        pauseAllVideosExcept(video);
+        video.play();
+        playIcon.style.display = 'none';
+        fullscreenBtn.style.display = 'block';
+    } else {
+        video.pause();
+        playIcon.style.display = 'block';
+        fullscreenBtn.style.display = 'none';
+    }
+}
+
+// Gestion des vidéos de tendances (cards)
 document.querySelectorAll('.card').forEach(card => {
-            const playIcon = card.querySelector('.play-icon');
-            const video = card.querySelector('.card-video');
-            const fullscreenBtn = card.querySelector('.fullscreen-icon');
+    const playIcon = card.querySelector('.play-icon');
+    const video = card.querySelector('.card-video');
+    const fullscreenBtn = card.querySelector('.fullscreen-icon');
 
-
-        video.addEventListener('play', function() {
+    if (video && playIcon) {
+        playIcon.addEventListener('click', () => handleVideoClick(video, playIcon, fullscreenBtn));
+        video.addEventListener('click', () => handleVideoClick(video, playIcon, fullscreenBtn));
+        
+        video.addEventListener('play', () => {
             playIcon.style.display = 'none';
             fullscreenBtn.style.display = 'block';
         });
 
-            playIcon.addEventListener('click', function() {
-                if (video.paused) {
-                    video.play();
-                    pauseAllVideosExcept(video);
-                    this.style.display = 'none';
-                    fullscreenBtn.style.display = 'block';
-                } else {
-                    video.pause();
-                    this.style.display = 'block';
-                    fullscreenBtn.style.display = 'none';
-                }
-            });
-
-            video.addEventListener('ended', function() {
-                playIcon.style.display = 'block';
-                fullscreenBtn.style.display = 'none';
-            });
-        });
-
-
-
- // Sélectionner tous les éléments .post-media qui contiennent des vidéos
-const videoPostsArray = document.querySelectorAll('.post-media');
-
-videoPostsArray.forEach(videoPost => {
-    const video = videoPost.querySelector('video');
-    const playBtn = videoPost.querySelector('.play-btn');
-    const fullscreenBtn = videoPost.querySelector('.fullscreen-icon');
-
-    if (video && playBtn) {
-        playBtn.addEventListener('click', function() {
-            if (video.paused) {
-                // Pause toutes les autres vidéos avant de jouer celle-ci
-                pauseAllVideosExcept(video);
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-
-        video.addEventListener('play', function() {
-            playBtn.style.display = 'none';
-            fullscreenBtn.style.display = 'block';
-        });
-
-        video.addEventListener('pause', function() {
-            playBtn.style.display = 'block';
+        video.addEventListener('pause', () => {
+            playIcon.style.display = 'block';
             fullscreenBtn.style.display = 'none';
         });
 
-        video.addEventListener('ended', function() {
-            playBtn.style.display = 'block';
+        video.addEventListener('ended', () => {
+            playIcon.style.display = 'block';
             fullscreenBtn.style.display = 'none';
         });
     }
 });
 
-function pauseAllVideosExcept(exceptVideo) {
-    videoPostsArray.forEach(videoPost => {
-        const video = videoPost.querySelector('video');
-        if (video && video !== exceptVideo) {
-            video.pause();
-        }
-    });
-};
+// Gestion des vidéos de post-media
+document.querySelectorAll('.post-media').forEach(postMedia => {
+    const video = postMedia.querySelector('video');
+    const playBtn = postMedia.querySelector('.play-btn');
+    const fullscreenBtn = postMedia.querySelector('.fullscreen-icon');
+
+    if (video && playBtn) {
+        playBtn.addEventListener('click', () => handleVideoClick(video, playBtn, fullscreenBtn));
+        video.addEventListener('click', () => handleVideoClick(video, playBtn, fullscreenBtn));
+
+        video.addEventListener('play', () => {
+            playBtn.style.display = 'none';
+            fullscreenBtn.style.display = 'block';
+        });
+
+        video.addEventListener('pause', () => {
+            playBtn.style.display = 'block';
+            fullscreenBtn.style.display = 'none';
+        });
+
+        video.addEventListener('ended', () => {
+            playBtn.style.display = 'block';
+            fullscreenBtn.style.display = 'none';
+        });
+    }
+});
 
 
 

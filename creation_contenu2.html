@@ -58,22 +58,13 @@
         </div>
         <div id="form-view" class="form-container">
             <div class="form-group">
-                <div class="left-align">
-                    <div class="checkbox-group">
+                <div class="line1">
+                    <div class="checker">
                         <label> <input type="checkbox" checked /> Checked </label>
                         <label> <input type="checkbox" check /> Checked </label>
                     </div>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="choice" checked />
-                        </label>
-                        <label> <input type="radio" name="choice" /></label>
-                    </div>
-                    <input type="text" value="Taper.voir!" placeholder="Entrez votre texte" />
-                    <input type="text" placeholder="Entrez votre nom" style="width: auto" />
-                </div>
-                <div class="right-align">
-                    <div class="checkbox-group">
+
+                    <div class="canceler">
                         <label>
                             <input type="checkbox" class="unchecked1" unchecked disabled />
                             Canceled
@@ -82,8 +73,17 @@
                             <input type="checkbox" class="unchecked2" disabled /> Canceled
                         </label>
                     </div>
+                </div>
 
-                    <div class="dropdown">
+                <div class="line2">
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="choice" checked />
+                        </label>
+                        <label> <input type="radio" name="choice" /></label>
+                    </div>
+
+                    <div class="selectOption">
                         <select>
                             <option>Choisir</option>
                             <option>Option 2</option>
@@ -96,8 +96,14 @@
                             <option>Option 3</option>
                         </select>
                     </div>
+                </div>
 
-                    <div class="toogle">
+                <div class="line3">
+                    <div class="input">
+                        <input type="text" value="Taper.voir!" placeholder="Entrez votre texte" />
+                        <input type="text" placeholder="Entrez votre nom" style="width: auto" />
+                    </div>
+                    <div class="toggle">
                         <div class="toggle-switch">
                             <input type="checkbox" id="toggle" unchecked />
                             <label for="toggle"></label>
@@ -109,7 +115,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
             <textarea>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum sit amet lectus pulvinar ultrices id a nunc. Nunc lobortis libero sit amet magna elementum tristique. Praesent rhoncus leo vel arcu. Donec finibus ultricies eros, quis porttitor neque molestie vitae. Praesent sollicitudin nulla vel libero. Nullam accumsan rutrum posuere luctus blandit!</textarea>

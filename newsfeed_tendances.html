@@ -495,29 +495,60 @@
         
 
     //Lecture des vidéos de tendances.
+// Fonction pour mettre en pause toutes les vidéos sauf celle spécifiée
+function pauseAllVideosExcept(exceptVideo) {
+    document.querySelectorAll('.video-card .card-video').forEach(video => {
+        if (video !== exceptVideo) {
+            video.pause();
+            const card = video.closest('.video-card');
+            const playIcon = card.querySelector('.play-icon');
+            const fullscreenIcon = card.querySelector('.fullscreen-icon');
+            if (playIcon) playIcon.style.display = 'block';
+            if (fullscreenIcon) fullscreenIcon.style.display = 'none';
+        }
+    });
+}
+
 // Sélectionner uniquement les cartes avec la classe 'video-card'
 document.querySelectorAll('.video-card').forEach(card => {
     const playIcon = card.querySelector('.play-icon');
     const video = card.querySelector('.card-video');
     const fullscreenIcon = card.querySelector('.fullscreen-icon');
 
-    playIcon.addEventListener('click', function() {
-        if (video.paused) {
-            video.play();
-            this.style.display = 'none';
-            fullscreenIcon.style.display = 'block';
-        } else {
-            video.pause();
-            this.style.display = 'block';
-            fullscreenIcon.style.display = 'none';
-        }
-    });
+    if (playIcon && video && fullscreenIcon) {
+        playIcon.addEventListener('click', function() {
+            if (video.paused) {
+                pauseAllVideosExcept(video);
+                video.play();
+                this.style.display = 'none';
+                fullscreenIcon.style.display = 'block';
+            } else {
+                video.pause();
+                this.style.display = 'block';
+                fullscreenIcon.style.display = 'none';
+            }
+        });
 
-    video.addEventListener('ended', function() {
-        playIcon.style.display = 'block';
-        fullscreenIcon.style.display = 'none';
-    });
+        video.addEventListener('click', function() {
+            if (!video.paused) {
+                video.pause();
+                playIcon.style.display = 'block';
+                fullscreenIcon.style.display = 'none';
+            } else {
+                pauseAllVideosExcept(video);
+                video.play();
+                playIcon.style.display = 'none';
+                fullscreenIcon.style.display = 'block';
+            }
+        });
+
+        video.addEventListener('ended', function() {
+            playIcon.style.display = 'block';
+            fullscreenIcon.style.display = 'none';
+        });
+    }
 });
+
 
 
 
