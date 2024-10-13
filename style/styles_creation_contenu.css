@@ -78,11 +78,6 @@ html {
   object-fit: cover;
 }
 
-.tab {
-  /* padding: 10px 0px; */
-  /* cursor: pointer; */
-}
-
 .form-container {
   padding: 23px;
   display: none;
@@ -121,6 +116,7 @@ html {
   align-content: space-between;
   justify-content: space-around;
   align-items: stretch;
+  gap: 20px;
 }
 
 .canceler {
@@ -129,7 +125,7 @@ html {
   align-content: space-between;
   justify-content: space-around;
   align-items: stretch;
-
+  gap: 20px;
   margin-left: 17%;
   position: relative;
 }
@@ -161,8 +157,11 @@ html {
 
 .line3 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 46px;
 }
 
 .input {
@@ -174,26 +173,44 @@ html {
   align-items: flex-start;
 }
 
-.toogle {
-  display: flex;
-}
-
-.checkbox-group,
-.radio-group {
+.toggle {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  align-items: baseline;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  top: -10px;
+  position: relative;
+  gap: 15px;
 }
-.checkbox-group label,
+
+.line1 label,
 .radio-group label {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
   cursor: pointer;
 }
-.checkbox-group input[type="checkbox"] {
+
+.line1 label {
+  color: #333;
+}
+
+.check {
+  background-color: white;
+  border-color: #0076c0;
+}
+
+.line1 label checked check {
+  color: #0076c0;
+}
+
+.line1 label disabled {
+  color: #ccc;
+}
+
+.line1 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   width: 24px;
@@ -204,17 +221,12 @@ html {
   position: relative;
   cursor: pointer;
 }
-.checkbox-group input[type="checkbox"]:checked {
-  background-color: #2196f3;
-  border-color: #2196f3;
+.line1 input[type="checkbox"]:checked {
+  border-color: #0076c0;
+  color: #0076c0;
 }
 
-.checkbox-group input[type="checkbox"]:check {
-  background-color: white;
-  border-color: #2196f3;
-}
-
-.checkbox-group input[type="checkbox"]:checked::after {
+.check1::after {
   content: "";
   position: absolute;
   width: 21px;
@@ -226,6 +238,20 @@ html {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.check2::after {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='16' viewBox='0 0 21 16' fill='none'%3E%3Cpath d='M2 6.51282L8.30645 13L19 2' stroke='blue' stroke-width='3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .radio-group input[type="radio"] {
   margin-right: 10px;
 }
@@ -248,7 +274,7 @@ html {
   -o-transition: background-color 0.3s;
 }
 .toggle-switch input[type="checkbox"]:checked {
-  background-color: #2196f3;
+  background-color: #0076c0;
 }
 .toggle-switch input[type="checkbox"]::before {
   content: "";
@@ -266,18 +292,12 @@ html {
 }
 .form-group input[type="text"],
 select {
-  /* width: 100%; */
   padding: 8px;
   margin-bottom: 15px;
-  /* border: 1px solid #ccc; */
-  /* border-radius: 4px; */
   background-color: white;
   width: 163px;
   height: 30px;
   flex-shrink: 0;
-  /* border-radius: 74px; */
-  /* border: 1px solid #C4C4C4; */
-  /* border-radius: 5px; */
   border: 1px solid #c4c4c4;
   border-radius: 74px;
 }
@@ -410,13 +430,6 @@ textarea {
   border: none;
 }
 
-.radio-group label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
 .radio-group input[type="radio"] {
   appearance: none; /* Supprime le style par défaut */
   width: 24px; /* Taille du bouton radio */
@@ -431,7 +444,7 @@ textarea {
 
 .radio-group input[type="radio"]:checked {
   background-color: white; /* Couleur de fond bleu pour le bouton sélectionné */
-  border-color: #2196f3;
+  border-color: #0076c0;
 }
 
 .radio-group input[type="radio"]:checked::after {
@@ -439,7 +452,7 @@ textarea {
   position: absolute;
   width: 14px; /* Taille de l'icône à l'intérieur */
   height: 14px;
-  background-color: #2196f3; /* Couleur de l'icône */
+  background-color: #0076c0; /* Couleur de l'icône */
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -448,11 +461,18 @@ textarea {
 
 .unchecked1 {
   background-color: #c4c4c4; /* Gris pour l'apparence désactivée */
-  /* border-color: #b0b0b0; */
   cursor: not-allowed;
 }
 
 .unchecked2 {
   cursor: not-allowed;
   background-color: white;
+}
+
+.check2 {
+  background-color: white;
+}
+
+.check1 {
+  background-color: #0076c0;
 }
