@@ -505,3 +505,12 @@ textarea {
   outline: none;
   border-color: #c4c4c4; /* Optionnel : définir une autre couleur de bordure */
 }
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  outline: none; /* Retire la bordure par défaut */
+  border-color: #0076c0; /* Bordure bleue lors de la sélection */
+}
