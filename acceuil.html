@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider CSS Uniquement</title>
     <link rel="stylesheet" href="style/styles_acceuil.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-</head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <span id="slide1"></span>
-        <span id="slide2"></span>
-        <span id="slide3"></span>
+      <span id="slide1"></span>
+      <span id="slide2"></span>
+      <span id="slide3"></span>
 
-        <div class="slider">
-            <div id="slide1" class="slide">
-                <img src="./assets/img1.jpeg" alt="Slide 1" />
-                <a href="#slide3" class="skip-link">
-                    Passer
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                        <circle cx="15" cy="15" r="15" fill="#0076C0" />
-                        <path d="M6 14L20.17 14L16.59 10.41L18 9L24 15L18 21L16.59 19.59L20.17 16L6 16L6 14Z"
-                            fill="white" />
-                    </svg>
-                </a>
-                <div class="slide-content">
-                    <h2>Bienvenu sur MTN Fresh.</h2>
-                    <p>Un univers de fun, d’opportunité et de liberté !</p>
-                </div>
-            </div>
-            <div id="slide2" class="slide">
-                <img src="./assets/img2.jfif" alt="Slide 2" />
-                <a href="#slide3" class="skip-link">
-                    Passer
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                        <circle cx="15" cy="15" r="15" fill="#0076C0" />
-                        <path d="M6 14L20.17 14L16.59 10.41L18 9L24 15L18 21L16.59 19.59L20.17 16L6 16L6 14Z"
-                            fill="white" />
-                    </svg>
-                </a>
-                <div class="slide-content">
-                    <h2>Eclate toi!</h2>
-                    <p>
-                        Découvre les meilleures vidéos pour t'éclater, apprendre et
-                        t'inspirer
-                    </p>
-                </div>
-            </div>
-            <div id="slide3" class="slide">
-                <img src="./assets/img3.jpeg" alt="Slide 3" />
-                <div class="slide-content2">
-                    <h2>Gagne des points</h2>
-                    <p>
-                        Gagne des points et deviens le gars le plus fresh de la
-                        communauté!
-                    </p>
-                    <button class="btn-inscrire" onclick="window.location.href='./inscription.html'">
-                        <span>Inscrivez-vous</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
-                            <path d="M17.106 1L24 8M24 8L17.106 15M24 8H0" stroke="white" stroke-width="2" />
-                        </svg>
-                    </button>
-                    <button class="btn-connecter" onclick="window.location.href='./connexion.html'">
-                        <span>Connectez-vous</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
-                            <path d="M17.106 1L24 8M24 8L17.106 15M24 8H0" stroke="white" stroke-width="2" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+      <div class="slider">
+        <div id="slide1" class="slide">
+          <img src="./assets/img1.jpeg" alt="Slide 1" />
+          <a href="#slide3" class="skip-link">
+            Passer
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <circle cx="15" cy="15" r="15" fill="#0076C0" />
+              <path
+                d="M6 14L20.17 14L16.59 10.41L18 9L24 15L18 21L16.59 19.59L20.17 16L6 16L6 14Z"
+                fill="white"
+              />
+            </svg>
+          </a>
+          <div class="slide-content">
+            <h2>Bienvenu sur MTN Fresh.</h2>
+            <p>Un univers de fun, d’opportunité et de liberté !</p>
+          </div>
         </div>
-        <div class="slider-nav">
-            <a href="#slide1" class="default-active"></a>
-            <a href="#slide2" class="default-active1"></a>
-            <a href="#slide3" class="default-active2"></a>
+        <div id="slide2" class="slide">
+          <img src="./assets/img2.jfif" alt="Slide 2" />
+          <a href="#slide3" class="skip-link">
+            Passer
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <circle cx="15" cy="15" r="15" fill="#0076C0" />
+              <path
+                d="M6 14L20.17 14L16.59 10.41L18 9L24 15L18 21L16.59 19.59L20.17 16L6 16L6 14Z"
+                fill="white"
+              />
+            </svg>
+          </a>
+          <div class="slide-content">
+            <h2>Eclate toi!</h2>
+            <p>
+              Découvre les meilleures vidéos pour t'éclater, apprendre et
+              t'inspirer
+            </p>
+          </div>
         </div>
+        <div id="slide3" class="slide">
+          <img src="./assets/img3.jpeg" alt="Slide 3" />
+          <div class="slide-content2">
+            <h2>Gagne des points</h2>
+            <p>
+              Gagne des points et deviens le gars le plus fresh de la
+              communauté!
+            </p>
+            <button
+              class="btn-inscrire"
+              onclick="window.location.href='./inscription.html'"
+            >
+              <span>Inscrivez-vous</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="16"
+                viewBox="0 0 26 16"
+                fill="none"
+              >
+                <path
+                  d="M17.106 1L24 8M24 8L17.106 15M24 8H0"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              class="btn-connecter"
+              onclick="window.location.href='./connexion.html'"
+            >
+              <span>Connectez-vous</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="16"
+                viewBox="0 0 26 16"
+                fill="none"
+              >
+                <path
+                  d="M17.106 1L24 8M24 8L17.106 15M24 8H0"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <a href="#slide1" class="default-active"></a>
+        <a href="#slide2" class="default-active1"></a>
+        <a href="#slide3" class="default-active2"></a>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
