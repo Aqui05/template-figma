@@ -192,13 +192,14 @@ html {
   border-color: #0076c0;
 }
 
+/*
 .line1 label checked check {
   color: #0076c0;
 }
 
 .line1 label disabled {
   color: #ccc;
-}
+}*/
 
 .line1 input[type="checkbox"] {
   appearance: none;
@@ -498,4 +499,9 @@ textarea {
 
 .check1 {
   background-color: #0076c0;
+}
+
+.text:focus {
+  outline: none;
+  border-color: #c4c4c4; /* Optionnel : définir une autre couleur de bordure */
 }
