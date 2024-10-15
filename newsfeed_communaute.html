@@ -111,7 +111,7 @@
 
             <div class="tabs">
                 <label class="tab" for="idees">Idées</label>
-                <label class="tab" for="astuces">Trucs & astuces</label>
+                <label class="tab" for="astuces">Trucs et astuces</label>
                 <label class="tab" for="testeurs">Testeurs</label>
             </div>
             <input type="radio" id="idees" name="tab" checked hidden />
@@ -181,7 +181,7 @@
                                 <div class="post-comments">
                                     <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                     <br>
-                                    <span id="see-all-comments">Voir tous les commentaires</span>
+                                     <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                                 </div>
 
 
@@ -247,7 +247,7 @@
                                 <div class="post-comments">
                                     <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                     <br>
-                                    <span id="see-all-comments">Voir tous les commentaires</span>
+                                     <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                                 </div>
 
 
@@ -316,7 +316,7 @@
                             <div class="post-comments">
                                 <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                 <br>
-                                <span id="see-all-comments">Voir tous les commentaires</span>
+                                 <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                             </div>
 
 
@@ -382,7 +382,7 @@
                             <div class="post-comments">
                                 <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                 <br>
-                                <span id="see-all-comments">Voir tous les commentaires</span>
+                                 <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                             </div>
 
 
@@ -448,7 +448,7 @@
                             <div class="post-comments">
                                 <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                 <br>
-                                <span id="see-all-comments">Voir tous les commentaires</span>
+                                 <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                             </div>
 
 
@@ -516,7 +516,9 @@
                             <div class="post-comments">
                                 <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                 <br>
-                                <span id="see-all-comments">Voir tous les commentaires</span>
+                                 <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
+
+
                             </div>
 
 
@@ -582,7 +584,7 @@
                             <div class="post-comments">
                                 <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                 <br>
-                                <span id="see-all-comments">Voir tous les commentaires</span>
+                                 <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                             </div>
 
 
@@ -650,7 +652,7 @@
                             <div class="post-comments">
                                 <p><strong>Jason Doe:</strong> Woow j’admire cette vidéo, trop cool...!!!</p>
                                 <br>
-                                <span id="see-all-comments">Voir tous les commentaires</span>
+                                 <a href="./commentaires.html"><span>Voir tous les commentaires</span></a>
                             </div>
 
 
@@ -684,6 +686,7 @@
                     </div>
                 </div>
             </div>
+            </section>
     </div>
     <div class="add-button" id="add-content">
         <svg xmlns="http://www.w3.org/2000/svg" width="84" height="88" viewBox="0 0 84 88" fill="none">
@@ -724,10 +727,6 @@
 
     document.getElementById('account-nav').addEventListener('click', function() {
         window.location.href = 'mon_profil.html'; // Change to the actual account page URL
-    });
-
-    document.getElementById('see-all-comments').addEventListener('click', function() {
-        window.location.href = 'commentaires.html';
     });
 
     document.getElementById('add-content').addEventListener('click', function() {
