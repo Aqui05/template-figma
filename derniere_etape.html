@@ -33,7 +33,7 @@
       <p class="subtitle">Suivez 10 de vos idoles préférés ou plus</p>
       <div class="carousel-container">
         <div class="carousel">
-          <div class="card">
+          <div class="card active">
             <img src="./assets/img8.jfif" alt="Sessimin" />
             <div class="card-content">
               <div class="titre">
@@ -108,6 +108,89 @@
       document.getElementById("passer").addEventListener("click", function () {
         redirectTo("./newsfeed.html#slide1");
       });
+      
+    
+// Sélectionnez les éléments du DOM
+const carousel = document.querySelector('.carousel');
+const cards = document.querySelectorAll('.card');
+const totalCards = cards.length;
+
+let currentIndex = 0;
+let isScrolling = false;
+let scrollTimeout;
+
+// Fonction pour mettre à jour la carte active
+function updateActiveCard() {
+  cards.forEach((card, index) => {
+    card.classList.remove('active');
+    if (index === currentIndex) {
+      card.classList.add('active');
+    }
+  });
+}
+
+// Fonction pour déterminer quelle carte est la plus visible
+function getMostVisibleCard() {
+  let maxVisibility = 0;
+  let mostVisibleIndex = 0;
+
+  cards.forEach((card, index) => {
+    const rect = card.getBoundingClientRect();
+    const visibility = Math.min(rect.right, carousel.clientWidth) - Math.max(rect.left, 0);
+
+    if (visibility > maxVisibility) {
+      maxVisibility = visibility;
+      mostVisibleIndex = index;
+    }
+  });
+
+  return mostVisibleIndex;
+}
+
+// Gestionnaire d'événements pour le défilement
+carousel.addEventListener('scroll', () => {
+  if (!isScrolling) {
+    isScrolling = true;
+    carousel.classList.add('is-scrolling');
+  }
+
+  clearTimeout(scrollTimeout);
+
+  scrollTimeout = setTimeout(() => {
+    isScrolling = false;
+    carousel.classList.remove('is-scrolling');
+    currentIndex = getMostVisibleCard();
+    updateActiveCard();
+  }, 150); // Délai avant de considérer que le défilement est terminé
+});
+
+// Fonction pour faire défiler automatiquement le carrousel
+function scrollCarousel() {
+  if (!isScrolling) {
+    currentIndex = (currentIndex + 1) % totalCards;
+    cards[currentIndex].scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center'
+    });
+    updateActiveCard();
+  }
+}
+
+// Démarrer le défilement automatique
+let autoScrollInterval = setInterval(scrollCarousel, 3000);
+
+// Arrêter le défilement automatique lorsque l'utilisateur interagit avec le carrousel
+carousel.addEventListener('mouseenter', () => {
+  clearInterval(autoScrollInterval);
+});
+
+// Reprendre le défilement automatique lorsque l'utilisateur cesse d'interagir
+carousel.addEventListener('mouseleave', () => {
+  autoScrollInterval = setInterval(scrollCarousel, 3000);
+});
+
+// Initialisation
+updateActiveCard();
     </script>
   </body>
 </html>

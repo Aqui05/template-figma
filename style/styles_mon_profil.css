@@ -46,6 +46,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    font-family: "MaPolice", sans-serif;
 }
 
 .profile-container {
@@ -238,6 +239,7 @@ html {
 .content {
   padding: 20px;
   border-top: 0.1px solid #c4c4c4;
+  padding: 13px;
 }
 
 .card {
@@ -332,20 +334,43 @@ html {
   justify-content: space-between;
 }
 .badge-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  /* max-width: 600px; */
+    display: flex;
+    column-gap: 13px;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+.badge1 {
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+}
+
+.badge2 {
+display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+}
+
 .badge {
   background-color: white;
-  border-radius: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: unset;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   width: 97%;
   height: 150px;
   flex-shrink: 0;

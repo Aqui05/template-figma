@@ -28,6 +28,10 @@ html {
   -ms-overflow-style: none;
   overflow: hidden;
 }
+
+* {
+      font-family: "MaPolice", sans-serif;
+}
 ::-webkit-scrollbar {
   display: none;
 }
@@ -88,10 +92,19 @@ html {
   overflow: hidden;
   position: relative;
 }
-
+/*
 .carousel {
   display: flex;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+  height: 57%;
+}
+*/
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 20px;
   height: 57%;
@@ -105,7 +118,7 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
   scroll-snap-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card img {
@@ -139,6 +152,13 @@ html {
   transform: scale(1.05); /* Zoom lors du survol */
   transform: scaleY(1.1);
 }
+
+.card.active {
+  transform: scale(1.05); /* Zoom pour la carte active */
+  transform: scaleY(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
 
 .card p {
   color: #c4c4c4;

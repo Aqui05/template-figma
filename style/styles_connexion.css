@@ -117,6 +117,7 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+    font-family: "MaPolice", sans-serif;
 }
 
 input::placeholder {
@@ -125,6 +126,11 @@ input::placeholder {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  font-family: "MaPolice", sans-serif;
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.9s ease;
 }
 
 .forgot-password {
@@ -172,7 +178,7 @@ input::placeholder {
   background-color: white; /* Fond blanc */
   /* color: #3b5998; */ /* Texte bleu Facebook */
   border: 2px solid white; /* Bordure bleue Facebook */
-  width: 90%;
+  width: 86%;
   padding: 10px;
   border-radius: 60px;
   font-size: 16px;
@@ -188,7 +194,11 @@ input::placeholder {
   justify-content: space-between;
   align-items: center;
   padding-right: 37%;
-}
+  font-family: "MaPolice", sans-serif;
+  margin: 5px;
+
+  }
+
 .submit-button {
   background-color: #0076c0;
   color: white;
@@ -206,6 +216,10 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+*{
+      font-family: "MaPolice", sans-serif;
 }
 
 .submit-button span {
